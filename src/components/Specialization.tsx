@@ -6,7 +6,7 @@ export default function Specialization() {
         <section>
             <div className='w-full relative   '>
                 <div className='w-full text-center '>
-                    <h2 className='text-5xl font-bold text-[var(--primary-color)]'>Dr. Payal Bajaj’s specializations</h2>
+                    <h2 className='text-5xl font-bold text-[var(--primary-color)]'>Dr. Payal Bajaj&apos;s specializations</h2>
                 </div>
                 <div className='w-full specialization-wraper mt-16'>
                     <div className='w-full h-full border border-[var(--primary-color)] rounded-2xl p-4'>
