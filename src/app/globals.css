@@ -1,26 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary-color: #572127;
+  --secondary-color: #832e35;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --gray-color: #808080;
+  --light-gray-color: #f0f0f0;
+  --dark-gray-color: #333333;
+  --font-inter: "Inter", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-pt-serif: "PT Serif", serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  transition: all 0.3s ease-in-out;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -o-text-size-adjust: 100%;
+}
+html,
+body {
+  font-family: var(--font-inter);
+  color: #333;
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  padding: 70px 70px;
+}
+
+span {
+  display: block;
+}
+
+header {
+  padding: 10px 70px;
+}
+
+.menu li:last-child a {
+  padding: 10px 25px;
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  border-radius: 5px;
+  font-weight: 600;
+  border: 1px solid var(--white-color);
+
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.menu-icon {
+  display: none !important;
+  cursor: pointer;
+  font-size: 30px;
+  color: var(--primary-color);
+}
+
+.main-wraper {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 600px;
+  gap: 20px;
+}
+
+.specialization-wraper {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.about-wraper {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: end;
+}
+
+.about-content {
+  position: relative;
+  width: 100%;
+
+  h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--secondary-color);
+  }
+  h3 {
+    margin-top: 15px;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    line-height: 1.2;
+  }
+}
+
+.spo-logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.qualification-wraper {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card-wrape {
+  position: relative;
+
+  h3 {
+    color: var(--white-color);
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+  }
+  p {
+    color: var(--white-color);
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 5px;
+  }
+}
+
+.insta-wraper {
+  position: relative;
+  width: 100%;
+}
+
+.eapps-instagram-feed-posts-grid .eapps-instagram-feed-posts-inner {
+  width: 100% !important;
+}
+
+.slick-arrow {
+  background-color: var(--primary-color) !important;
+  color: var(--white-color) !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+}
+.slick-track {
+  display: flex !important;
+  gap: 20px !important;
+}
+
+.gallery {
+  position: relative;
+  width: 100%;
+}
+
+.contact-wraper {
+  position: relative;
+  width: 100%;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 500px 1fr;
+
+  .map-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .form-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-gray-color);
+    padding: 20px;
+    border-radius: 20px;
+
+    input, textarea{
+      border: none;
+      background-color: var(--white-color);
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      outline: none;
+      color: var(--primary-color);
+      font-size: 18px;
+    }
+    button{
+      position: relative;
+      border: 1px solid var(--primary-color);
+      padding: 10px 30px;
+      border-radius: 5px;
+      display: block;
+      margin-left: auto;
+      background-color: var(--primary-color);
+      color: var(--white-color);
+    }
+  }
+}
+
+.footer-wraper{
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40% 1fr 1fr;
+
+  .block{
+    position: relative;
+    width: 100%;
+  }
+}
+
+.animated-gradient-text {
+  background: linear-gradient(
+    90deg,
+    #572127,
+    #832e35,
+    #a63b45,
+    #832e35,
+    #572127
+  );
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  animation: gradientSlide 10s ease infinite;
+}
+
+@keyframes gradientSlide {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  header {
+    padding: 10px 40px;
+  }
+  section {
+    padding: 50px 40px;
+  }
+  .about-wraper {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 848px) {
+  .menu-icon {
+    display: flex !important;
+  }
+  .menu {
+    display: none !important;
+  }
+  .main-wraper {
+    grid-template-columns: 1fr 350px;
+  }
+}
+
+@media (max-width: 748px) {
+  .main-wraper {
+    grid-template-columns: 1fr;
+  }
 }
