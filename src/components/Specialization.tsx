@@ -14,7 +14,7 @@ export default function Specialization() {
                             <Image src='/images/item/gyno-01.png' width={200} height={200} alt='dr. payal' />
                             <h3 className='w-full font-semibold text-[var(--primary-color)] text-center mt-4 mb-2 text-2xl'>Gynecologist Specialist</h3>
                             <p className='text-[var(--secondary-color)] text-base'>
-                                Compassionate care for women's health at every stage of life. From routine checkups to advanced treatments, we're here for you.
+                                Compassionate care for women&apos;s health at every stage of life. From routine checkups to advanced treatments, we&apos;re here for you.
                             </p>
                         </div>
                     </div>
