@@ -46,12 +46,12 @@ export default function Specialization() {
                 >
                     {[
                         {
-                            img: '/image/item/gyno-01.png',
+                            img: '/image/item/gyno-03.svg',
                             title: 'Gynecologist Specialist',
                             desc: "Compassionate care for women&apos;s health at every stage of life. From routine checkups to advanced treatments, we&apos;re here for you.",
                         },
                         {
-                            img: '/image/item/gyno-02.png',
+                            img: '/image/item/gyno-02.svg',
                             title: 'Infertility Specialist',
                             desc: "Expert care and personalized solutions for your parenthood journey. Helping you overcome infertility with compassion and advanced treatments.",
                         },
