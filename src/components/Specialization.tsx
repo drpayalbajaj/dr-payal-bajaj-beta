@@ -33,8 +33,8 @@ export default function Specialization() {
         <section ref={ref}>
             <div className="w-full relative" id="services">
                 <div className="w-full text-center ">
-                    <h2 className="lg:text-5xl text-4xl font-bold text-maroon-800">
-                        Dr. Payal Bajaj&apos;s specializations
+                    <h2 className="lg:text-5xl text-4xl font-bold text-primary">
+                        Focused Fields
                     </h2>
                 </div>
 
@@ -44,7 +44,7 @@ export default function Specialization() {
                     initial="hidden"
                     animate={isInView ? 'visible' : 'hidden'}
                 >
-                    {[ // Array for easy mapping & keying
+                    {[
                         {
                             img: '/image/item/gyno-01.png',
                             title: 'Gynecologist Specialist',
