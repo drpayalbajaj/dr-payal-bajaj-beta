@@ -67,9 +67,9 @@ export default function Footer() {
             <section className='w-full bg-primary' style={{ paddingTop: "0", paddingBottom: "10px" }}>
                 <div className='w-full flex items-center justify-between flex-wrap gap-2'>
                     <div className='text-white'>
-                        <p>Copyright @ 2025 Dr. Payal Bajaj | Developed by
+                        <p>Copyright @ 2025 Dr. Payal Bajaj | Developed by 
                             <a href="https://www.wizards.co.in" target='_blank'
-                                className='text-amber-300'>Wizards</a></p>
+                                className='text-amber-300'> Wizards</a></p>
                     </div>
                     <div className='text-white'>
                         <p className='flex gap-2 flex-wrap'>

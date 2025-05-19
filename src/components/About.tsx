@@ -47,7 +47,7 @@ function Hero() {
           animate={isInView ? 'visible' : 'hidden'}
         >
           <h2 className="text-2xl font-light text-primary leading-[1.1]">
-            Know Your Doctor.
+            About the Doctor
           </h2>
           <h2 className="mt-4 lg:text-4xl md:text-3xl text-5xl font-bold text-maroon-800 leading-[1.1]">
             Dr. Payal Bajaj
