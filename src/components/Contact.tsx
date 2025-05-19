@@ -11,6 +11,16 @@ export default function Contact() {
   return (
     <section className='w-full relative bg-maroon-800 md:p-10 p-4' id='contact'>
 
+      <motion.h2
+        className='w-full mb-8 font-semibold lg:text-5xl text-4xl text-new-white text-center'
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeUp}
+      >
+        Get in Touch
+      </motion.h2>
+
       <div className="grid md:grid-cols-2 grid-cols-1 gap-10 mt-8">
 
         <motion.div
@@ -38,15 +48,7 @@ export default function Contact() {
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeUp}
         >
-          <motion.h2
-            className='mb-8 font-semibold text-3xl text-new-white text-center md:text-left'
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeUp}
-          >
-            We Would Like to Hear from You.
-          </motion.h2>
+
           <form className='mt-0 w-full'>
             <div className='relative w-full bg-new-white px-5 py-4 rounded-lg '>
               <input type="text" placeholder='Name' className=' h-full text-xl w-full bg-transparent outline-0 border-0' />

@@ -13,18 +13,18 @@ export default function Footer() {
                             Dr. Payal Bajaj, one of the best and most highly reputable gynaecologists, is an IVF specialist in Delhi. She helps provide a detailed explanation and solution to any condition concerning the female reproductive system.
                         </p>
                         <p className='mt-5 flex gap-2'>
-                            <span className='w-[40px] h-[40px] bg-white rounded-full p-[2px]'>
-                                <i className="hgi hgi-stroke hgi-instagram w-full h-full bg-[var(--primary-color)] rounded-full  flex items-center justify-center text-white text-xl"></i>
-                            </span>
-                            <span className='w-[40px] h-[40px] bg-white rounded-full p-[2px]'>
-                                <i className="hgi hgi-stroke hgi-facebook-02 w-full h-full bg-[var(--primary-color)] rounded-full  flex items-center justify-center text-white text-xl"></i>
-                            </span>
-                            <span className='w-[40px] h-[40px] bg-white rounded-full p-[2px]'>
-                                <i className="hgi hgi-stroke hgi-new-twitter w-full h-full bg-[var(--primary-color)] rounded-full  flex items-center justify-center text-white text-xl"></i>
-                            </span>
-                            <span className='w-[40px] h-[40px] bg-white rounded-full p-[2px]'>
-                                <i className="hgi hgi-stroke hgi-youtube w-full h-full bg-[var(--primary-color)] rounded-full  flex items-center justify-center text-white text-xl"></i>
-                            </span>
+                            <Link href='https://www.instagram.com/dr_payalbajaj/' target='_blank' className='w-[40px] h-[40px] bg-white rounded-full p-[2px]'>
+                                <i className="hgi hgi-stroke hgi-instagram w-full h-full bg-primary rounded-full  flex items-center justify-center text-white text-xl"></i>
+                            </Link>
+                            <Link href='https://www.facebook.com/DoctorPayalbajaj' target='_blank' className='w-[40px] h-[40px] bg-white rounded-full p-[2px]'>
+                                <i className="hgi hgi-stroke hgi-facebook-02 w-full h-full bg-primary rounded-full  flex items-center justify-center text-white text-xl"></i>
+                            </Link>
+                            <Link href='https://www.linkedin.com/in/dr-payal-bajaj-2613a923/' target='_blank' className='w-[40px] h-[40px] bg-white rounded-full p-[2px]'>
+                                <i className="hgi hgi-stroke hgi-linkedin-02 w-full h-full bg-primary rounded-full  flex items-center justify-center text-white text-xl"></i>
+                            </Link>
+                            <Link href='https://www.youtube.com/@DrPayalBajaj' target='_blank' className='w-[40px] h-[40px] bg-white rounded-full p-[2px]'>
+                                <i className="hgi hgi-stroke hgi-youtube w-full h-full bg-primary rounded-full  flex items-center justify-center text-white text-xl"></i>
+                            </Link>
                         </p>
                     </div>
 

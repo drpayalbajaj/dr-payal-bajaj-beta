@@ -31,7 +31,7 @@ export default function Qualification() {
     return (
         <section id='qualification' ref={ref}>
             <h2 className='mt-5 text-center relative md:text-5xl text-4xl font-bold text-primary'>
-                Qualification of Dr. Paya Bajaj
+                Academic Highlights
             </h2>
 
             <motion.div

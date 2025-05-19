@@ -3,9 +3,8 @@ import React from 'react'
 export default function Testimonials() {
     return (
         <section>
-            <span className='block text-center mt-2 mb-3 font-bold text-maroon-800'>Testimonials</span>
             <h2 className='text-center relative md:text-5xl text-4xl font-bold text-primary'>
-                What Parents Say About Dr. Payal Bajaj
+                Words That Matter
             </h2>
 
             <div className='w-full mt-16 relative'>
