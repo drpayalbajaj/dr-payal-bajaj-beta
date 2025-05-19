@@ -41,8 +41,21 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className="block">
-                        <h2 className='text-3xl font-bold text-white'>Get Direction</h2>
-                        <p className='md:mt-[70px] mt-5 w-full text-white'>
+                        <h2 className='text-3xl font-bold text-white'>Visit Us</h2>
+                        <div className='md:mt-[70px] mt-5 w-full '>
+                            <div className='w-full relative flex gap-3 items-center'>
+                                <i
+                                    className="hgi hgi-stroke hgi-call w-[40px] h-[40px] flex items-center justify-center border border-white rounded-full text-white"></i>
+                                <Link href='tel:+919138005800' className='block text-white'>+91 9138005800</Link>
+                            </div>
+                            <div className='w-full relative flex gap-3 items-center mt-3'>
+                                <i
+                                    className="hgi hgi-stroke hgi-mail-01 w-[40px] h-[40px] flex items-center justify-center border border-white rounded-full text-white"></i>
+                                <Link href='mailto:bajajdrpayal@gmail.com'
+                                    className='block text-white'>bajajdrpayal@gmail.com</Link>
+                            </div>
+                        </div>
+                        <p className='mt-5 w-full text-white'>
                             Nandi IVF - Best IVF Centre in Ashok Vihar, Delhi.
                             <br />
                             1st floor, C3/9, Phase II, Pocket C 3, Phase 2, Ashok Vihar, New Delhi, Delhi, 110052
