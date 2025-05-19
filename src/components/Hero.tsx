@@ -48,7 +48,7 @@ export default function Hero() {
                         width={380}
                         height={380}
                         alt='Hero Image'
-                        className='lg:w-[420px] md:w-[320px]'
+                        className='lg:w-[380px] md:w-[320px]'
                     />
                 </motion.div>
             </div>
