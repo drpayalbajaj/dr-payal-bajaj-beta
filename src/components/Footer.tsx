@@ -32,12 +32,12 @@ export default function Footer() {
                         <h2 className='text-3xl font-bold text-white'>Quick Links</h2>
 
                         <div className='md:mt-[75px] mt-5 w-full text-white flex flex-col'>
-                            <Link href='#' className=' '>Home</Link>
-                            <Link href='#' className=' mt-1'>About</Link>
-                            <Link href='#' className=' mt-1'>Services</Link>
-                            <Link href='#' className=' mt-1'>Qualification</Link>
-                            <Link href='#' className='mt-1'>Blogs</Link>
-                            <Link href='#' className='mt-1'>Contact</Link>
+                            <Link href='/' className=' '>Home</Link>
+                            <Link href='#about' className=' mt-1'>About</Link>
+                            <Link href='#services' className=' mt-1'>Services</Link>
+                            <Link href='#qualification' className=' mt-1'>Qualification</Link>
+                            <Link href='/blogs' className='mt-1'>Blogs</Link>
+                            <Link href='#contact' className='mt-1'>Contact</Link>
                         </div>
                     </div>
                     <div className="block">
@@ -54,7 +54,9 @@ export default function Footer() {
             <section className='w-full bg-primary' style={{ paddingTop: "0", paddingBottom: "10px" }}>
                 <div className='w-full flex items-center justify-between flex-wrap gap-2'>
                     <div className='text-white'>
-                        <p>Copyright @ 2025 Dr. Payal Bajaj | Developed by <a href="" className='text-amber-300'>Wizards</a></p>
+                        <p>Copyright @ 2025 Dr. Payal Bajaj | Developed by
+                            <a href="https://www.wizards.co.in" target='_blank'
+                                className='text-amber-300'>Wizards</a></p>
                     </div>
                     <div className='text-white'>
                         <p className='flex gap-2 flex-wrap'>
