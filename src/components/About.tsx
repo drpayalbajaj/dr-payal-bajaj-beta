@@ -1,33 +1,96 @@
+'use client'
 import Image from 'next/image'
-import React from 'react'
+import React, { useRef } from 'react'
+import { motion, useInView } from "motion/react"
 
 export default function About() {
-    return (
-        <section style={{ paddingBottom: "0" }}>
-            <div className="about-wraper">
-                <Image src="/images/main-image/main-02.png" alt="about" width={500} height={500} className="about-image" />
+  return (
+    <>
+      <Hero />
+    </>
+  )
+}
 
-                <div className='about-content'>
-                    <h2>About Dr. Payal Bajaj</h2>
-                    <p>Dr. Payal Bajaj Creating Miracles Personalized IVF Solutions for Growing Families.</p>
-                    <span>Dr. Payal Bajaj, one of the best and most highly reputable gynaecologists, is an IVF specialist in Delhi. She helps provide a detailed explanation and solution to any condition concerning the female reproductive system.</span>
-                    <h3>20 years of experience</h3>
-                    <span>
-                        Dr Payal Bajaj has won various academic awards all through her academic career.She is expert at stimulating following up ovarian cycles in different types of infertile patients and is a strong believer in an individualized management of infertility. She sticks evidence based protocols and strives to provide competent rational ethical and transparent clinical care to the infertile couple.
-                    </span>
-                    <h3>
-                        She is also member of various prestigious Gynae and Infertility societies of India
-                    </h3>
+function Hero() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-100px' }) 
 
-                    <div className='flex mt-5 gap-5 spo-logo '>
-                        <Image src="/images/logo/aogd.png" alt="award" width={50} height={50} />
-                        <Image src="/images/logo/dfg.png" alt="award" width={50} height={50} />
-                        <Image src="/images/logo/fogsi.jpg" alt="award" width={50} height={50} />
-                        <Image src="/images/logo/fps.png" alt="award" width={60} height={30} />
-                        <Image src="/images/logo/logo-new.jpg" alt="award" width={50} height={50} />
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
+  const leftVariants = {
+    hidden: { opacity: 0, x: -200 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: 'easeOut' },
+    },
+  }
+
+  const rightVariants = {
+    hidden: { opacity: 0, x: 200 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: 'easeOut' },
+    },
+  }
+
+  return (
+    <section
+      ref={ref}
+      id="about"
+      className="w-full relative overflow-x-hidden"
+    >
+      <div className="w-full relative grid lg:grid-cols-2 grid-cols-1 md:gap-5 gap-7">
+        <motion.div
+          className="w-full relative h-full flex flex-col justify-center"
+          variants={leftVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+        >
+          <h2 className="text-2xl font-light text-primary leading-[1.1]">
+            Know Your Doctor.
+          </h2>
+          <h2 className="mt-4 lg:text-4xl md:text-3xl text-5xl font-bold text-maroon-800 leading-[1.1]">
+            Dr. Payal Bajaj
+          </h2>
+
+          <p className="mt-2 text-2xl leading-[1.1] font-medium text-secondry">
+            Medical Director And Senior IVF Consultant
+          </p>
+          <span className="mt-2 text-steel-gray text-lg leading-[1.2]">
+            Dr Payal Bajaj is an experienced obstetrician and gynecologist with over 20 years of experience in the discipline. She is also a Reproductive endocrinologist and Infertility specialist par excellence.
+          </span>
+
+          <h3 className="mt-3 text-2xl text-maroon-800 font-bold leading-[1.1]">
+            Dr. Payal Bajaj Creating Miracles Personalized IVF Solutions for Growing Families.
+          </h3>
+
+          <span className="mt-2 text-steel-gray text-lg leading-[1.2]">
+            Dr. Payal Bajaj, one of the best and most highly reputable gynaecologists, is an IVF specialist in Delhi. She helps provide a detailed explanation and solution to any condition concerning the female reproductive system.
+          </span>
+
+          <h3 className="mt-3 text-2xl text-maroon-800 font-bold leading-[1.1]">
+            20 years of experience
+          </h3>
+
+          <span className="mt-2 text-steel-gray text-lg leading-[1.2]">
+            Dr Payal Bajaj has won various academic awards all through her academic career. She is expert at stimulating following up ovarian cycles in different types of infertile patients and is a strong believer in an individualized management of infertility. She sticks to evidence-based protocols and strives to provide competent, rational, ethical, and transparent clinical care to the infertile couple.
+          </span>
+        </motion.div>
+
+        <motion.div
+          className="w-full relative h-full flex items-center lg:justify-end justify-center"
+          variants={rightVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+        >
+          <Image
+            src="/image/hero/main.png"
+            width={500}
+            height={500}
+            alt="Hero Image"
+          />
+        </motion.div>
+      </div>
+    </section>
+  )
 }

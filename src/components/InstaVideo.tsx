@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function Insta() {
-    return (
-        <section className='bg-[var(--primary-color)] w-full'>
+export default function InstaVideo() {
+  return (
+    <section className='bg-primary w-full'>
             <div className="insta-wraper">
-                <h2 className='mt-1 text-center relative text-5xl font-bold text-white'>
+                <h2 className='mt-1 text-center relative md:text-5xl text-4xl font-bold text-white'>
                     Connect with us on Instagram.
                 </h2>
 
@@ -13,5 +13,5 @@ export default function Insta() {
                 </div>
             </div>
         </section>
-    )
+  )
 }

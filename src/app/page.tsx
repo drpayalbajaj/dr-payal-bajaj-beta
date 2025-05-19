@@ -1,37 +1,31 @@
 import About from '@/components/About'
-import Awards from '@/components/Awards'
-import Blogs from '@/components/Blogs'
-import Contact from '@/components/Contact-form'
+import Blog from '@/components/Blog'
+import Contact from '@/components/Contact'
 import Details from '@/components/Details'
 import Footer from '@/components/Footer'
-import Gallery from '@/components/Gallery'
-import HeroSection from '@/components/HeroSection'
-import Insta from '@/components/Insta'
-import IvfSection from '@/components/IvfSection'
-import MainSection from '@/components/MainSection'
-import Navbar from '@/components/Navbar'
+import Header from '@/components/Header'
+import Hero from '@/components/Hero'
+import InstaVideo from '@/components/InstaVideo'
+import IVF from '@/components/IVF'
 import Qualification from '@/components/Qualification'
 import Specialization from '@/components/Specialization'
 import Testimonials from '@/components/Testimonials'
 import React from 'react'
 
-export default function Home() {
+export default function page() {
   return (
     <>
-      <Navbar />
-      <HeroSection/>
-      <MainSection/>
-      <Specialization/>
-      <About/>
-      <Qualification/>
-      <IvfSection/>
-      <Insta/>
+      <Header />
+      <Hero />
+      <About />
+      <Specialization />
+      <Qualification />
+      <IVF />
+      <InstaVideo/>
       <Details/>
-      <Awards/>
-      <Gallery/>
-      <Blogs />
-      <Testimonials/>
       <Contact/>
+      <Blog/>
+      <Testimonials/>
       <Footer/>
     </>
   )
