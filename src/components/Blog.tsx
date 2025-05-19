@@ -43,13 +43,13 @@ export default function Blog() {
         hidden: {},
         visible: {
             transition: {
-                staggerChildren: 0.5,
+                staggerChildren: 0.3,
             },
         },
     }
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 50 },
+        hidden: { opacity: 0, y: 100 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
     }
 
