@@ -8,7 +8,7 @@ import { motion } from "motion/react"
 export default function Hero() {
     return (
         <section className='w-full relative bg-new-white overflow-hidden'>
-            <div className='w-full relative grid md:grid-cols-2 grid-cols-1 md:gap-5 gap-7'>
+            <div className='w-full relative grid max-[924px]:grid-cols-1 grid-cols-2 gap-5 max-[924px]:gap-10'>
 
                 <motion.div
                     initial={{ opacity: 0, x: -100 }}
@@ -41,14 +41,14 @@ export default function Hero() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                     viewport={{ once: true }}
-                    className='w-full relative h-full flex items-center md:justify-end justify-center'
+                    className='w-full relative h-full flex items-center justify-end max-[924px]:justify-center'
                 >
                     <Image
-                        src='/image/hero/hero-03.svg'
+                        src='/image/hero/hero-04.svg'
                         width={380}
                         height={380}
                         alt='Hero Image'
-                        className='lg:w-[380px] md:w-[320px]'
+                        className='lg:w-[450px] md:w-[380px]'
                     />
                 </motion.div>
             </div>
