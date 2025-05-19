@@ -15,6 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="shortcut icon" href="/image/icons/logo.png" type="image/x-icon" />
+        <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css"></link>
+      </head>
       <body>
         <SmoothScroll>
           {children}
