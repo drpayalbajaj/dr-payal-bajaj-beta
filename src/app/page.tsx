@@ -2,8 +2,6 @@ import About from '@/components/About'
 import Blog from '@/components/Blog'
 import Contact from '@/components/Contact'
 import Details from '@/components/Details'
-import Footer from '@/components/Footer'
-import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import InstaVideo from '@/components/InstaVideo'
 import IVF from '@/components/IVF'
@@ -15,7 +13,6 @@ import React from 'react'
 export default function page() {
   return (
     <>
-      <Header />
       <Hero />
       <About />
       <Specialization />
@@ -26,7 +23,6 @@ export default function page() {
       <Contact/>
       <Blog/>
       <Testimonials/>
-      <Footer/>
     </>
   )
 }

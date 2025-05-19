@@ -68,7 +68,7 @@ export default function Header() {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="relative flex flex-col gap-1"
+                    className="relative flex flex-col gap-1 z-50"
                 >
                     <h5 className="block text-new-white text-4xl max-[480px]:text-2xl font-bold leading-[1]">
                         Dr. Payal Bajaj
@@ -82,7 +82,7 @@ export default function Header() {
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    className={`transition ease-in-out duration-300 lg:relative fixed top-0 right-0 lg:bg-transparent bg-primary bottom-0 lg:p-0 px-10 py-20 lg:translate-x-0
+                    className={`z-[40] transition ease-in-out duration-300 lg:relative fixed top-0 right-0 lg:bg-transparent bg-primary bottom-0 lg:p-0 px-10 py-20 lg:translate-x-0
                     ${openMenu ? 'translate-x-0' : 'translate-x-[100%]'}`}
                 >
                     <motion.ul className="flex lg:items-center gap-5 flex-col lg:flex-row items-start mt-10 lg:m-0">
@@ -107,7 +107,7 @@ export default function Header() {
                 </motion.div>
 
                 <div
-                    className="lg:hidden relative flex flex-col justify-center gap-1 items-center w-[50px] h-[50px] cursor-pointer rounded-full bg-new-white"
+                    className="z-50 lg:hidden relative flex flex-col justify-center gap-1 items-center w-[50px] h-[50px] cursor-pointer rounded-full bg-new-white"
                     onClick={() => setOpenMenu(!openMenu)}
                 >
                     <span
