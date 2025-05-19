@@ -39,7 +39,7 @@ export default function Details() {
                     className='mt-5 text-center relative md:text-3xl lg:text-5xl text-3xl font-bold text-primary'
                     variants={itemVariants}
                 >
-                    Most Compassionate and Advanced IVF Treatments for Your Path to Parenthood
+                    Advanced IVF treatments with a caring touch
                 </motion.h2>
 
                 <motion.div className='relative w-full mt-10' variants={itemVariants}>

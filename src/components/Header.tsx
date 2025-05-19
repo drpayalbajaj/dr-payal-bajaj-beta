@@ -89,6 +89,7 @@ export default function Header() {
                         {menuItem.map((item, idx) => (
                             <motion.li key={idx} variants={itemVariants}>
                                 <Link
+                                    onClick={() => setOpenMenu(false)}
                                     href={item.path}
                                     className={`hover:text-secondry font-merriweather font-medium text-xl 
                                         ${path === item.path ? 'text-white' : 'text-off-white'
