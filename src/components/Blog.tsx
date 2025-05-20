@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { motion } from "motion/react" 
+import { motion } from "motion/react"
 
 interface Blogs {
     title: string
@@ -78,7 +78,7 @@ export default function Blog() {
                                 width={500}
                                 height={400}
                                 alt={data.title}
-                                className='w-full rounded-md'
+                                className='w-full rounded-md h-[220px] object-cover object-center'
                             />
                             <div className='w-full mt-8'>
                                 <Link
