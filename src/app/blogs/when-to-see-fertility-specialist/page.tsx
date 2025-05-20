@@ -1,4 +1,5 @@
 import Contact from '@/components/Contact'
+import Image from 'next/image'
 import React from 'react'
 
 export default function page() {
@@ -13,7 +14,7 @@ export default function page() {
                         <em className='block -mt-[25px] text-maroon-800 text-[14px]'>By Dr. Payal Bajaj - Medical Director & Senior IVF Consultant</em>
 
                         <div className='w-full'>
-                            <img src="/image/blogs/4.png" alt="" className=' block mx-auto' />
+                            <Image width={800} height={400} src="/image/blogs/4.png" alt="When to See a Fertility Specialist: Don&apos;t Delay Your Parenthood Journey" className=' block mx-auto' />
                         </div>
 
                         <div className='w-full relative flex flex-col gap-5'>
@@ -55,7 +56,7 @@ export default function page() {
                                 Final Thoughts
                             </h2>
                             <p className='font-medium text-steel-gray md:text-xl text-base leading-[1.2]'>
-                                Infertility is more common than people think, and thankfully, it is also more treatable than ever before. As the <strong className='text-maroon-800'>Medical Director and Senior IVF Consultant,</strong> I believe in offering not just medical care, but emotional support and honest guidance at every step. If you're facing difficulties in conceiving, don&apos;t wait for months or years hoping things will work out on their own. Book a consultation and let us help you understand your fertility better. <strong className='text-maroon-800'>Your dream of becoming a parent deserves expert care—and the right time to begin is now.</strong>
+                                Infertility is more common than people think, and thankfully, it is also more treatable than ever before. As the <strong className='text-maroon-800'>Medical Director and Senior IVF Consultant,</strong> I believe in offering not just medical care, but emotional support and honest guidance at every step. If you&apos;re facing difficulties in conceiving, don&apos;t wait for months or years hoping things will work out on their own. Book a consultation and let us help you understand your fertility better. <strong className='text-maroon-800'>Your dream of becoming a parent deserves expert care—and the right time to begin is now.</strong>
                             </p>
                         </div>
                     </div>
