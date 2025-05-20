@@ -1,4 +1,5 @@
 import Contact from '@/components/Contact'
+import Image from 'next/image'
 import React from 'react'
 
 export default function page() {
@@ -13,7 +14,7 @@ export default function page() {
                         <em className='block -mt-[25px] text-maroon-800 text-[14px]'>By Dr. Payal Bajaj - Medical Director & Senior IVF Consultant</em>
 
                         <div className='w-full'>
-                            <img src="/image/blogs/2.png" alt="" className=' block mx-auto' />
+                            <Image width={800} height={400} src="/image/blogs/2.png" alt="Top 5 Reasons IVF Fails - And How to Avoid Them" className=' block mx-auto' />
                         </div>
 
                         <div className='w-full relative flex flex-col gap-5'>
