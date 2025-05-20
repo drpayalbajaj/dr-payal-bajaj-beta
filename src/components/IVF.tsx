@@ -31,12 +31,12 @@ export default function IVF() {
     <section
       ref={ref}
       style={{
-        backgroundImage: "url('/image/banner/banner.png')",
+        // backgroundImage: "url('/image/banner/banner.png')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         width: '100%',
       }}
-      className=''
+      className='bg-[url(/image/banner/banner.png)] max-[544px]:bg-[url(/image/banner/banner-mobile.jpeg)]'
     >
       <motion.div
         variants={containerVariants}
