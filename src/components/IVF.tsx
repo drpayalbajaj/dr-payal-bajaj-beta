@@ -36,13 +36,15 @@ export default function IVF() {
         backgroundPosition: 'center',
         width: '100%',
       }}
-      className='bg-[url(/image/banner/banner.png)] max-[544px]:bg-[url(/image/banner/banner-mobile.jpeg)]'
+      className="relative bg-[url(/image/banner/banner.png)] max-[544px]:bg-[url(/image/banner/creative.png)] after:absolute after:inset-0 after:bg-[linear-gradient(to_bottom,_rgba(0,0,0,0.4)_0%,_transparent_30%,_transparent_70%,_rgba(0,0,0,0.4)_100%)] after:z-[1]"
+
     >
       <motion.div
+
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
-        // className="max-w-4xl mx-auto px-4 py-10"
+        className="z-10 relative"
       >
         <motion.h2
           className="mt-1 text-left relative md:text-5xl text-4xl font-bold text-primary"
