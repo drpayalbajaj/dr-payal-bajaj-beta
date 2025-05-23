@@ -7,7 +7,13 @@ import { motion } from "motion/react"
 
 export default function Hero() {
     return (
-        <section className='w-full relative bg-new-white overflow-hidden'>
+        <section className='w-full relative overflow-hidden min-[924px]:bg-[url(/image/banner/banner.jpg)] bg-none'
+            style={{
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                width: '100%',
+                padding: "90px 70px"
+            }}>
             <div className='w-full relative grid max-[924px]:grid-cols-1 grid-cols-2 gap-5 max-[924px]:gap-10'>
 
                 <motion.div
@@ -43,13 +49,13 @@ export default function Hero() {
                     viewport={{ once: true }}
                     className='w-full relative h-full flex items-center justify-end max-[924px]:justify-center'
                 >
-                    <Image
-                        src='/image/hero/hero-04.svg'
-                        width={380}
-                        height={380}
+                    {/* <Image
+                        src='/image/banner/hero-img.png'
+                        width={1000}
+                        height={1000}
                         alt='Hero Image'
                         className='lg:w-[450px] md:w-[380px]'
-                    />
+                    /> */}
                 </motion.div>
             </div>
         </section>
