@@ -48,6 +48,9 @@ span, p{
   nav{
     padding: 16px 30px;
   }
+  .pp{
+    padding-right: 30px !important;
+  }
 }
 
 @media (max-width:480px) {
