@@ -14,14 +14,14 @@ export default function Hero() {
                 width: '100%',
                 padding: "0"
             }}>
-            <div className='w-full relative grid max-[924px]:grid-cols-1 grid-cols-2 gap-5 max-[924px]:gap-4'>
+            <div className='w-full relative grid max-[924px]:grid-cols-1 grid-cols-2 gap-5 max-[924px]:gap-0'>
 
                 <motion.div
                     initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                     viewport={{ once: true }}
-                    className='w-full relative h-full flex flex-col justify-center min-[924px]:py-[90px] min-[924]:ml-[70px] px-[60px] py-[70px] max-[669px]:px-[30px] '
+                    className='w-full relative h-full flex flex-col justify-center min-[924px]:py-[90px] min-[924]:ml-[70px] px-[60px] py-[70px] max-[668px]:px-[30px] max-[668px]:py-[40px]'
                 >
                     <h1 className='lg:text-5xl md:text-3xl text-3xl font-pt font-bold text-primary leading-[1.1]'>
                         Bringing Dreams to Life Your Journey to Parenthood Starts Here!
