@@ -75,7 +75,7 @@ export default function IVF() {
 
         </motion.div>
 
-        <motion.div className='w-full md:hidden bg-[url(/image/banner/ivf-mob.jpg)]'>
+        <motion.div className='w-full md:hidden '>
           <Image src="/image/banner/ivf-mob-1.jpg" width={1000} height={1000} alt='About Ivf ' className='' />
         </motion.div>
 
