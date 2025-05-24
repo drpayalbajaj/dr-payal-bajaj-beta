@@ -48,7 +48,7 @@ export default function Specialization() {
                         {
                             img: '/image/item/obj-3.svg',
                             title: 'Gynecologist',
-                            desc: "Compassionate care for women&apos;s health at every stage of life. From routine checkups to advanced treatments, we&apos;re here for you.",
+                            desc: "Compassionate care for women's health at every stage of life. From routine checkups to advanced treatments, we're here for you.",
                         },
                         {
                             img: '/image/item/obj.svg',
