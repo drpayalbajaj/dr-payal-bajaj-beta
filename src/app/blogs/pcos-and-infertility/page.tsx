@@ -56,7 +56,8 @@ export default function page() {
                             </h2>
 
                             <p className='font-medium text-steel-gray md:text-xl text-base leading-[1.2]'>
-                                There is no one-size-fits-all treatment for PCOS. The choice of treatment depends on the patient&aposs age, symptoms, fertility goals, and other health factors. For some, lifestyle changes like weight loss, healthy eating, and regular exercise can restore ovulation naturally. Even a 5-10% reduction in weight can make a big difference in hormone levels and fertility.
+                                There is no one-size-fits-all treatment for PCOS. The choice of treatment depends on the 
+                                patient&apos;s age, symptoms, fertility goals, and other health factors. For some, lifestyle changes like weight loss, healthy eating, and regular exercise can restore ovulation naturally. Even a 5-10% reduction in weight can make a big difference in hormone levels and fertility.
                                 <br />
                                 <br />
                                 If lifestyle changes alone don&apos;t help, we use ovulation induction medications like Letrozole or Clomiphene to help stimulate egg release. These are often the first step in fertility treatment for PCOS. If that doesn&apos;t work, we may move on to gonadotropin injections or Intrauterine Insemination (IUI).

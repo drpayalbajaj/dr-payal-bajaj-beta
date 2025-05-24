@@ -71,7 +71,7 @@ export default function page() {
 
 
                             <p className='font-medium text-steel-gray md:text-xl text-base leading-[1.2]'>
-                                Today, more women are choosing to focus on education and career in their 20s and early 30s—and that&aposs completely okay. But it&aposs also important to be aware of the biological clock. If you&apos;re not ready to start a family yet, <strong className='text-maroon-800'>fertility preservation through egg freezing</strong> is a smart and safe option
+                                Today, more women are choosing to focus on education and career in their 20s and early 30s—and that&apos;s completely okay. But it&apos;s also important to be aware of the biological clock. If you&apos;re not ready to start a family yet, <strong className='text-maroon-800'>fertility preservation through egg freezing</strong> is a smart and safe option
                                 <br />
                                 <br />
                                 Egg freezing allows women to preserve their younger, healthier eggs for future use. Ideally, egg freezing is most successful when done before the age of 35, but it can still be beneficial later depending on individual fertility parameters.
@@ -87,7 +87,7 @@ export default function page() {
                                 If you are above 35 and have been trying to conceive for more than 6 months without success, it&apos;s time to consult a fertility specialist. For women under 35, the usual advice is to try for a year before seeking help—but <strong className='text-maroon-800'>age is a strong reason not to delay.</strong>
                                 <br />
                                 <br />
-                                Even if you&apos;re not actively trying to conceive but want to know where you stand in terms of fertility, a simple fertility check-up can give you clarity. Knowing your AMH and egg reserve early can help you plan better, whether you want to conceive soon or later.
+                                Even if you&apos;re not actively trying to conceive but want to know where you stand in terms of fertility, a simple fertility check-up can give you clarity. Knowing your AMH and egg reserve early can help you plan better, whether you want to conceive sooner or later.
                                 <br />
                                 <br />
                                 If needed, treatments like <strong className='text-maroon-800'>ovulation induction, IUI, or IVF</strong> can be used, depending on your age and test results. In older women, <strong className='text-maroon-800'>IVF with pre-implantation genetic testing (PGT-A)</strong> may improve chances of success by selecting healthy embryos.
@@ -100,7 +100,7 @@ export default function page() {
                                 Yes, age affects fertility—but it&apos;s not the end of the road. I have treated many women in their late 30s and even early 40s who went on to become mothers. With proper planning, personalized treatment, and timely intervention, pregnancy is still very much possible.
                                 <br />
                                 <br />
-                                The key is to be informed and proactive. If you&apos;re concerned about age and fertility, don&apos;t wait in silence. Talk to a specialist, get your tests done, and explore your options. The earlier you act, the better your chances of success.
+                                The key is to be informed and proactive. If you&apos;re concerned about age and fertility, don&apos;t wait in silence. Talk to a specialist, get your tests done, and explore your options. The earlier you act, the  better are your chances of success.
                                 <br />
                                 <br />
                                 <strong className='text-maroon-800'>Let&apos;s take the first step together. Book your consultation with Dr. Payal Bajaj and get the right guidance on your fertility journey—no matter your age.</strong>

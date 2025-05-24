@@ -70,7 +70,7 @@ export default function IVF() {
             className="text-left text-base mt-1 max-w-2xl text-maroon-800"
             variants={itemVariants}
           >
-            With a vision to provide care beyond comparison in the field of fertility medicine, The Nandi Fertility Centre aspires to be a reliable partner in providing comprehensive fertility treatment solutions, with the ease of accessibility and affordability. Reflecting our endeavours in offering a qualitative and result-bound fertility care, the best Fertility Centre in Coimbatore witnesses the baby miracles on a daily basis.
+            With a vision to provide care beyond comparison in the field of fertility medicine, The Nandi Fertility Centre aspires to be a reliable partner in providing comprehensive fertility treatment solutions, with the ease of accessibility and affordability. Reflecting our endeavours in offering a qualitative and result-bound fertility care, the best Fertility Centre in Delhi and NCR witnesses the baby miracles on a daily basis.
           </motion.p>
 
         </motion.div>
