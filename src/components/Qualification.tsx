@@ -69,13 +69,13 @@ export default function Qualification() {
                 ].map(({ img, title, desc }, i) => (
                     <motion.div
                         key={i}
-                        className='w-full h-full rounded-lg border border-primary bg-primary'
+                        className='w-full h-full rounded-lg bg-new-white shadow-sm '
                         variants={itemVariants}
                     >
                         <div className="w-full flex justify-center items-center flex-col h-full p-5">
-                            <Image src={img} width={img.includes('isar.svg') ? 90 : 150} height={img.includes('isar.svg') ? 50 : 100} alt='dr. payal' />
-                            <h3 className='text-2xl text-new-white leading-[1.1] mt-5'>{title}</h3>
-                            <p className='mt-2 text-base leading-[1.1] text-white '>{desc}</p>
+                            <Image src={img} width={img.includes('isar.svg') ? 90 : 200} height={img.includes('isar.svg') ? 50 : 100} alt='dr. payal' />
+                            <h3 className='text-3xl text-primary leading-[1.1] mt-5'>{title}</h3>
+                            <p className='mt-4 text-lg leading-[1.1] text-maroon-800 '>{desc}</p>
                         </div>
                     </motion.div>
                 ))}
