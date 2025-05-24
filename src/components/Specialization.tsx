@@ -46,29 +46,29 @@ export default function Specialization() {
                 >
                     {[
                         {
-                            img: '/image/item/gyno-03.svg',
-                            title: 'Gynecologist Specialist',
+                            img: '/image/item/obj-3.svg',
+                            title: 'Gynecologist',
                             desc: "Compassionate care for women&apos;s health at every stage of life. From routine checkups to advanced treatments, we&apos;re here for you.",
                         },
                         {
-                            img: '/image/item/gyno-02.svg',
+                            img: '/image/item/obj.svg',
                             title: 'Infertility Specialist',
                             desc: "Expert care and personalized solutions for your parenthood journey. Helping you overcome infertility with compassion and advanced treatments.",
                         },
                         {
-                            img: '/image/svg/rep.svg',
+                            img: '/image/item/obj-4.svg',
                             title: 'Reproductive Endocrinology',
                             desc: 'Expertise in diagnosing and treating hormonal disorders that affect fertility and reproductive health in women.',
                         },
                     ].map(({ img, title, desc }, i) => (
                         <motion.div
-                            className="w-full h-full border border-maroon-800 rounded-2xl p-4"
+                            className="w-full h-full rounded-2xl p-4 bg-new-white"
                             key={i}
                             variants={itemVariants}
                         >
-                            <div className="relative w-full flex justify-center items-center flex-col h-full">
-                                <Image src={img} width={200} height={200} alt={title} />
-                                <h3 className="w-full font-semibold text-maroon-800 text-center mt-4 mb-2 text-2xl">
+                            <div className="relative w-full flex  items-center flex-col h-full">
+                                <Image src={img} width={300} height={200} alt={title} />
+                                <h3 className="w-full font-semibold text-primary text-center mt-4 mb-2 text-2xl">
                                     {title}
                                 </h3>
                                 <p className="text-steel-gray text-base">{desc}</p>
