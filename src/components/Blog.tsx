@@ -55,7 +55,7 @@ export default function Blog() {
 
     return (
         <section className='w-full relative'>
-            <h2 className='mt-5 text-center relative md:text-5xl text-4xl font-bold text-primary'>
+            <h2 className='mt-5 text-center relative text-4xl font-bold text-primary'>
                 Blogs
             </h2>
 

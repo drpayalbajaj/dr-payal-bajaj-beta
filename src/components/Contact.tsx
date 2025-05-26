@@ -12,7 +12,7 @@ export default function Contact() {
     <section className='w-full relative bg-maroon-800 md:p-10 p-4' id='contact'>
 
       <motion.h2
-        className='w-full mb-8 font-semibold lg:text-5xl text-4xl text-new-white text-center'
+        className='w-full mb-8 font-semibold text-4xl text-primary text-center'
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -63,7 +63,7 @@ export default function Contact() {
               <textarea name="" id="" placeholder='Your Query' className=' h-full text-xl w-full bg-transparent outline-0 border-[none]'></textarea>
             </div>
             <div className='relative w-full mt-5'>
-              <button type="submit" className='bg-new-white px-10 py-3 rounded-lg cursor-pointer font-bold font-merriweather text-xl text-maroon-800'>Submit</button>
+              <button type="submit" className='bg-primary px-10 py-3 rounded-lg cursor-pointer font-bold font-merriweather text-xl text-white'>Submit</button>
             </div>
           </form>
         </motion.div>

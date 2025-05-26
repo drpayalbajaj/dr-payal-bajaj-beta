@@ -4,7 +4,7 @@ export default function InstaVideo() {
   return (
     <section className='bg-primary w-full'>
             <div className="insta-wraper">
-                <h2 className='mt-1 text-center relative md:text-5xl text-4xl font-bold text-white'>
+                <h2 className='mt-1 text-center relative text-4xl font-bold text-white'>
                     Connect with us on Instagram.
                 </h2>
 

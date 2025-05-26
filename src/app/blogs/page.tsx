@@ -17,7 +17,7 @@ export default function Page() {
     <>
       <section className='w-full relative bg-new-white py-10 px-4'>
         <div className='w-full flex flex-col items-center justify-center'>
-          <span className='text-5xl font-bold text-maroon-800 mb-3'>Blogs</span>
+          <span className='text-5xl font-bold text-dark mb-3'>Blogs</span>
 
           <div className="text-gray-600 text-lg flex flex-wrap items-center gap-1">
             <Link href="/" className="hover:underline text-blue-600">Home</Link>
