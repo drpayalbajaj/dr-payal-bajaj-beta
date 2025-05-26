@@ -1,15 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #572127;
+  --color-primary: #950b87;
   --color-new-white: #FAF3EF;
-  --color-secondry: #A97474;
+  --color-secondry: #ff33f3;
   --color-steel-gray: #58595B;
-  --color-maroon-800: #832e35;
-  --color-off-white: #efefef;
+  --color-off-white: #fff3fe;
   --color-dark: #3d3d3d;
-  --font-merriweather: "Merriweather", serif;
+  --font-playfair: "Playfair Display", serif;
   --font-roboto: "Roboto", sans-serif;
 }
 
@@ -21,7 +20,7 @@ section {
 }
 
 h1,h2,h3,h4,h5,h6{
-  font-family: "Merriweather", serif;
+  font-family: "Playfair Display", serif !important;
   line-height: 1.1;
 }
 span, p{
