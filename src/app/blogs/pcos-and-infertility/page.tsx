@@ -11,7 +11,7 @@ export default function page() {
                         <h1 className='hero-heading md:text-[36px] text-[24px] font-bold text-primary leading-[1.1]' >
                             PCOS and Infertility: Causes, Treatment, and Hope
                         </h1>
-                        <em className='block -mt-[25px] text-maroon-800 text-[14px]'>By Dr. Payal Bajaj - Medical Director & Senior IVF Consultant</em>
+                        <em className='block -mt-[25px] text-dark text-[14px]'>By Dr. Payal Bajaj - Medical Director & Senior IVF Consultant</em>
 
                         <div className='w-full'>
                             <Image width={800} height={400} src="/image/blogs/3.png" alt="PCOS and Infertility: Causes, Treatment, and Hope" className=' block mx-auto' />
@@ -19,7 +19,7 @@ export default function page() {
 
                         <div className='w-full relative flex flex-col gap-5'>
                             <p className='font-medium text-dark md:text-xl text-base leading-[1.2]'>
-                                Polycystic Ovary Syndrome (PCOS) is one of the most common hormonal disorders in women of reproductive age. It affects nearly 1 in 10 women and is a leading cause of infertility. For many women diagnosed with PCOS, the journey to motherhood can feel confusing and frustrating. However, the good news is that <strong className='text-maroon-800'>PCOS-related infertility is highly treatable</strong> with the right guidance and care.
+                                Polycystic Ovary Syndrome (PCOS) is one of the most common hormonal disorders in women of reproductive age. It affects nearly 1 in 10 women and is a leading cause of infertility. For many women diagnosed with PCOS, the journey to motherhood can feel confusing and frustrating. However, the good news is that <strong className='text-dark'>PCOS-related infertility is highly treatable</strong> with the right guidance and care.
                                 <br /><br />
                                 With over 18 years of experience as a fertility specialist, I have seen hundreds of women with PCOS successfully conceive—some naturally and others with assistance. In this blog, let&apos;s understand how PCOS affects fertility, what treatment options are available, and why there is still hope for those struggling to conceive.
                             </p>
@@ -70,7 +70,7 @@ export default function page() {
                                 Managing PCOS Beyond Fertility
                             </h2>
                             <p className='font-medium text-steel-gray md:text-xl text-base leading-[1.2]'>
-                                It&apos;s important to remember that PCOS doesn&apos;t just affect your fertility. It can also increase your risk of <strong className='text-maroon-800'>diabetes, high cholesterol, heart disease, and endometrial problems.</strong> That&apos;s why managing PCOS is important even after pregnancy.
+                                It&apos;s important to remember that PCOS doesn&apos;t just affect your fertility. It can also increase your risk of <strong className='text-dark'>diabetes, high cholesterol, heart disease, and endometrial problems.</strong> That&apos;s why managing PCOS is important even after pregnancy.
                                 <br />
                                 <br />
                                 At our clinic, we don&apos;t just focus on helping you conceive—we also support your long-term health. Through regular follow-ups, personalized diet plans, and hormone balancing, we help you take control of your health beyond the fertility journey.

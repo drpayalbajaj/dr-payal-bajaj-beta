@@ -33,7 +33,7 @@ export default function Specialization() {
         <section ref={ref}>
             <div className="w-full relative" id="services">
                 <div className="w-full text-center ">
-                    <h2 className="lg:text-5xl text-4xl font-bold text-primary">
+                    <h2 className=" text-4xl font-bold text-primary">
                         Focused Fields
                     </h2>
                 </div>

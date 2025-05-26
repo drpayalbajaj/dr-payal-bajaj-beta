@@ -46,21 +46,21 @@ function Hero() {
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
         >
-          <h2 className="text-2xl font-light text-primary leading-[1.1]">
+          <h2 className="text-4xl font-light text-primary leading-[1.1]">
             About the Doctor
           </h2>
-          <h2 className="mt-4 lg:text-4xl md:text-3xl text-5xl font-bold text-maroon-800 leading-[1.1]">
+          <h2 className="mt-4 md:text-3xl text-5xl font-bold text-primary leading-[1.1]">
             Dr. Payal Bajaj
           </h2>
 
-          <p className="mt-2 text-2xl leading-[1.1] font-medium text-secondry">
+          <p className="mt-2 text-2xl leading-[1.1] font-medium text-dark">
             Medical Director And Senior IVF Consultant
           </p>
           <span className="mt-2 text-steel-gray text-lg leading-[1.2]">
             Dr Payal Bajaj is an experienced obstetrician and gynecologist with over 20 years of experience in the discipline. She is also a Reproductive endocrinologist and Infertility specialist par excellence.
           </span>
 
-          <h3 className="mt-3 text-2xl text-maroon-800 font-bold leading-[1.1]">
+          <h3 className="mt-3 text-2xl text-dark font-bold leading-[1.1]">
             Dr. Payal Bajaj Creating Miracles Personalized IVF Solutions for Growing Families.
           </h3>
 
@@ -68,7 +68,7 @@ function Hero() {
             Dr. Payal Bajaj, one of the best and most highly reputable gynaecologists, is an IVF specialist in Delhi. She helps provide a detailed explanation and solution to any condition concerning the female reproductive system.
           </span>
 
-          <h3 className="mt-3 text-2xl text-maroon-800 font-bold leading-[1.1]">
+          <h3 className="mt-3 text-2xl text-dark font-bold leading-[1.1]">
             20 years of experience
           </h3>
 

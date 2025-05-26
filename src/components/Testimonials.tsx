@@ -3,7 +3,7 @@ import React from 'react'
 export default function Testimonials() {
     return (
         <section>
-            <h2 className='text-center relative md:text-5xl text-4xl font-bold text-primary'>
+            <h2 className='text-center relative text-4xl font-bold text-primary'>
                 Words That Matter
             </h2>
 

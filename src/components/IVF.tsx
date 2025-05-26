@@ -48,13 +48,13 @@ export default function IVF() {
       >
         <motion.div className='pp w-full max-[668px]:pl-[30px] max-[668px]:pr-[30px] max-[668px]:py-[40px] pl-[70px] py-[60px] max-md:pr-[70px]  '>
           <motion.h2
-            className="mt-1 text-left relative md:text-5xl text-4xl font-bold text-primary"
+            className="mt-1 text-left relative text-4xl font-bold text-primary"
             variants={itemVariants}
           >
             What is IVF?
           </motion.h2>
           <motion.p
-            className="text-left text-base mt-5 text-maroon-800"
+            className="text-left text-base mt-5 text-dark"
             variants={itemVariants}
           >
             IVF which is In Vitro Fertilization is also known as test tube baby. In normal pregnancy, the sperm produced by the male needs to be fertilized with the egg produced by the female body. In cases where natural pregnancy is not possible, these eggs are extracted with the help of a particular instrument and fertilized with the sperm in the laboratory. The eggs are retrieved using a minor procedure called ovum pick up, vaginally. This procedure is carried out under sedation so you don&apos;t feel any pain. After the ovum pick-up procedure, the eggs are fertilized with sperm and the resultant embryos are formed within 3 to 5 days. A better embryo is selected and implanted in the uterus of the female partner. The after-procedure is just like any other pregnant woman. After 9 months the baby is delivered normally or through cesarean, accordingly.
@@ -67,7 +67,7 @@ export default function IVF() {
             Why Choose Nandi IVF Centre
           </motion.h3>
           <motion.p
-            className="text-left text-base mt-1 max-w-2xl text-maroon-800"
+            className="text-left text-base mt-1 max-w-2xl text-dark"
             variants={itemVariants}
           >
             With a vision to provide care beyond comparison in the field of fertility medicine, The Nandi Fertility Centre aspires to be a reliable partner in providing comprehensive fertility treatment solutions, with the ease of accessibility and affordability. Reflecting our endeavours in offering a qualitative and result-bound fertility care, the best Fertility Centre in Delhi and NCR witnesses the baby miracles on a daily basis.

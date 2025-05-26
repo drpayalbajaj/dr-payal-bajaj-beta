@@ -36,7 +36,7 @@ export default function Details() {
                 animate={isInView ? 'visible' : 'hidden'}
             >
                 <motion.h2
-                    className='mt-5 text-center relative md:text-3xl lg:text-5xl text-3xl font-bold text-primary'
+                    className='mt-5 text-center relative text-4xl font-bold text-primary'
                     variants={itemVariants}
                 >
                     Advanced IVF treatments with a caring touch
@@ -52,11 +52,11 @@ export default function Details() {
                     />
                 </motion.div>
 
-                <motion.p className='text-primary mt-5 text-lg' variants={itemVariants}>
+                <motion.p className='text-dark mt-5 text-lg' variants={itemVariants}>
                     The Expertise of Dr. Payal Bajaj lies in delivering a successful IVF treatment using the ethical and evidence based approach especially in patients with low ovarian reserve, multiple IVF failures and repeated miscarriages. She is well known for her polite, friendly, approachable and honest personality.
                 </motion.p>
 
-                <motion.p className='text-primary text-lg mt-5' variants={itemVariants}>
+                <motion.p className='text-dark text-lg mt-5' variants={itemVariants}>
                     She has written many blogs and articles for various health magazines. Her keen interest in creating awareness in the general public regarding reproductive health has led to almost thousands of poeple following her writings on social media. She is also a part of various clubs and organisations that specifically work towards empowering women worldwide.
                 </motion.p>
             </motion.div>

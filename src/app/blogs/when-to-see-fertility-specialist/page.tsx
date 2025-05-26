@@ -11,7 +11,7 @@ export default function page() {
                         <h1 className='hero-heading md:text-[36px] text-[24px] font-bold text-primary leading-[1.1]' >
                             When to See a Fertility Specialist: Don&apos;t Delay Your Parenthood Journey
                         </h1>
-                        <em className='block -mt-[25px] text-maroon-800 text-[14px]'>By Dr. Payal Bajaj - Medical Director & Senior IVF Consultant</em>
+                        <em className='block -mt-[25px] text-dark text-[14px]'>By Dr. Payal Bajaj - Medical Director & Senior IVF Consultant</em>
 
                         <div className='w-full'>
                             <Image width={800} height={400} src="/image/blogs/4.png" alt="When to See a Fertility Specialist: Don&apos;t Delay Your Parenthood Journey" className=' block mx-auto' />
@@ -19,7 +19,7 @@ export default function page() {
 
                         <div className='w-full relative flex flex-col gap-5'>
                             <p className='font-medium text-dark md:text-xl text-base leading-[1.2]'>
-                                For many couples, starting a family is one of life&apos;s most cherished dreams. But when pregnancy doesn&apos;t happen naturally, it can lead to emotional stress and uncertainty. It&apos;s important to know that infertility is a medical condition — <strong className='text-maroon-800'>not a failure or weakness.</strong> Today, with modern science and expert care, most causes of infertility can be identified and treated. <strong className='text-maroon-800'>The key is to recognize the right time to seek help.</strong> As a senior IVF consultant with over 18 years of experience, I have seen how early intervention can make a world of difference in achieving successful outcomes.
+                                For many couples, starting a family is one of life&apos;s most cherished dreams. But when pregnancy doesn&apos;t happen naturally, it can lead to emotional stress and uncertainty. It&apos;s important to know that infertility is a medical condition — <strong className='text-dark'>not a failure or weakness.</strong> Today, with modern science and expert care, most causes of infertility can be identified and treated. <strong className='text-dark'>The key is to recognize the right time to seek help.</strong> As a senior IVF consultant with over 18 years of experience, I have seen how early intervention can make a world of difference in achieving successful outcomes.
                             </p>
 
                             <h2 className='font-bold md:text-2xl text-lg text-primary'>
@@ -56,7 +56,7 @@ export default function page() {
                                 Final Thoughts
                             </h2>
                             <p className='font-medium text-steel-gray md:text-xl text-base leading-[1.2]'>
-                                Infertility is more common than people think, and thankfully, it is also more treatable than ever before. As the <strong className='text-maroon-800'>Medical Director and Senior IVF Consultant,</strong> I believe in offering not just medical care, but emotional support and honest guidance at every step. If you&apos;re facing difficulties in conceiving, don&apos;t wait for months or years hoping things will work out on their own. Book a consultation and let us help you understand your fertility better. <strong className='text-maroon-800'>Your dream of becoming a parent deserves expert care—and the right time to begin is now.</strong>
+                                Infertility is more common than people think, and thankfully, it is also more treatable than ever before. As the <strong className='text-dark'>Medical Director and Senior IVF Consultant,</strong> I believe in offering not just medical care, but emotional support and honest guidance at every step. If you&apos;re facing difficulties in conceiving, don&apos;t wait for months or years hoping things will work out on their own. Book a consultation and let us help you understand your fertility better. <strong className='text-dark'>Your dream of becoming a parent deserves expert care—and the right time to begin is now.</strong>
                             </p>
                         </div>
                     </div>

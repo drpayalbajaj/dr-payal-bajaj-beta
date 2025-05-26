@@ -30,7 +30,7 @@ export default function Qualification() {
 
     return (
         <section id='qualification' ref={ref}>
-            <h2 className='mt-5 text-center relative md:text-5xl text-4xl font-bold text-primary'>
+            <h2 className='mt-5 text-center relative text-4xl font-bold text-primary'>
                 Academic Highlights
             </h2>
 
@@ -75,7 +75,7 @@ export default function Qualification() {
                         <div className="w-full flex justify-center items-center flex-col h-full p-5">
                             <Image src={img} width={img.includes('isar.svg') ? 90 : 200} height={img.includes('isar.svg') ? 50 : 100} alt='dr. payal' />
                             <h3 className='text-3xl text-primary leading-[1.1] mt-5'>{title}</h3>
-                            <p className='mt-4 text-lg leading-[1.1] text-maroon-800 '>{desc}</p>
+                            <p className='mt-4 text-lg leading-[1.1] text-dark '>{desc}</p>
                         </div>
                     </motion.div>
                 ))}
