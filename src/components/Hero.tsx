@@ -23,8 +23,8 @@ export default function Hero() {
                     viewport={{ once: true }}
                     className='w-full relative h-full flex flex-col justify-center min-[924px]:py-[90px] px-[60px] py-[70px] max-[668px]:px-[30px] max-[668px]:py-[40px]'
                 >
-                    <h1 className='lg:text-5xl md:text-3xl text-3xl font-pt font-bold text-primary leading-[1.1]'>
-                        Bringing Dreams to Life Your Journey to Parenthood Starts Here!
+                    <h1 className='lg:text-4xl md:text-3xl text-3xl font-pt font-bold text-primary leading-[1.1]'>
+                        Step into your parenthood journey
                     </h1>
 
                     <p className='mt-5 lg:text-lg md:text-base leading-[1.1] font-medium text-steel-gray'>
