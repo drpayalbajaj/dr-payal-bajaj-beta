@@ -84,10 +84,11 @@ function Hero() {
           animate={isInView ? 'visible' : 'hidden'}
         >
           <Image
-            src="/image/hero/main.png"
-            width={500}
-            height={500}
+            src="/image/hero/about.jpg"
+            width={1000}
+            height={1000}
             alt="Hero Image"
+            className='w-[500px] h-auto object-cover'
           />
         </motion.div>
       </div>
