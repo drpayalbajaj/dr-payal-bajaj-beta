@@ -70,9 +70,9 @@ export default function Header() {
                     transition={{ delay: 0.1 }}
                     className="relative flex flex-col gap-1 z-50"
                 >
-                    <h5 className="block text-new-white text-4xl max-[480px]:text-2xl font-bold leading-[1]">
+                    <Link href='/' className="font-playfair block text-new-white text-4xl max-[480px]:text-2xl font-bold leading-[1.2]">
                         Dr. Payal Bajaj
-                    </h5>
+                    </Link>
                     <span className="block text-off-white text-[18px] max-[480px]:text-[14px] leading-[1] font-medium">
                         Senior IVF Consultant
                     </span>
