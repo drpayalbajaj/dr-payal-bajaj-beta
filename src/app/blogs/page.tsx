@@ -77,6 +77,12 @@ function AllBlogs() {
       content: "For many couples, starting a family is one of life's most cherished dreams. But when pregnancy doesn't happen naturally, it can lead to emotional stress and uncertainty. It's important to know that infertility is a medical condition—not a failure or weakness. Today, with modern science and expert care, most causes of infertility can be identified and treated. The key is to recognize the right time to seek help",
       uri: "blogs/when-to-see-fertility-specialist",
     },
+    {
+      title: "It’s Not Just Women – Why Men’s Health Matters in Pregnancy",
+      image: "/image/blogs/5.png",
+      content: "When we talk about pregnancy and miscarriage, most people think of women’s health. We often forget that men’s health, especially the health of their sperm, is just as important. Recent studies show that problems with sperm health can affect pregnancy outcomes, including miscarriage. A healthy pregnancy is not just the responsibility of the woman – it takes both partners working together.",
+      uri: "blogs/why-mens-health-matters-in-pregnancy",
+    },
   ]
 
   const containerVariants = {
