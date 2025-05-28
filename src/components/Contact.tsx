@@ -30,7 +30,7 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    for (let key in formData) {
+    for (const key in formData) {
       if (!formData[key as keyof typeof formData]) {
         alert(`Please fill out the ${key} field.`);
         return;

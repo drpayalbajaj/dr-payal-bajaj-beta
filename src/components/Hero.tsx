@@ -36,7 +36,7 @@ export default function Hero() {
                             Book an Appointment
                         </Link>
 
-                        <Link href='tel:+919138005800' className='px-6 py-[14px] border rounded-md border-primary text-primary font-bold font-roboto'>
+                        <Link href='tel:+919911631639' className='px-6 py-[14px] border rounded-md border-primary text-primary font-bold font-roboto'>
                             Call Now
                         </Link>
                     </div>

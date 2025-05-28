@@ -46,13 +46,13 @@ export default function Footer() {
                             <div className='w-full relative flex gap-3 items-center'>
                                 <i
                                     className="hgi hgi-stroke hgi-call w-[40px] h-[40px] flex items-center justify-center border border-white rounded-full text-white"></i>
-                                <Link href='tel:+919138005800' className='block text-white'>+91 9138005800</Link>
+                                <Link href='tel:+919911631639' className='block text-white'>+91 9911631639</Link>
                             </div>
                             <div className='w-full relative flex gap-3 items-center mt-3'>
                                 <i
                                     className="hgi hgi-stroke hgi-mail-01 w-[40px] h-[40px] flex items-center justify-center border border-white rounded-full text-white"></i>
-                                <Link href='mailto:bajajdrpayal@gmail.com'
-                                    className='block text-white'>bajajdrpayal@gmail.com</Link>
+                                <Link href='mailto:drpayalbajaj@gmail.com'
+                                    className='block text-white'>drpayalbajaj@gmail.com</Link>
                             </div>
                         </div>
                         <p className='mt-5 w-full text-white'>
