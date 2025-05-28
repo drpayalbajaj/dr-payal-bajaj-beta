@@ -7,14 +7,35 @@ import React, { useEffect, useState } from 'react'
 export default function page() {
     return (
         <>
+            <Header />
             <Hero />
             <About />
-            <Map/>
+            <Map />
             <Testimonials />
+            <Footer />
         </>
     )
 }
 
+function Header() {
+    return (
+        <header className='z-10 relative w-full bg-primary md:px-20 md:py-4 overflow-hidden'>
+            <nav className='w-full relative flex items-center justify-between gap-10'>
+                <Link href="/">
+                    <h5 className="block text-zinc-100 text-4xl max-[480px]:text-xl font-bold leading-[1]">
+                        Dr. Payal Bajaj
+                    </h5>
+                    <span className="block text-zinc-100 text-[18px] max-[480px]:text-[12px] leading-[1] font-medium">
+                        Senior IVF Consultant
+                    </span>
+                </Link>
+                <Link href="https://dr-payal-bajaj-beta.vercel.app/" className='relative bg-white text-primary md:px-7 md:py-3 md:text-xl px-3 py-2 text-[14px] font-semibold rounded hover:bg-zinc-100'>
+                    Visit Website
+                </Link>
+            </nav>
+        </header>
+    )
+}
 
 function Hero() {
     const [isFormOpen, setIsFormOpen] = useState(false)
@@ -75,7 +96,6 @@ type FormProps = {
 function Form({ isFormOpen, setIsFormOpen }: FormProps) {
 
     const [shouldRender, setShouldRender] = useState(false)
-
     useEffect(() => {
         const showTimer = setTimeout(() => {
             setIsFormOpen(true)
@@ -116,7 +136,7 @@ function Form({ isFormOpen, setIsFormOpen }: FormProps) {
             className={`inset-0 z-50 flex items-center justify-center transition-all duration-300 ease-in-out 
             ${isFormOpen ? 'opacity-100 backdrop-blur-sm' : 'opacity-0 pointer-events-none backdrop-blur-0'}
         `}>
-            <div className='w-full h-full p-10 flex items-center justify-center'>
+            <div className='w-full h-full flex items-center justify-center'>
                 <div
                     className={`transform transition-all duration-300 ease-in-out 
                     ${isFormOpen ? 'scale-100 translate-y-0 opacity-100' : 'scale-90 -translate-y-10 opacity-0'}
@@ -218,5 +238,17 @@ function Map() {
                 title="Nandi IVF Location"
             ></iframe>
         </section>
+    )
+}
+
+function Footer() {
+    return (
+        <footer className='w-full bg-primary md:px-20 px-8 py-4 '>
+            <div className='w-full relative flex justify-center items-center'>
+                <p className='text-white'>Copyright @ 2025 Dr. Payal Bajaj | Developed by
+                    <a href="https://www.wizards.co.in" target='_blank'
+                        className='text-amber-300'> Wizards</a></p>
+            </div>
+        </footer>
     )
 }
