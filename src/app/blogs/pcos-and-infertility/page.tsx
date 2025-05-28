@@ -1,10 +1,13 @@
 import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 import Image from 'next/image'
 import React from 'react'
 
 export default function page() {
     return (
         <>
+            <Header />
             <section className='bg-new-white w-full relative'>
                 <div className='bg-new-light-500 max-w-[768px] w-full mx-auto mt-5 '>
                     <div className='relative w-full flex flex-col gap-8'>
@@ -56,7 +59,7 @@ export default function page() {
                             </h2>
 
                             <p className='font-medium text-steel-gray md:text-xl text-base leading-[1.2]'>
-                                There is no one-size-fits-all treatment for PCOS. The choice of treatment depends on the 
+                                There is no one-size-fits-all treatment for PCOS. The choice of treatment depends on the
                                 patient&apos;s age, symptoms, fertility goals, and other health factors. For some, lifestyle changes like weight loss, healthy eating, and regular exercise can restore ovulation naturally. Even a 5-10% reduction in weight can make a big difference in hormone levels and fertility.
                                 <br />
                                 <br />
@@ -93,6 +96,7 @@ export default function page() {
                 </div>
             </section>
             <Contact />
+            <Footer />
         </>
     )
 }
