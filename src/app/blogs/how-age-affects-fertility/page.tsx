@@ -1,10 +1,13 @@
 import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 import Image from 'next/image'
 import React from 'react'
 
 export default function page() {
     return (
         <>
+            <Header />
             <section className='bg-new-white w-full relative'>
                 <div className='bg-new-light-500 max-w-[768px] w-full mx-auto mt-5 '>
                     <div className='relative w-full flex flex-col gap-8'>
@@ -110,6 +113,7 @@ export default function page() {
                 </div>
             </section>
             <Contact />
+            <Footer />
         </>
     )
 }
