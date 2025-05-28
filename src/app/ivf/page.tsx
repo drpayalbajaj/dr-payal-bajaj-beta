@@ -32,7 +32,7 @@ function Header() {
                         Senior IVF Consultant
                     </span>
                 </Link>
-                <Link href="https://dr-payal-bajaj-beta.vercel.app/" className='relative bg-white text-primary md:px-7 md:py-3 md:text-xl px-3 py-2 text-[14px] font-semibold rounded hover:bg-zinc-100'>
+                <Link href="/" className='relative bg-white text-primary md:px-7 md:py-3 md:text-xl px-3 py-2 text-[14px] font-semibold rounded hover:bg-zinc-100'>
                     Visit Website
                 </Link>
             </nav>
@@ -107,12 +107,12 @@ function Form({ isFormOpen, setIsFormOpen }: FormProps) {
     const [shouldRender, setShouldRender] = useState(false)
     useEffect(() => {
         const showTimer = setTimeout(() => {
-            setIsFormOpen(true)
-            setShouldRender(true)
-        }, 3000)
+            setIsFormOpen(true);
+            setShouldRender(true);
+        }, 3000);
 
-        return () => clearTimeout(showTimer)
-    }, [])
+        return () => clearTimeout(showTimer);
+    }, [setIsFormOpen]);
 
     useEffect(() => {
         if (!isFormOpen) {
