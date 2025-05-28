@@ -50,9 +50,9 @@ export async function POST(req: NextRequest) {
         }
 
         const { error } = await resend.emails.send({
-            from: "Enquiry - Dr. Payal Bajaj <info@drpayalbajaj.com>",
+            from: "Enquiry Landing Page - Dr. Payal Bajaj <info@drpayalbajaj.com>",
             to: ["drpayalbajaj@gmail.com"],
-            subject: "New Enquiry Form Submission",
+            subject: "New Enquiry Form Submission From Landing Page",
             html: `
                 <div style="font-family: Arial, sans-serif; color: #333;">
                     <h2>New Enquiry Received</h2>
