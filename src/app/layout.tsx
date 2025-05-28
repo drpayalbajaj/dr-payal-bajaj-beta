@@ -20,15 +20,6 @@ export default function RootLayout({
       <head>
         <link rel="shortcut icon" href="/image/icons/logo.png" type="image/x-icon" />
         <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css"></link>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VX2CY2WZR5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VX2CY2WZR5');
-</script>
       </head>
       <body>
         <SmoothScroll>
