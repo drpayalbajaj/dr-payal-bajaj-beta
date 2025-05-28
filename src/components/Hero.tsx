@@ -32,7 +32,7 @@ export default function Hero() {
                     </p>
 
                     <div className='flex items-center mt-15 gap-10 max-[480px]:gap-3 max-[480px]:flex-wrap'>
-                        <Link href='#contact' className='px-6 py-[14px] border rounded-md border-primary bg-primary text-new-white font-bold font-roboto'>
+                        <Link href='#contact' className='px-6 py-[14px] border rounded-md border-primary bg-primary text-white font-bold font-roboto'>
                             Book an Appointment
                         </Link>
 

@@ -70,7 +70,7 @@ export default function Header() {
                     transition={{ delay: 0.1 }}
                     className="relative flex flex-col gap-1 z-50"
                 >
-                    <Link href='/' className="font-playfair block text-new-white text-4xl max-[480px]:text-2xl font-bold leading-[1.2]">
+                    <Link href='/' className="font-playfair block text-white text-4xl max-[480px]:text-2xl font-bold leading-[1.2]">
                         Dr. Payal Bajaj
                     </Link>
                     <span className="block text-off-white text-[18px] max-[480px]:text-[14px] leading-[1] font-medium">
@@ -100,7 +100,7 @@ export default function Header() {
                             </motion.li>
                         ))}
                         <motion.li variants={itemVariants}>
-                            <Link href='#contact' className="font-merriweather cursor-pointer relative font-medium flex items-center justify-center bg-new-white text-primary text-maroon-500 px-7 py-[10px] rounded-md text-xl">
+                            <Link href='#contact' className="font-merriweather cursor-pointer relative font-medium flex items-center justify-center bg-white text-primary text-maroon-500 px-7 py-[10px] rounded-md text-xl">
                                 Contact
                             </Link>
                         </motion.li>
