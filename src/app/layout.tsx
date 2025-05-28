@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
 import SmoothScroll from "./SmoothScroll";
-// import Header from "@/components/Header";
-// import Footer from "@/components/Footer";
+import { GoogleAnalytics } from '@next/third-parties/google'
+ 
 
 export const metadata: Metadata = {
   title: "Dr. Payal Bajaj - Senior IVF Consultant",
@@ -27,6 +27,7 @@ export default function RootLayout({
           {children}
           {/* <Footer /> */}
         </SmoothScroll>
+        <GoogleAnalytics gaId="G-VX2CY2WZR5" />
         <Script src="https://static.elfsight.com/platform/platform.js" async />
       </body>
     </html>
