@@ -1,8 +1,10 @@
 'use client'
 import Testimonials from '@/components/Testimonials'
+import axios from 'axios'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+import toast, { Toaster } from 'react-hot-toast'
 
 export default function page() {
     return (
@@ -13,6 +15,7 @@ export default function page() {
             <Map />
             <Testimonials />
             <Footer />
+            <Toaster />
         </>
     )
 }
@@ -94,7 +97,13 @@ type FormProps = {
 };
 
 function Form({ isFormOpen, setIsFormOpen }: FormProps) {
-
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        location: '',
+        message: ''
+    });
     const [shouldRender, setShouldRender] = useState(false)
     useEffect(() => {
         const showTimer = setTimeout(() => {
@@ -130,6 +139,57 @@ function Form({ isFormOpen, setIsFormOpen }: FormProps) {
 
     if (!shouldRender) return null
 
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        for (let key in formData) {
+            if (!formData[key as keyof typeof formData]) {
+                alert(`Please fill out the ${key} field.`);
+                return;
+            }
+        }
+
+        toast.promise(
+            axios
+                .post("/api/enquiry", formData, {
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                })
+                .then((response) => {
+                    if (response.status === 200) {
+                        setFormData({
+                            name: "",
+                            email: "",
+                            phone: "",
+                            location: "",
+                            message: "",
+                        });
+                        setIsFormOpen(false);
+                        return response.data.message;
+                    } else {
+                        return response.data.message
+                    }
+                })
+                .catch((error) => {
+                    console.log("Error sending message", error.message);
+                    throw error;
+                }),
+            {
+                loading: "Sending message...",
+                success: (message) => message,
+                error: (err) => err
+            }
+        );
+    };
+
+
     return (
         <section
             style={{ position: 'fixed' }}
@@ -156,23 +216,39 @@ function Form({ isFormOpen, setIsFormOpen }: FormProps) {
                         </div>
 
                         <div className='mt-10 w-full relative flex flex-col gap-5'>
-                            {['Name', 'Email', 'Phone No.', 'Location'].map((placeholder, i) => (
+                            {[
+                                { name: 'name', placeholder: 'Name', type: 'text' },
+                                { name: 'email', placeholder: 'Email', type: 'email' },
+                                { name: 'phone', placeholder: 'Phone No.', type: 'tel' },
+                                { name: 'location', placeholder: 'Location', type: 'text' }
+                            ].map((field, i) => (
                                 <div key={i} className='w-full bg-zinc-100 rounded px-3 py-3'>
                                     <input
-                                        type={placeholder === 'Email' ? 'email' : placeholder === 'Phone No.' ? 'tel' : 'text'}
+                                        type={field.type}
+                                        name={field.name}
                                         required
-                                        placeholder={placeholder}
+                                        placeholder={field.placeholder}
+                                        value={formData[field.name as keyof typeof formData]}
+                                        onChange={handleChange}
                                         className='bg-transparent w-full h-full text-lg outline-none border-none'
                                     />
                                 </div>
                             ))}
                             <div className='w-full bg-zinc-100 rounded px-3 py-3'>
-                                <textarea required placeholder='Message' className='bg-transparent w-full h-full text-lg outline-none border-none' />
+                                <textarea
+                                    name='message'
+                                    required
+                                    placeholder='Message'
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    className='bg-transparent w-full h-full text-lg outline-none border-none'
+                                />
                             </div>
                         </div>
 
                         <div className='mt-8 w-full'>
-                            <button className='w-full px-6 py-2 bg-white text-primary font-bold text-lg rounded cursor-pointer hover:bg-new-white hover:text-dark transition-all duration-300 ease-in-out'>
+                            <button onClick={handleSubmit}
+                                className='w-full px-6 py-2 bg-white text-primary font-bold text-lg rounded cursor-pointer hover:bg-new-white hover:text-dark transition-all duration-300 ease-in-out'>
                                 Send
                             </button>
                         </div>
