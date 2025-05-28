@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function InstaVideo() {
   return (
-    <section className='bg-primary w-full'>
+    <section className='bg-[#9f76bf] w-full'>
             <div className="insta-wraper">
                 <h2 className='mt-1 text-center relative text-4xl font-bold text-white'>
                     Connect with us on Instagram.
