@@ -4,6 +4,8 @@ import Link from 'next/link'
 import React from 'react'
 import { motion } from "motion/react"
 import Image from 'next/image'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 
 export default function Page() {
@@ -15,6 +17,7 @@ export default function Page() {
 
   return (
     <>
+      <Header />
       <section className='w-full relative bg-new-white py-10 px-4'>
         <div className='w-full flex flex-col items-center justify-center'>
           <span className='text-5xl font-bold text-dark mb-3'>Blogs</span>
@@ -35,8 +38,8 @@ export default function Page() {
           </div>
         </div>
       </section>
-
       <AllBlogs />
+      <Footer />
     </>
 
   );
