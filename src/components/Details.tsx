@@ -4,62 +4,88 @@ import React, { useRef } from 'react'
 import { motion, useInView } from 'motion/react'
 
 export default function Details() {
+
+
+    return (
+        <Hero />
+    )
+}
+
+function Hero() {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: '-100px' })
 
-    const containerVariants = {
-        hidden: {},
+    const leftVariants = {
+        hidden: { opacity: 0, x: -200 },
         visible: {
-            transition: {
-                staggerChildren: 0.3,
-            },
+            opacity: 1,
+            x: 0,
+            transition: { duration: 0.8, ease: 'easeOut' },
         },
     }
 
-    const itemVariants = {
-        hidden: { opacity: 0, y: 50 },
+    const rightVariants = {
+        hidden: { opacity: 0, x: 200 },
         visible: {
             opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.6,
-                ease: 'easeOut',
-            },
+            x: 0,
+            transition: { duration: 0.8, ease: 'easeOut' },
         },
     }
 
     return (
-        <section ref={ref}>
-            <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate={isInView ? 'visible' : 'hidden'}
-            >
-                <motion.h2
-                    className='mt-5 text-center relative text-4xl font-bold text-primary'
-                    variants={itemVariants}
+        <section
+            ref={ref}
+            id="about"
+            className="w-full relative overflow-x-hidden"
+        >
+            <div className="w-full relative grid lg:grid-cols-2 grid-cols-1 md:gap-5 gap-7">
+                <motion.div
+                    className="w-full relative h-full flex flex-col justify-center"
+                    variants={leftVariants}
+                    initial="hidden"
+                    animate={isInView ? 'visible' : 'hidden'}
                 >
-                    Advanced IVF treatments with a caring touch
-                </motion.h2>
+                    <h2 className="text-4xl font-light text-primary leading-[1.1]">
+                        Advanced IVF treatments with a caring touch
+                    </h2>
+                    <h2 className="mt-4 md:text-3xl text-5xl font-bold text-primary leading-[1.1]">
+                        Dr. Payal Bajaj - IVF Consultant
+                    </h2>
 
-                <motion.div className='relative w-full mt-10' variants={itemVariants}>
-                    <Image
-                        className='w-full'
-                        src='/image/banner/banner-01.png'
-                        alt='dr payal'
-                        width={1000}
-                        height={300}
-                    />
+                    <p className="mt-2 text-2xl leading-[1.1] font-medium text-[#9f76bf]">
+                        Fertility Specialist, Obstetrician & Gynecologist
+                    </p>
+                    <p className="mt-2 text-2xl leading-[1.1] font-semibold text-[#9f76bf]">
+                        Medical Director - Nandi IVF
+                    </p>
+                    <span className="mt-5 text-steel-gray text-lg leading-[1.2]">
+                        The Expertise of Dr. Payal Bajaj lies in delivering a successful IVF treatment using the ethical and evidence based approach especially in patients with low ovarian reserve, multiple IVF failures and repeated miscarriages. She is well known for her polite, friendly, approachable and honest personality.
+                    </span>
+
+
+                    <span className="mt-2 text-steel-gray text-lg leading-[1.2]">
+                        She has written many blogs and articles for various health magazines. Her keen interest in creating awareness in the general public regarding reproductive health has led to almost thousands of poeple following her writings on social media. She is also a part of various clubs and organisations that specifically work towards empowering women worldwide.
+                    </span>
+
+
                 </motion.div>
 
-                <motion.p className='text-dark mt-5 text-lg' variants={itemVariants}>
-                    The Expertise of Dr. Payal Bajaj lies in delivering a successful IVF treatment using the ethical and evidence based approach especially in patients with low ovarian reserve, multiple IVF failures and repeated miscarriages. She is well known for her polite, friendly, approachable and honest personality.
-                </motion.p>
-
-                <motion.p className='text-dark text-lg mt-5' variants={itemVariants}>
-                    She has written many blogs and articles for various health magazines. Her keen interest in creating awareness in the general public regarding reproductive health has led to almost thousands of poeple following her writings on social media. She is also a part of various clubs and organisations that specifically work towards empowering women worldwide.
-                </motion.p>
-            </motion.div>
+                <motion.div
+                    className="w-full relative h-full flex items-center lg:justify-end justify-center"
+                    variants={rightVariants}
+                    initial="hidden"
+                    animate={isInView ? 'visible' : 'hidden'}
+                >
+                    <Image
+                        src="/image/hero/details.jpg"
+                        width={1000}
+                        height={1000}
+                        alt="Hero Image"
+                        className='w-full h-auto object-cover'
+                    />
+                </motion.div>
+            </div>
         </section>
     )
 }
