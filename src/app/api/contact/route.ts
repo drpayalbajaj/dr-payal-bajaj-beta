@@ -49,8 +49,8 @@ export async function POST(req: NextRequest) {
         }
 
         const { error } = await resend.emails.send({
-            from: "Dr. Payal Bajaj <onboarding@resend.dev>",
-            to: ["priyeshrai.dev@gmail.com"],
+            from: "Dr. Payal Bajaj <info@drpayalbajaj.com>",
+            to: ["drpayalbajaj@gmail.com"],
             subject: "New Contact Form Submission",
             html: `
                 <div style="font-family: Arial, sans-serif; color: #333;">
