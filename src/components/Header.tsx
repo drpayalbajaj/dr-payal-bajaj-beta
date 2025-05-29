@@ -112,15 +112,15 @@ export default function Header() {
                     onClick={() => setOpenMenu(!openMenu)}
                 >
                     <span
-                        className={`transition duration-300 ease-in-out block bg-maroon-800 w-[30px] h-[2px] rounded-2xl ${openMenu ? 'rotate-[45deg] absolute' : 'relative rotate-0'
+                        className={`transition duration-300 ease-in-out block bg-primary w-[30px] h-[2px] rounded-2xl ${openMenu ? 'rotate-[45deg] absolute' : 'relative rotate-0'
                             }`}
                     ></span>
                     <span
-                        className={`transition duration-300 ease-in-out block bg-maroon-800 w-[30px] h-[2px] rounded-2xl ${openMenu ? 'opacity-0 absolute' : 'relative opacity-100'
+                        className={`transition duration-300 ease-in-out block bg-primary w-[30px] h-[2px] rounded-2xl ${openMenu ? 'opacity-0 absolute' : 'relative opacity-100'
                             }`}
                     ></span>
                     <span
-                        className={`transition duration-300 ease-in-out block bg-maroon-800 w-[30px] h-[2px] rounded-2xl ${openMenu ? 'rotate-[-45deg] absolute' : 'relative rotate-0'
+                        className={`transition duration-300 ease-in-out block bg-primary w-[30px] h-[2px] rounded-2xl ${openMenu ? 'rotate-[-45deg] absolute' : 'relative rotate-0'
                             }`}
                     ></span>
                 </div>
