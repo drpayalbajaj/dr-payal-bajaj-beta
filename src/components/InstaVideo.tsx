@@ -9,7 +9,7 @@ export default function InstaVideo() {
                 </h2>
 
                 <div className='mt-10 overflow-hidden'>
-                    <div className="elfsight-app-f3c3952f-fbc2-4d2e-a555-f491827a7b22" data-elfsight-app-lazy></div>
+                    <div className="elfsight-app-a8f44adb-6f47-4198-9d51-ba5cb86d28cd" data-elfsight-app-lazy></div>
                 </div>
             </div>
         </section>
