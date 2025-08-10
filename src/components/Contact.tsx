@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
+import { FaWhatsapp } from "react-icons/fa";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -26,6 +27,10 @@ export default function Contact() {
     const blacklistPattern = /<script|<\/script|javascript:|onerror=|onload=/gi;
     return !blacklistPattern.test(input);
   };
+
+  const handleWhatsappChat = () => {
+    location.href = "https://wa.me/+919911631639?text=Hi%2C%20I%E2%80%99d%20like%20to%20book%20an%20appointment%20with%20Dr.%20Payal%20Bajaj.%20Please%20guide%20me%20through%20the%20process";
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -172,6 +177,13 @@ export default function Contact() {
               <button type="submit" className='bg-primary px-10 py-3 rounded-lg cursor-pointer font-bold font-merriweather text-xl text-white'>
                 Submit
               </button>
+              <button onClick={handleWhatsappChat} className='mx-4 px-5 gap-2 py-3 rounded-lg cursor-pointer font-bold font-merriweather text-xl shadow-lg bg-[#25D366] text-white hover:brightness-95 focus:outline-none focus:ring-4 focus:ring-[#25D366]/30'>
+                    <FaWhatsapp className='inline'/>
+                  <p className='inline px-2'>
+                    Chat on WhatsApp
+                    </p>
+              </button>
+            
             </div>
           </form>
         </motion.div>
