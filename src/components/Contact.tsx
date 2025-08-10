@@ -173,18 +173,53 @@ export default function Contact() {
                 onChange={handleChange}
               ></textarea>
             </div>
-            <div className='relative w-full mt-5'>
-              <button type="submit" className='bg-primary px-10 py-3 rounded-lg cursor-pointer font-bold font-merriweather text-xl text-white'>
-                Submit
-              </button>
-              <button onClick={handleWhatsappChat} className='mx-4 px-5 gap-2 py-3 rounded-lg cursor-pointer font-bold font-merriweather text-xl shadow-lg bg-[#25D366] text-white hover:brightness-95 focus:outline-none focus:ring-4 focus:ring-[#25D366]/30'>
-                    <FaWhatsapp className='inline'/>
-                  <p className='inline px-2'>
-                    Chat on WhatsApp
-                    </p>
-              </button>
-            
-            </div>
+            <div className="relative w-full mt-5 flex flex-row flex-wrap">
+  {/* Submit Button */}
+  <button
+    type="submit"
+    className="
+      bg-primary
+      px-6 sm:px-10
+      py-2.5 sm:py-3
+      rounded-lg
+      cursor-pointer
+      font-bold
+      font-merriweather
+      text-base sm:text-xl
+      text-white
+    "
+  >
+    Submit
+  </button>
+
+  {/* WhatsApp Button */}
+  <button
+    onClick={handleWhatsappChat}
+    className="
+      mx-2
+      px-4 sm:px-5
+      gap-2
+      py-2.5 sm:py-3
+      rounded-lg
+      cursor-pointer
+      font-bold
+      font-merriweather
+      text-base sm:text-xl
+      shadow-lg
+      bg-[#25D366]
+      text-white
+      hover:brightness-95
+      focus:outline-none
+      focus:ring-4
+      focus:ring-[#25D366]/30
+      flex items-center justify-center
+    "
+  >
+    <FaWhatsapp className="inline text-lg sm:text-xl" />
+    <span className="px-2">Chat on WhatsApp</span>
+  </button>
+</div>
+
           </form>
         </motion.div>
       </div>
