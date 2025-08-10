@@ -173,7 +173,7 @@ export default function Contact() {
                 onChange={handleChange}
               ></textarea>
             </div>
-            <div className="relative w-full mt-5 flex flex-row flex-wrap">
+            <div className="relative w-full mt-5 flex flex-row flex-nowrap overflow-x-auto">
   {/* Submit Button */}
   <button
     type="submit"
