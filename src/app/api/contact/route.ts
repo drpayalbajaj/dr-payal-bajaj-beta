@@ -90,7 +90,7 @@ export async function POST(req: NextRequest) {
             },
             });
             // return NextResponse.json({ message: 'Message sent and saved to Google Sheets' });
-        } catch (error: any) {
+        } catch (error) {
             console.error('Error saving to Google Sheets:', error);
             // return NextResponse.json({ message: 'Internal server error', error: error.message });
         }
