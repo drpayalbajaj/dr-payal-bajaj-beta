@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import UserInputForm from '@/components/UserInputForm';
 import ScratchCardGame from '@/components/ScratchCardGame';
-import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 
 const RewardsPage: React.FC = () => {
