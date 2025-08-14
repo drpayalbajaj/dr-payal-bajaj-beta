@@ -15,6 +15,7 @@ const menuItem: MenuItem[] = [
     { name: 'Services', path: '#services' },
     { name: 'Qualification', path: '#qualification' },
     { name: 'Blogs', path: '/blogs' },
+    { name: 'Rewards', path: '/rewards' }
 ]
 
 const containerVariants = {
