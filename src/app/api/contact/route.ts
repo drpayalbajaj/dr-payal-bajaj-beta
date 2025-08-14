@@ -83,7 +83,7 @@ export async function POST(req: NextRequest) {
 
             await sheets.spreadsheets.values.append({
             spreadsheetId: process.env.GOOGLE_SHEET_ID,
-            range: 'Sheet1!B:F', // Adjust as needed
+            range: 'Sheet1!A:E', // Adjust as needed
             valueInputOption: 'RAW',
             requestBody: {
                 values: [[name, email, contactNo, message, new Date().toLocaleString()]],
