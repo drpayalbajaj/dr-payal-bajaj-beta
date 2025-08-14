@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { google } from 'googleapis';
 
-const SPREADSHEET_ID = process.env.GOOGLE_SHEET_ID; // Google Sheet ID
 const SHEET_NAME = 'Rewards'; // Change if needed
 
 function getISTDateTime() {
@@ -45,8 +44,8 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ success: true }, {status: 200});
-  } catch (error: any) {
+  } catch (error) {
     console.log("ERROR:",error);
-    return NextResponse.json({ error: error.message }, {status: 400});
+    return NextResponse.json({ error: error }, {status: 400});
   }
 }
