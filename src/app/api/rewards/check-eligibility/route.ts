@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
   }
 
   const body = await req.json();
-  let { email } = body;
+  const { email } = body;
 
   if (!email) {
     return NextResponse.json({ error: 'Email is required' }, { status: 400 });
@@ -25,17 +25,37 @@ export async function POST(req: NextRequest) {
     console.log(SPREADSHEET_ID);
 
     const sheets = google.sheets({ version: 'v4', auth });
-    const response = await sheets.spreadsheets.values.get({
+    const ClaimedResponse = await sheets.spreadsheets.values.get({
       spreadsheetId: SPREADSHEET_ID,
       range: 'Rewards!B:B', // Assuming email is in column B
     });
 
-    const rows = response.data.values || [];
-    const exists = rows.some((row) => row[0]?.toLowerCase() === email.toLowerCase());
+    const eligibleEmails = await sheets.spreadsheets.values.get({
+      spreadsheetId: SPREADSHEET_ID,
+      range: "EligibleCustomers!A:A", // Adjust your sheet name & range
+    });
 
-    return NextResponse.json({ exists },{status:200});
-  } catch (error: any) {
+    const emailsList =
+      eligibleEmails.data.values?.map((row) => row[0]?.trim().toLowerCase()) || [];
+
+    if (!emailsList.includes(email.trim().toLowerCase())) {
+      return NextResponse.json(
+        { eligible: false, message: "User not eligible for reward games." },
+        { status: 200 }
+      );
+    }
+
+    const rows = ClaimedResponse.data.values || [];
+    const exists = rows.some((row) => row[0]?.toLowerCase() === email.toLowerCase());
+    if (exists) {
+      return NextResponse.json(
+        { eligible: false, message: "User not eligible for reward games." },
+        { status: 200 }
+      );
+    }
+    return NextResponse.json({ eligible:true, message:"You are eligible for reward games." },{status:200});
+  } catch (error) {
     console.log(error);
-    return NextResponse.json({ error: error.message },{status:500});
+    return NextResponse.json({ error: error },{status:500});
   }
 }
