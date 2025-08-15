@@ -152,7 +152,7 @@ const RewardsPage: React.FC = () => {
               <div className="relative inline-block">
                 {!photoError ? (
                   <img 
-                    src="/images/dr-payal-bajaj.jpg" 
+                    src="public/image/hero/about.jpg" 
                     alt="Dr. Payal Bajaj - IVF Specialist" 
                     className="w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto object-cover shadow-lg border-4 border-white"
                     onError={() => setPhotoError(true)}
