@@ -83,8 +83,8 @@ const RewardsPage: React.FC = () => {
 
     toast.promise(promise, {
       loading: "Verifying your review...",
-      success: (message) => message || "Congratulations! You're eligible for our appreciation rewards!",
-      error: (err) => err.message || "We couldn't find your review. Please ensure you've reviewed us on Google.",
+      success: (message) => message || "Congratulations! You&rsquo;re eligible for our appreciation rewards!",
+      error: (err) => err.message || "We couldn&rsquo;t find your review. Please ensure you&rsquo;ve reviewed us on Google.",
     });
     return true;
   };
@@ -175,7 +175,7 @@ const RewardsPage: React.FC = () => {
                 
                 <div className="mt-6 text-center">
                   <p className="text-xs text-gray-500 leading-relaxed">
-                    Haven't reviewed us yet? 
+                    Haven&rsquo;t reviewed us yet? 
                     <a 
                       href="https://www.google.com/search?q=Dr+Payal+Bajaj+reviews" 
                       target="_blank" 
@@ -200,7 +200,7 @@ const RewardsPage: React.FC = () => {
                   Congratulations!
                 </h2>
                 <p className="text-green-50 text-sm">
-                  You're eligible for our appreciation rewards
+                  You&rsquo;re eligible for our appreciation rewards
                 </p>
               </div>
               
