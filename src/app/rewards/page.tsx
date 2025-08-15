@@ -64,6 +64,8 @@ import toast, { Toaster } from 'react-hot-toast';
 const RewardsPage: React.FC = () => {
   const [userData, setUserData] = useState({ name: '', email: '', phone: '' });
   const [canPlay, setCanPlay] = useState(false);
+  const [logoError, setLogoError] = useState(false);
+  const [photoError, setPhotoError] = useState(false);
 
   const checkUserReviews = async (formData: { name: string; email: string; phone: string }) => {
     setUserData(formData);
@@ -149,7 +151,7 @@ const RewardsPage: React.FC = () => {
             <div className="mb-6">
               <div className="relative inline-block">
                 <img 
-                  src="/hero/about.jpg" 
+                  src="/images/dr-payal-bajaj.jpg" 
                   alt="Dr. Payal Bajaj - IVF Specialist" 
                   className="w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto object-cover shadow-lg border-4 border-white"
                   onError={(e) => {
@@ -182,7 +184,7 @@ const RewardsPage: React.FC = () => {
                 </div>
                 <div className="hidden sm:block w-px h-12 bg-gray-200"></div>
                 <div className="text-center">
-                  <div className="text-3xl sm:text-4xl font-bold text-purple-500 mb-1">23+</div>
+                  <div className="text-3xl sm:text-4xl font-bold text-purple-500 mb-1">15+</div>
                   <div className="text-sm text-gray-600 font-medium">Years Experience</div>
                 </div>
                 <div className="hidden sm:block w-px h-12 bg-gray-200"></div>
@@ -195,7 +197,7 @@ const RewardsPage: React.FC = () => {
             
             <p className="text-gray-500 text-base leading-relaxed">
               As a token of our gratitude for sharing your experience through a Google review, 
-              we are excited to offer you exclusive rewards. Your feedback helps other families 
+              we're excited to offer you exclusive rewards. Your feedback helps other families 
               find hope and begin their own journey to parenthood.
             </p>
           </div>
@@ -221,7 +223,7 @@ const RewardsPage: React.FC = () => {
                   <p className="text-xs text-gray-500 leading-relaxed">
                     Haven&rsquo;t reviewed us yet? 
                     <a 
-                      href="https://www.google.com/search?sca_esv=0efe9abe5facc01b&sxsrf=AE3TifNnAD0zk5eeSF6lH3Z_mQLe7jsFdA:1755218737517&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E9YT7asJZxvuzI47dOOx2lQj1jAXT-G8uCfrAFEV4Mkrkgp3NuUo_keRA2HGnQATr-1nyNk3PsikxqTEDgl9A0X0_9tbOQD_Y3pagaDPxRTP1jKebEzfbBycTi12GbCUNy0nm7JJ1z0ybkq_vCN6XfxA7NL3T3r_OvQDkHiNoCI-NrUt9ZkoKDS95si3R_bCx3BC_QRPVepql958P9xDZpzoiUxv&q=Dr+Payal+Bajaj+-+Infertility+%26+IVF+Specialist,+IVF+Consultant+in+Delhi,+Obstetrics+%26+Gynaecology+Reviews&sa=X&ved=2ahUKEwihiOmqy4uPAxXl2TgGHdQ6J8IQ0bkNegQIMxAE" 
+                      href="https://www.google.com/search?q=Dr+Payal+Bajaj+reviews" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-purple-600 hover:text-purple-700 font-medium ml-1 underline"
