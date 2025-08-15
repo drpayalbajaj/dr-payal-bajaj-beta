@@ -150,21 +150,20 @@ const RewardsPage: React.FC = () => {
             {/* Dr. Payal Bajaj Photo */}
             <div className="mb-6">
               <div className="relative inline-block">
-                <img 
-                  src="/images/dr-payal-bajaj.jpg" 
-                  alt="Dr. Payal Bajaj - IVF Specialist" 
-                  className="w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto object-cover shadow-lg border-4 border-white"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextElementSibling.style.display = 'flex';
-                  }}
-                />
-                {/* Fallback if photo doesn't load */}
-                <div className="hidden w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto bg-gradient-to-r from-purple-600 to-purple-800 items-center justify-center shadow-lg border-4 border-white">
-                  <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
+                {!photoError ? (
+                  <img 
+                    src="/images/dr-payal-bajaj.jpg" 
+                    alt="Dr. Payal Bajaj - IVF Specialist" 
+                    className="w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto object-cover shadow-lg border-4 border-white"
+                    onError={() => setPhotoError(true)}
+                  />
+                ) : (
+                  <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto bg-gradient-to-r from-purple-600 to-purple-800 flex items-center justify-center shadow-lg border-4 border-white">
+                    <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  </div>
+                )}
                 {/* Professional badge */}
                 <div className="absolute -bottom-2 -right-2 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-medium shadow-lg">
                   IVF Expert
@@ -184,7 +183,7 @@ const RewardsPage: React.FC = () => {
                 </div>
                 <div className="hidden sm:block w-px h-12 bg-gray-200"></div>
                 <div className="text-center">
-                  <div className="text-3xl sm:text-4xl font-bold text-purple-500 mb-1">15+</div>
+                  <div className="text-3xl sm:text-4xl font-bold text-purple-500 mb-1">23+</div>
                   <div className="text-sm text-gray-600 font-medium">Years Experience</div>
                 </div>
                 <div className="hidden sm:block w-px h-12 bg-gray-200"></div>
@@ -197,7 +196,7 @@ const RewardsPage: React.FC = () => {
             
             <p className="text-gray-500 text-base leading-relaxed">
               As a token of our gratitude for sharing your experience through a Google review, 
-              we're excited to offer you exclusive rewards. Your feedback helps other families 
+              we are excited to offer you exclusive rewards. Your feedback helps other families 
               find hope and begin their own journey to parenthood.
             </p>
           </div>
