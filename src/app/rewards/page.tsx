@@ -64,7 +64,6 @@ import toast, { Toaster } from 'react-hot-toast';
 const RewardsPage: React.FC = () => {
   const [userData, setUserData] = useState({ name: '', email: '', phone: '' });
   const [canPlay, setCanPlay] = useState(false);
-  const [photoError, setPhotoError] = useState(false);
 
   const checkUserReviews = async (formData: { name: string; email: string; phone: string }) => {
     setUserData(formData);
@@ -91,7 +90,7 @@ const RewardsPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-purple-100 py-6 sm:py-12">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-rose-50 py-6 sm:py-12">
       <Toaster 
         position="top-center" 
         reverseOrder={false}
@@ -100,7 +99,7 @@ const RewardsPage: React.FC = () => {
           style: {
             background: '#ffffff',
             color: '#1f2937',
-            boxShadow: '0 10px 25px -5px rgba(147, 51, 234, 0.1), 0 10px 10px -5px rgba(147, 51, 234, 0.04)',
+            boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
             border: '1px solid #e5e7eb',
             borderRadius: '12px',
             padding: '16px',
@@ -110,9 +109,18 @@ const RewardsPage: React.FC = () => {
         }}
       />
       
-         <h1 className="text-3xl sm:text-5xl font-bold text-gray-800 mb-4 leading-tight">
+      <div className="max-w-xl sm:max-w-6xl mx-auto px-4">
+        {/* Header Section */}
+        <div className="text-center mb-8 sm:mb-12">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-rose-500 rounded-full mb-4 shadow-lg">
+            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+            </svg>
+          </div>
+          
+          <h1 className="text-3xl sm:text-5xl font-bold text-gray-800 mb-4 leading-tight">
             Appreciation Rewards
-            <span className="block text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-800 mt-2">
+            <span className="block text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-rose-600 mt-2">
               For Our Valued Patients
             </span>
           </h1>
@@ -121,44 +129,16 @@ const RewardsPage: React.FC = () => {
             <p className="text-gray-600 text-lg sm:text-xl mb-4 leading-relaxed">
               Thank you for trusting <span className="font-semibold text-gray-800">Dr. Payal Bajaj</span> with your fertility journey
             </p>
-
-            {/* Dr. Payal Bajaj Photo */}
-            <div className="mb-6">
-              <div className="relative inline-block">
-                {!photoError ? (
-                  <img 
-                    src="/image/hero/about.jpg" 
-                    alt="Dr. Payal Bajaj - IVF Specialist" 
-                    className="w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto object-cover shadow-lg border-4 border-white"
-                    onError={() => setPhotoError(true)}
-                  />
-                ) : (
-                  <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto bg-gradient-to-r from-purple-600 to-purple-800 flex items-center justify-center shadow-lg border-4 border-white">
-                    <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                  </div>
-                )}
-                {/* Professional badge */}
-                <div className="absolute -bottom-2 -right-2 bg-purple-600 text-white text-xs px-2 py-1 rounded-full font-medium shadow-lg">
-                  IVF Expert
-                </div>
-              </div>
-              <div className="mt-3">
-                <h3 className="text-lg font-semibold text-gray-800">Dr. Payal Bajaj</h3>
-                <p className="text-sm text-gray-600">Senior IVF Specialist & Fertility Expert</p>
-              </div>
-            </div>
             
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-100 mb-6">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
                 <div className="text-center">
-                  <div className="text-3xl sm:text-4xl font-bold text-purple-600 mb-1">82.5%</div>
+                  <div className="text-3xl sm:text-4xl font-bold text-blue-600 mb-1">82.5%</div>
                   <div className="text-sm text-gray-600 font-medium">Success Rate</div>
                 </div>
                 <div className="hidden sm:block w-px h-12 bg-gray-200"></div>
                 <div className="text-center">
-                  <div className="text-3xl sm:text-4xl font-bold text-purple-500 mb-1">23+</div>
+                  <div className="text-3xl sm:text-4xl font-bold text-rose-600 mb-1">23+</div>
                   <div className="text-sm text-gray-600 font-medium">Years Experience</div>
                 </div>
                 <div className="hidden sm:block w-px h-12 bg-gray-200"></div>
@@ -181,11 +161,11 @@ const RewardsPage: React.FC = () => {
         <div className="max-w-md mx-auto">
           {!canPlay ? (
             <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
-              <div className="bg-gradient-to-r from-purple-600 to-purple-800 p-6 text-center">
+              <div className="bg-gradient-to-r from-blue-500 to-rose-500 p-6 text-center">
                 <h2 className="text-xl sm:text-2xl font-semibold text-white mb-2">
                   Verify Your Review
                 </h2>
-                <p className="text-purple-50 text-sm">
+                <p className="text-blue-50 text-sm">
                   Enter your details to check your reward eligibility
                 </p>
               </div>
@@ -200,7 +180,7 @@ const RewardsPage: React.FC = () => {
                       href="https://www.google.com/search?q=Dr+Payal+Bajaj+reviews" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-purple-600 hover:text-purple-700 font-medium ml-1 underline"
+                      className="text-blue-600 hover:text-blue-700 font-medium ml-1 underline"
                     >
                       Leave a review on Google
                     </a>
