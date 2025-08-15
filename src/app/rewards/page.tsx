@@ -151,7 +151,7 @@ const RewardsPage: React.FC = () => {
             
             <p className="text-gray-500 text-base leading-relaxed">
               As a token of our gratitude for sharing your experience through a Google review, 
-              we're excited to offer you exclusive rewards. Your feedback helps other families 
+              we are excited to offer you exclusive rewards. Your feedback helps other families 
               find hope and begin their own journey to parenthood.
             </p>
           </div>
