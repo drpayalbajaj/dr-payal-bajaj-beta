@@ -64,8 +64,8 @@ import toast, { Toaster } from 'react-hot-toast';
 const RewardsPage: React.FC = () => {
   const [userData, setUserData] = useState({ name: '', email: '', phone: '' });
   const [canPlay, setCanPlay] = useState(false);
-  const [logoError, setLogoError] = useState(false);
-  const [photoError, setPhotoError] = useState(false);
+  // const [logoError, setLogoError] = useState(false);
+  // const [photoError, setPhotoError] = useState(false);
 
   const checkUserReviews = async (formData: { name: string; email: string; phone: string }) => {
     setUserData(formData);
@@ -111,11 +111,11 @@ const RewardsPage: React.FC = () => {
         }}
       />
       
-      <div className="max-w-xl sm:max-w-6xl mx-auto px-4">
+{/*       <div className="max-w-xl sm:max-w-6xl mx-auto px-4"> */}
         {/* Header Section */}
-        <div className="text-center mb-8 sm:mb-12">
+{/*         <div className="text-center mb-8 sm:mb-12"> */}
           {/* Nandi IVF Logo */}
-          <div className="mb-6">
+{/*           <div className="mb-6">
             <img 
               src="/images/nandi-ivf-logo.png" 
               alt="Nandi IVF Logo" 
@@ -124,16 +124,16 @@ const RewardsPage: React.FC = () => {
                 e.target.style.display = 'none';
                 e.target.nextElementSibling.style.display = 'block';
               }}
-            />
+            /> */}
             {/* Fallback if logo doesn't load */}
-            <div className="hidden">
+{/*             <div className="hidden">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-rose-500 rounded-full mb-4 shadow-lg">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                 </svg>
               </div>
             </div>
-          </div>
+          </div> */}
           
           <h1 className="text-3xl sm:text-5xl font-bold text-gray-800 mb-4 leading-tight">
             Appreciation Rewards
@@ -155,7 +155,7 @@ const RewardsPage: React.FC = () => {
                     src="public/image/hero/about.jpg" 
                     alt="Dr. Payal Bajaj - IVF Specialist" 
                     className="w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto object-cover shadow-lg border-4 border-white"
-                    onError={() => setPhotoError(true)}
+{/*                     onError={() => setPhotoError(true)} */}
                   />
                 ) : (
                   <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto bg-gradient-to-r from-purple-600 to-purple-800 flex items-center justify-center shadow-lg border-4 border-white">
