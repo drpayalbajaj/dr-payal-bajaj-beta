@@ -1,4 +1,5 @@
-import About from '@/components/About'
+import Doctor from '@/components/Doctor'
+import About  from '@/components/Aboutus'
 import Blog from '@/components/Blog'
 import Contact from '@/components/Contact'
 import Details from '@/components/Details'
@@ -10,6 +11,7 @@ import IVF from '@/components/IVF'
 import Qualification from '@/components/Qualification'
 import Specialization from '@/components/Specialization'
 import Testimonials from '@/components/Testimonials'
+
 import React from 'react'
 
 export default function page() {
@@ -17,7 +19,8 @@ export default function page() {
     <>
       <Header />
       <Hero />
-      <About />
+      <Doctor/>
+      <About/>
       <Specialization />
       <Qualification />
       <IVF />
