@@ -34,7 +34,7 @@ export default function Specialization() {
             <div className="w-full relative" id="services">
                 <div className="w-full text-center ">
                     <h2 className=" text-4xl font-bold text-primary">
-                        Focused Fields
+                        Services 
                     </h2>
                 </div>
 

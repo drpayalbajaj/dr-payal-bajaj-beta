@@ -36,7 +36,7 @@ function Hero() {
     return (
         <section
             ref={ref}
-            id="about"
+            id="details"
             className="w-full relative overflow-x-hidden"
         >
             <div className="w-full relative grid lg:grid-cols-2 grid-cols-1 md:gap-5 gap-7">

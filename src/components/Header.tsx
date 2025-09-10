@@ -11,10 +11,12 @@ type MenuItem = {
 
 const menuItem: MenuItem[] = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '#about' },
+    { name: 'Doctor', path: '#doctor' },
+    { name: 'About Us', path:'#Aboutus'},
     { name: 'Services', path: '#services' },
     { name: 'Qualification', path: '#qualification' },
     { name: 'Blogs', path: '/blogs' },
+    { name: 'Details', path: '#details' },
     { name: 'Rewards', path: '/rewards' }
 ]
 
