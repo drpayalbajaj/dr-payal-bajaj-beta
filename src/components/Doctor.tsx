@@ -84,7 +84,7 @@ function Hero() {
           animate={isInView ? 'visible' : 'hidden'}
         >
           <Image
-            src="/image/hero/about.jpg"
+            src="/image/hero/WhatsApp Image 2025-09-10 at 22.54.07_d9f2a3af.jpg"
             width={1000}
             height={1000}
             alt="Hero Image"
