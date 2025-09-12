@@ -208,7 +208,6 @@ function Hero() {
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
           >
-            {/* Frosted Glass Card - More transparent background */}
             <div className="bg-white/30 backdrop-blur-2xl rounded-3xl p-8 md:p-12 shadow-2xl border border-white/20">
               <div className="relative">
                 {/* Modern Tab Switcher */}
@@ -222,7 +221,6 @@ function Hero() {
                       width: 'calc(50% - 4.5px)',
                     }}
                   />
-                  {/* Tab text is now bigger (text-lg) */}
                   <button 
                     onClick={() => setActiveTab('vision')}
                     className={`relative z-10 flex-1 py-3 px-4 text-center text-lg font-semibold transition-colors duration-300 rounded-full ${
@@ -263,17 +261,29 @@ function Hero() {
                           <HeartIcon className="w-8 h-8 text-primary" />
                         )}
                       </div>
-                      <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                      <h3 
+                        className="text-3xl md:text-4xl font-bold mb-6"
+                        style={{ color: '#111827' }} // GUARANTEED FIX: Inline style for heading
+                      >
                         {activeTab === 'vision' ? 'Our Vision' : 'Our Mission'}
                       </h3>
-                      <p className="text-lg font-medium text-white [text-shadow:0_2px_4px_rgb(0_0_0_/_0.5)] leading-relaxed max-w-lg mx-auto">
+                      <p 
+                        className="text-lg font-medium leading-relaxed max-w-lg mx-auto"
+                        style={{ color: 'white', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }} // GUARANTEED FIX: Inline style for paragraph
+                      >
                         {activeTab === 'vision' ? (
                           <>
-                            At <strong className="font-bold text-black">Nandi IVF</strong>, we believe everyone deserves their own happy family. We strive to provide world-class assisted reproductive technologies backed by the highest quality standards to families around the globe.
+                            At <strong 
+                              className="font-bold" 
+                              style={{ color: '#a78bfa' }} // GUARANTEED FIX: Inline style for highlight
+                            >Nandi IVF</strong>, we believe everyone deserves their own happy family. We strive to provide world-class assisted reproductive technologies backed by the highest quality standards to families around the globe.
                           </>
                         ) : (
                           <>
-                            Our mission at <strong className="font-bold text-black">Nandi IVF</strong> is to provide empathetic and evidence-based fertility care tailored to meet each patient's specific needs with compassion and excellence.
+                            Our mission at <strong 
+                              className="font-bold" 
+                              style={{ color: '#a78bfa' }} // GUARANTEED FIX: Inline style for highlight
+                            >Nandi IVF</strong> is to provide empathetic and evidence-based fertility care tailored to meet each patient's specific needs with compassion and excellence.
                           </>
                         )}
                       </p>
@@ -420,7 +430,7 @@ function TeamMember({ name, title, imageSrc, altText }: { name: string, title: s
         </div>
         
         {/* Action button */}
-        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-primary w-12 h-12 rounded-full flex justify-center items-center shadow-xl cursor-pointer hover:bg-primary/90 hover:scale-110 transition-all duration-300 group-hover:shadow-2xl">
+        <div className="absolute -bottom-4 left-1/2 -translate-x-1.2 bg-primary w-12 h-12 rounded-full flex justify-center items-center shadow-xl cursor-pointer hover:bg-primary/90 hover:scale-110 transition-all duration-300 group-hover:shadow-2xl">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />

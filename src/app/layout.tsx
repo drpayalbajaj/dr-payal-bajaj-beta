@@ -28,7 +28,7 @@
 //           {/* <Footer /> */}
 //         </SmoothScroll>
 //         <GoogleAnalytics gaId="G-VX2CY2WZR5" />
-//         <Script src="https://static.elfsight.com/platform/platform.js" async />
+//         {<Script src="https://static.elfsight.com/platform/platform.js" async />}
 //       </body>
 //     </html>
 //   );
