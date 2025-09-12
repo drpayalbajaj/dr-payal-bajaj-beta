@@ -3,7 +3,6 @@ import { motion, useInView } from "motion/react"
 import React, { useRef } from 'react'
 import Image from 'next/image'
 
-
 export default function Specialization() {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: '-100px' })
@@ -66,12 +65,12 @@ export default function Specialization() {
                             key={i}
                             variants={itemVariants}
                         >
-                            <div className="relative w-full flex  items-center flex-col h-full">
+                            <div className="relative w-full flex items-center flex-col h-full">
                                 <Image src={img} width={300} height={200} alt={title} />
-                                <h3 className="w-full font-semibold text-primary text-center mt-4 mb-2 text-2xl">
+                                <h3 className="w-full font-semibold text-primary text-center mt-4 mb-2 text-3xl">
                                     {title}
                                 </h3>
-                                <p className="text-steel-gray text-base">{desc}</p>
+                                <p className="text-gray-700 text-lg font-medium text-center leading-relaxed">{desc}</p>
                             </div>
                         </motion.div>
                     ))}

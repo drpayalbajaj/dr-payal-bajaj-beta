@@ -74,8 +74,8 @@ export default function Qualification() {
                     >
                         <div className="w-full flex justify-center items-center flex-col h-full p-5">
                             <Image src={img} width={img.includes('isar.svg') ? 90 : 200} height={img.includes('isar.svg') ? 50 : 100} alt='dr. payal' />
-                            <h3 className='text-3xl text-primary leading-[1.1] mt-5'>{title}</h3>
-                            <p className='mt-4 text-lg leading-[1.1] text-dark '>{desc}</p>
+                            <h3 className='text-3xl font-semibold text-primary text-center mt-5'>{title}</h3>
+                            <p className='text-gray-700 text-lg font-medium text-center leading-relaxed mt-4'>{desc}</p>
                         </div>
                     </motion.div>
                 ))}

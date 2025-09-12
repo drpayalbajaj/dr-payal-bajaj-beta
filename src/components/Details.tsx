@@ -4,8 +4,6 @@ import React, { useRef } from 'react'
 import { motion, useInView } from 'motion/react'
 
 export default function Details() {
-
-
     return (
         <Hero />
     )
@@ -59,15 +57,15 @@ function Hero() {
                     <p className="mt-2 text-2xl leading-[1.1] font-semibold text-[#9f76bf]">
                         Medical Director - Nandi IVF
                     </p>
-                    <span className="mt-5 text-steel-gray text-lg leading-[1.2]">
+                    
+                    {/* The two spans below have been changed to styled p tags */}
+                    <p className="mt-5 text-lg font-medium text-gray-700 leading-relaxed">
                         The Expertise of Dr. Payal Bajaj lies in delivering a successful IVF treatment using the ethical and evidence based approach especially in patients with low ovarian reserve, multiple IVF failures and repeated miscarriages. She is well known for her polite, friendly, approachable and honest personality.
-                    </span>
+                    </p>
 
-
-                    <span className="mt-2 text-steel-gray text-lg leading-[1.2]">
+                    <p className="mt-4 text-lg font-medium text-gray-700 leading-relaxed">
                         She has written many blogs and articles for various health magazines. Her keen interest in creating awareness in the general public regarding reproductive health has led to almost thousands of poeple following her writings on social media. She is also a part of various clubs and organisations that specifically work towards empowering women worldwide.
-                    </span>
-
+                    </p>
 
                 </motion.div>
 
