@@ -30,7 +30,7 @@ export default function Specialization() {
 
     return (
         <section ref={ref}>
-            <div className="w-full relative" id="services">
+            <div className="w-full relative scroll-mt-28" id="services">
                 <div className="w-full text-center ">
                     <h2 className=" text-4xl font-bold text-primary">
                         Services 

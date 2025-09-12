@@ -29,7 +29,7 @@ export default function Qualification() {
     }
 
     return (
-        <section id='qualification' ref={ref}>
+        <section id='qualification' ref={ref} className="scroll-mt-28">
             <h2 className='mt-5 text-center relative text-4xl font-bold text-primary'>
                 Academic Highlights
             </h2>
