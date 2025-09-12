@@ -11,12 +11,12 @@ type MenuItem = {
 
 const menuItem: MenuItem[] = [
     { name: 'Home', path: '/' },
-    { name: 'Doctor', path: '#doctor' },
-    { name: 'About Us', path:'#Aboutus'},
-    { name: 'Services', path: '#services' },
-    { name: 'Qualification', path: '#qualification' },
+    { name: 'Doctor', path: '/#doctor' },
+    { name: 'About Us', path: '/#Aboutus' },
+    { name: 'Services', path: '/#services' },
+    { name: 'Qualification', path: '/#qualification' },
     { name: 'Blogs', path: '/blogs' },
-    { name: 'Details', path: '#details' },
+    { name: 'Details', path: '/#details' },
     { name: 'Rewards', path: '/rewards' }
 ]
 
@@ -103,7 +103,7 @@ export default function Header() {
                             </motion.li>
                         ))}
                         <motion.li variants={itemVariants}>
-                            <Link href='#contact' className="font-merriweather cursor-pointer relative font-medium flex items-center justify-center bg-white text-primary text-maroon-500 px-7 py-[10px] rounded-md text-xl">
+                            <Link href='/#contact' className="font-merriweather cursor-pointer relative font-medium flex items-center justify-center bg-white text-primary text-maroon-500 px-7 py-[10px] rounded-md text-xl">
                                 Contact
                             </Link>
                         </motion.li>

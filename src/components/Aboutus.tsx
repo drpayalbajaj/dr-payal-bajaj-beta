@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React, { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from "motion/react" 
 import { BeakerIcon, HeartIcon, SparklesIcon, ShieldCheckIcon, CurrencyDollarIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
 
 export default function About() {
   return (
@@ -71,216 +72,370 @@ function Hero() {
     },
   }
 
-  return (
-    <section ref={ref} id="Aboutus" className="w-full relative overflow-x-hidden py-12 md:py-20 px-6 md:px-12">
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: 'easeOut' },
+    },
+  }
 
-      {/* ===== TOP HERO SECTION ===== */}
-      <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-12 items-center mb-20">
-        <motion.div
-          className="w-full"
-          variants={leftVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-        >
-          <h2 className="text-4xl font-light text-primary leading-[1.1]">Best IVF Centre In Delhi</h2>
-          <p className="mt-4 text-steel-gray text-lg leading-relaxed max-w-4xl">
-            <a href="http://nandiivf.com/" target="_blank" rel="noreferrer" className="underline hover:text-primary transition">
-              Nandi IVF
-            </a> is a unique IVF centre focused on delivering happiness to aspiring parents through efficient, ethical, and comprehensive health care services that transcend social, geographical, and logistical barriers.
-          </p>
-           <p className="mt-4 text-steel-gray text-lg leading-relaxed max-w-4xl">
-             If you are interested in learning more about our fertility services or would like to schedule a free consultation, please get in touch with us today. We look forward to helping you build the family of your dreams.
-          </p>
-        </motion.div>
-        
-        <motion.div
-          className="w-full flex justify-center lg:justify-end"
-          variants={rightVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-        >
-          <Image src="/image/hero/IMG_0404.JPG" width={500} height={500} alt="Hero Image" className="w-[500px] h-auto object-cover rounded-lg" />
-        </motion.div>
+  return (
+    <section ref={ref} id="Aboutus" className="w-full relative overflow-x-hidden">
+
+      {/* ===== HERO SECTION WITH MODERN GRADIENT ===== */}
+      <div className="">
+        <div className=" ">
+          <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-16 items-center">
+            <motion.div
+              className="w-full space-y-6"
+              variants={leftVariants}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+            >
+              <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-4">
+                <SparklesIcon className="w-4 h-4 mr-2" />
+                Best IVF Centre in Delhi
+              </div>
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
+                Building Dreams,<br />
+                <span className="text-primary">One Family</span> at a Time
+              </h1>
+              <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
+                <a href="http://nandiivf.com/" target="_blank" rel="noreferrer" className="text-primary font-medium hover:underline transition-all duration-200">
+                  Nandi IVF
+                </a> delivers happiness through efficient, ethical, and comprehensive healthcare that transcends all barriers.
+              </p>
+              <p className="text-lg text-gray-500 leading-relaxed max-w-xl">
+                Schedule your free consultation today and take the first step toward building the family of your dreams.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Link
+                  href="#contact"
+                  className="px-8 py-4 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center"
+                >
+                  Book Consultation
+                </Link>
+                <Link 
+                  href="#ivf"
+                  className="px-8 py-4 border-2 border-primary text-primary rounded-xl font-semibold hover:bg-primary hover:text-white transition-all duration-200 text-center"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              className="w-full flex justify-center lg:justify-end"
+              variants={rightVariants}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+            >
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-violet-200/40 rounded-2xl blur-2xl"></div>
+                <Image 
+                  src="/image/hero/IMG_0404.JPG" 
+                  width={550} 
+                  height={550} 
+                  alt="Hero Image" 
+                  className="relative w-full max-w-[550px] h-auto object-cover rounded-2xl shadow-2xl border border-white/20" 
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </div>
 
-      {/* ===== NEW TWO-COLUMN LAYOUT WITH STICKY IMAGE ===== */}
-      <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-12 lg:gap-20">
-        
-        {/* --- LEFT COLUMN (SCROLLING CONTENT) --- */}
-        <div className="w-full">
-          {/* Redesigned Features Section */}
-          <div>
-            <h2 className="text-3xl font-bold leading-tight text-dark text-center mb-8">
-              What sets <span className="text-primary font-bold">Nandi IVF</span> apart
+      {/* ===== FEATURES SECTION ===== */}
+      <div className="bg-white py-20 md:py-28">
+        <div className=" mx-auto ">
+          <motion.div
+            variants={fadeInVariants}
+            initial="hidden"
+            animate={isInView ? 'visible' : 'hidden'}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              What sets <span className="text-primary">Nandi IVF</span> apart
             </h2>
-            <div className="flex space-x-6 overflow-x-auto pb-4 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-x-0 lg:overflow-visible">
-              {featuresData.map((feature, index) => (
-                <div 
-                  key={index} 
-                  className="w-80 flex-shrink-0 lg:w-auto"
-                  onMouseEnter={() => setHoveredCard(index)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                >
-                  <FeatureCard 
-                    icon={feature.icon}
-                    title={feature.title}
-                    description={feature.description}
-                    isHovered={hoveredCard === index}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Experience world-class fertility care with our comprehensive services and cutting-edge technology
+            </p>
+          </motion.div>
 
-          {/* ===== START: REDESIGNED VISION & MISSION SECTION ===== */}
-          <div className="mt-20 relative bg-slate-50 p-8 rounded-xl shadow-inner border border-violet-800">
-            
-            {/* Decorative Quote Icon in the background */}
-            <span className="absolute top-4 left-4 text-8xl text-slate-400 font-serif -z-0">“</span>
-
-            {/* Modern Pill Switcher */}
-            <div className="relative flex w-full max-w-xs mx-auto p-1 rounded-full bg-slate-200 mb-8">
-              {/* Sliding active indicator */}
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
+            {featuresData.map((feature, index) => (
               <motion.div
-                layout
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                className={`absolute inset-0 h-full bg-primary rounded-full`}
-                style={{
-                  left: activeTab === 'vision' ? '2%' : '50%',
-                  right: activeTab === 'mission' ? '2%' : '50%',
-                }}
-              />
-              <button 
-                onClick={() => setActiveTab('vision')}
-                className={`relative z-10 w-1/2 py-2 text-center text-sm font-bold transition-colors duration-300 ${activeTab === 'vision' ? 'text-white' : 'text-slate-600 hover:text-black'}`}
+                key={index}
+                variants={fadeInVariants}
+                initial="hidden"
+                animate={isInView ? 'visible' : 'hidden'}
+                transition={{ delay: index * 0.1 }}
+                onMouseEnter={() => setHoveredCard(index)}
+                onMouseLeave={() => setHoveredCard(null)}
               >
-                Our Vision
-              </button>
-              <button 
-                onClick={() => setActiveTab('mission')}
-                className={`relative z-10 w-1/2 py-2 text-center text-sm font-bold transition-colors duration-300 ${activeTab === 'mission' ? 'text-white' : 'text-slate-600 hover:text-black'}`}
-              >
-                Our Mission
-              </button>
-            </div>
-            
-            {/* Animated Text Area */}
-            <div className="relative">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeTab}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
-                  className="text-center text-steel-gray leading-relaxed"
-                >
-                  {activeTab === 'vision' ? (
-                    <p>
-                      At <strong>Nandi IVF</strong>, we believe everyone deserves their own happy family, which is why we strive to provide some of the best assisted reproductive technologies backed by high-quality standards to families around the globe.
-                    </p>
-                  ) : (
-                    <p>
-                      Our mission at <strong>Nandi IVF</strong> is to provide empathetic and evidence-based fertility care tailored to meet each patient’s specific needs.
-                    </p>
-                  )}
-                </motion.div>
-              </AnimatePresence>
-            </div>
+                <FeatureCard 
+                  icon={feature.icon}
+                  title={feature.title}
+                  description={feature.description}
+                  isHovered={hoveredCard === index}
+                />
+              </motion.div>
+            ))}
           </div>
-          {/* ===== END: REDESIGNED VISION & MISSION SECTION ===== */}
+        </div>
+      </div>
+
+      {/* ===== VISION/MISSION SECTION WITH BLENDED BACKGROUND ===== */}
+      <div className="relative py-20 md:py-28 overflow-hidden rounded-3xl mx-6 md:mx-12 lg:mx-auto max-w-7xl my-10">
+        {/* Background Image and Overlay */}
+        <div className="absolute inset-0">
+          <Image 
+            src="/image/hero/andriyko-podilnyk-uwnw5sxqpN4-unsplash.jpg" 
+            alt="Hands cradling newborn feet, symbolizing care and new life at Nandi IVF"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50"></div>
         </div>
 
-        {/* --- RIGHT COLUMN (STICKY IMAGE) --- */}
-        <div className="w-full h-full hidden lg:block">
-           <div className="sticky top-24 h-full">
-             <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg">
-               <Image 
-                 src="/image/hero/andriyko-podilnyk-uwnw5sxqpN4-unsplash.jpg" 
-                 alt="Hands cradling newborn feet, symbolizing care and new life at Nandi IVF"
-                 layout="fill"
-                 objectFit="cover"
-               />
-             </div>
-           </div>
+        {/* Content Container */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div
+            className="w-full max-w-2xl mx-auto"
+            variants={fadeInVariants}
+            initial="hidden"
+            animate={isInView ? 'visible' : 'hidden'}
+          >
+            {/* Frosted Glass Card - More transparent background */}
+            <div className="bg-white/30 backdrop-blur-2xl rounded-3xl p-8 md:p-12 shadow-2xl border border-white/20">
+              <div className="relative">
+                {/* Modern Tab Switcher */}
+                <div className="relative flex w-full max-w-sm mx-auto p-1.5 rounded-full bg-gray-100/70 mb-10">
+                  <motion.div
+                    layout
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    className="absolute top-1.5 bottom-1.5 bg-white rounded-full shadow-sm"
+                    animate={{
+                      left: activeTab === 'vision' ? '3px' : 'calc(50% + 1.5px)',
+                      width: 'calc(50% - 4.5px)',
+                    }}
+                  />
+                  {/* Tab text is now bigger (text-lg) */}
+                  <button 
+                    onClick={() => setActiveTab('vision')}
+                    className={`relative z-10 flex-1 py-3 px-4 text-center text-lg font-semibold transition-colors duration-300 rounded-full ${
+                      activeTab === 'vision' 
+                        ? 'text-primary' 
+                        : 'text-gray-600 hover:text-gray-800'
+                    }`}
+                  >
+                    Our Vision
+                  </button>
+                  <button 
+                    onClick={() => setActiveTab('mission')}
+                    className={`relative z-10 flex-1 py-3 px-4 text-center text-lg font-semibold transition-colors duration-300 rounded-full ${
+                      activeTab === 'mission' 
+                        ? 'text-primary' 
+                        : 'text-gray-600 hover:text-gray-800'
+                    }`}
+                  >
+                    Our Mission
+                  </button>
+                </div>
+                
+                {/* Content Area */}
+                <div className="relative min-h-[280px]">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeTab}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.3 }}
+                      className="text-center"
+                    >
+                      <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        {activeTab === 'vision' ? (
+                          <SparklesIcon className="w-8 h-8 text-primary" />
+                        ) : (
+                          <HeartIcon className="w-8 h-8 text-primary" />
+                        )}
+                      </div>
+                      <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        {activeTab === 'vision' ? 'Our Vision' : 'Our Mission'}
+                      </h3>
+                      <p className="text-lg font-medium text-white [text-shadow:0_2px_4px_rgb(0_0_0_/_0.5)] leading-relaxed max-w-lg mx-auto">
+                        {activeTab === 'vision' ? (
+                          <>
+                            At <strong className="font-bold text-black">Nandi IVF</strong>, we believe everyone deserves their own happy family. We strive to provide world-class assisted reproductive technologies backed by the highest quality standards to families around the globe.
+                          </>
+                        ) : (
+                          <>
+                            Our mission at <strong className="font-bold text-black">Nandi IVF</strong> is to provide empathetic and evidence-based fertility care tailored to meet each patient's specific needs with compassion and excellence.
+                          </>
+                        )}
+                      </p>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
       
-      {/* ===== RESTORED SECTIONS ===== */}
-      <section className="mt-20 text-center">
-        <h2 className="text-3xl font-bold leading-tight">
-          Our <span className="text-primary">Clinical Team</span>
-        </h2>
-        <p className="mt-2 text-steel-gray max-w-2xl mx-auto">
-          We have a team of specialists with decades of experience committed to providing every patient with the highest quality care.
-        </p>
-        <div className="mt-8 flex flex-wrap justify-center gap-12">
-          <TeamMember name="Dr. Payal Bajaj" title="Medical Director And Senior IVF Consultant" imageSrc="/image/hero/payal.jpg" altText="Dr. Payal Bajaj" />
-          <TeamMember name="Dr VED PRAKASH" title="(MSc., PhD.) Consultant Clinical Embryologist" imageSrc="/image/hero/ved-1.jpg" altText="Dr VED PRAKASH" />
+      {/* ===== CLINICAL TEAM SECTION ===== */}
+      <div className="bg-white py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div
+            variants={fadeInVariants}
+            initial="hidden"
+            animate={isInView ? 'visible' : 'hidden'}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Our <span className="text-primary">Clinical Team</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Meet our specialists with decades of experience, committed to providing every patient with the highest quality care and personalized attention.
+            </p>
+          </motion.div>
+
+          <div className="flex flex-wrap justify-center gap-12 lg:gap-16">
+            <TeamMember 
+              name="Dr. Payal Bajaj" 
+              title="Medical Director And Senior IVF Consultant" 
+              imageSrc="/image/hero/payal.jpg" 
+              altText="Dr. Payal Bajaj" 
+            />
+            <TeamMember 
+              name="Dr VED PRAKASH" 
+              title="(MSc., PhD.) Consultant Clinical Embryologist" 
+              imageSrc="/image/hero/ved-1.jpg" 
+              altText="Dr VED PRAKASH" 
+            />
+          </div>
         </div>
-      </section>
-      <section className="mt-12 text-center pb-12">
-        <h2 className="text-3xl font-bold leading-tight">
-          Meet Our <span className="text-primary">Founder</span>
-        </h2>
-        <p className="mt-2 text-steel-gray max-w-2xl mx-auto">
-          We have a team of specialists with decades of experience committed to providing every patient with the highest quality care.
-        </p>
-        <div className="mt-8 flex justify-center">
-          <TeamMember name="Dr. Sanjay Bajaj" title="(Managing Director & Founder)" imageSrc="/image/hero/nv1-1.jpg" altText="Dr. Sanjay Bajaj" />
+      </div>
+
+      {/* ===== FOUNDER SECTION ===== */}
+      <div className="bg-gradient-to-br from-slate-50 to-violet-50/20 py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div
+            variants={fadeInVariants}
+            initial="hidden"
+            animate={isInView ? 'visible' : 'hidden'}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Meet Our <span className="text-primary">Founder</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Visionary leadership driving innovation in fertility care and making dreams of parenthood a reality for countless families.
+            </p>
+          </motion.div>
+
+          <div className="flex justify-center">
+            <TeamMember 
+              name="Dr. Sanjay Bajaj" 
+              title="Managing Director & Founder" 
+              imageSrc="/image/hero/nv1-1.jpg" 
+              altText="Dr. Sanjay Bajaj" 
+            />
+          </div>
         </div>
-      </section>
+      </div>
     </section>
   )
 }
 
-
-function FeatureCard({ icon, title, description, isHovered }: { icon: React.ReactNode, title: string, description: string, isHovered: boolean }) {
-  
-  // Define styles directly in JavaScript objects for guaranteed override
-  const circleStyle = {
-    backgroundColor: isHovered ? '#875ba6' : '#EBE8EF', // Deep purple or light purple
-    transition: 'background-color 300ms ease-in-out',
-  };
-
-  const iconStyle = {
-    color: isHovered ? 'white' : '#875ba6', // White or deep purple
-    transition: 'color 300ms ease-in-out',
-  };
-
+function FeatureCard({
+  icon,
+  title,
+  description,
+  isHovered,
+}: {
+  icon: React.ReactNode
+  title: string
+  description: string
+  isHovered: boolean
+}) {
   return (
-    <div className="bg-white rounded-lg p-6 h-full flex flex-col shadow-md hover:shadow-2xl hover:-translate-y-1 transition-transform duration-300 ease-in-out cursor-pointer border border-gray-200  hover:border-primary">
-      
-      <div 
-        className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full mb-4"
-        style={circleStyle} 
-      >
+    <div
+      className="group relative bg-white/70 backdrop-blur-xl border border-gray-100 rounded-2xl p-8 h-full flex flex-col justify-start 
+               hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-2 
+               transition-all duration-500 ease-out"
+    >
+      {/* Glow background */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-violet-100/30 opacity-0 group-hover:opacity-100 transition duration-500 blur-xl" />
+
+      {/* Icon container */}
+      <div className="relative w-16 h-16 mb-6 flex items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-violet-100
+                       group-hover:from-primary group-hover:to-violet-400 transition-all duration-500">
         {React.cloneElement(icon as React.ReactElement, {
-          className: "w-6 h-6",
-          style: iconStyle, // Apply style object here
+          className: `w-8 h-8 transition-all duration-500 ${
+            isHovered ? 'text-white scale-110' : 'text-primary'
+          }`,
         })}
       </div>
 
-      <h3 className="text-lg font-bold text-dark mb-2">{title}</h3>
-      <p className="text-steel-gray leading-relaxed">{description}</p>
+      {/* Title */}
+      <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">
+        {title}
+      </h3>
+
+      {/* Divider */}
+      <div className="w-12 h-0.5 bg-gradient-to-r from-primary/70 to-transparent mb-4 group-hover:w-16 transition-all duration-500"></div>
+
+      {/* Description */}
+      <p className="text-lg font-medium text-gray-700 leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
+        {description}
+      </p>
+
+      {/* Bottom Accent Line */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 opacity-0 group-hover:opacity-100 transition-all duration-500 
+                       bg-gradient-to-r from-primary/40 via-violet-300/40 to-transparent rounded-b-2xl" />
     </div>
-  );
+  )
 }
+
 
 function TeamMember({ name, title, imageSrc, altText }: { name: string, title: string, imageSrc: string, altText: string }) {
   return (
-    <div className="flex flex-col items-center max-w-xs">
-      <div className="relative w-[200px] h-[200px] rounded-full border-4 border-primary overflow-hidden">
-        <Image src={imageSrc} alt={altText} fill className="object-cover" />
-        <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-primary w-12 h-12 rounded-full flex justify-center items-center shadow-lg cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-6 h-6">
+    <div className="flex flex-col items-center max-w-sm group">
+      <div className="relative">
+        {/* Gradient background */}
+        <div className="absolute -inset-1 bg-gradient-to-r from-primary to-violet-400 rounded-full opacity-75 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+        
+        {/* Image container */}
+        <div className="relative w-48 h-48 rounded-full border-4 border-white overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-300">
+          <Image 
+            src={imageSrc} 
+            alt={altText} 
+            fill 
+            className="object-cover group-hover:scale-105 transition-transform duration-500" 
+          />
+        </div>
+        
+        {/* Action button */}
+        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-primary w-12 h-12 rounded-full flex justify-center items-center shadow-xl cursor-pointer hover:bg-primary/90 hover:scale-110 transition-all duration-300 group-hover:shadow-2xl">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
           </svg>
         </div>
       </div>
-      <h3 className="mt-4 text-lg font-bold text-dark">{name}</h3>
-      <p className="mt-1 text-sm text-steel-gray text-center">{title}</p>
+      
+      <div className="mt-8 text-center">
+        <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
+          {name}
+        </h3>
+        <p className="text-base text-gray-600 leading-relaxed max-w-xs">
+          {title}
+        </p>
+      </div>
     </div>
   )
 }
