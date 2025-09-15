@@ -144,7 +144,6 @@ export default function RootLayout({
         {/* Third-party script (load lazily) */}
         <Script
           src="https://static.elfsight.com/platform/platform.js"
-          strategy="lazyOnload"
         />
       </body>
     </html>
