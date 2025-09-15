@@ -31,7 +31,7 @@
 //   )
 // }
 import Doctor from '@/components/Doctor'
-import About  from '@/components/Aboutus'
+import About  from '@/components/About'
 import Blog from '@/components/Blog'
 import Contact from '@/components/Contact'
 import Details from '@/components/Details'
