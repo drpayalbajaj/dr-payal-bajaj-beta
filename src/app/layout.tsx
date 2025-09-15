@@ -91,7 +91,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
 import SmoothScroll from "./SmoothScroll";
-import { GoogleAnalytics } from "@next/third-parties/google";
+// import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Dr. Payal Bajaj - Senior IVF Consultant",
