@@ -447,40 +447,40 @@ function FeatureCard({
 }
 
 
-function TeamMember({ name, title, imageSrc, altText }: { name: string, title: string, imageSrc: string, altText: string }) {
-  return (
-    <div className="flex flex-col items-center max-w-sm group">
-      <div className="relative">
-        {/* Gradient background */}
-        <div className="absolute -inset-1 bg-gradient-to-r from-primary to-violet-400 rounded-full opacity-75 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+// function TeamMember({ name, title, imageSrc, altText }: { name: string, title: string, imageSrc: string, altText: string }) {
+//   return (
+//     <div className="flex flex-col items-center max-w-sm group">
+//       <div className="relative">
+//         {/* Gradient background */}
+//         <div className="absolute -inset-1 bg-gradient-to-r from-primary to-violet-400 rounded-full opacity-75 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
         
-        {/* Image container */}
-        <div className="relative w-48 h-48 rounded-full border-4 border-white overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-300">
-          <Image 
-            src={imageSrc} 
-            alt={altText} 
-            fill 
-            className="object-cover group-hover:scale-105 transition-transform duration-500" 
-          />
-        </div>
+//         {/* Image container */}
+//         <div className="relative w-48 h-48 rounded-full border-4 border-white overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-300">
+//           <Image 
+//             src={imageSrc} 
+//             alt={altText} 
+//             fill 
+//             className="object-cover group-hover:scale-105 transition-transform duration-500" 
+//           />
+//         </div>
         
-        {/* Action button */}
-        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-primary w-12 h-12 rounded-full flex justify-center items-center shadow-xl cursor-pointer hover:bg-primary/90 hover:scale-110 transition-all duration-300 group-hover:shadow-2xl">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-          </svg>
-        </div>
-      </div>
+//         {/* Action button */}
+//         <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-primary w-12 h-12 rounded-full flex justify-center items-center shadow-xl cursor-pointer hover:bg-primary/90 hover:scale-110 transition-all duration-300 group-hover:shadow-2xl">
+//           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" className="w-6 h-6">
+//             <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+//             <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+//           </svg>
+//         </div>
+//       </div>
       
-      <div className="mt-8 text-center">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
-          {name}
-        </h3>
-        <p className="text-base text-gray-600 leading-relaxed max-w-xs">
-          {title}
-        </p>
-      </div>
-    </div>
-  )
-}
+//       <div className="mt-8 text-center">
+//         <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
+//           {name}
+//         </h3>
+//         <p className="text-base text-gray-600 leading-relaxed max-w-xs">
+//           {title}
+//         </p>
+//       </div>
+//     </div>
+//   )
+// }
