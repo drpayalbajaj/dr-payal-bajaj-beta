@@ -380,7 +380,7 @@ function Hero() {
                             Our mission at <strong 
                               className="font-bold" 
                               style={{ color: '#a78bfa' }}
-                            >Nandi IVF</strong> is to provide empathetic and evidence-based fertility care tailored to meet each patient's specific needs with compassion and excellence.
+                            >Nandi IVF</strong> is to provide empathetic and evidence-based fertility care tailored to meet each patient specific needs with compassion and excellence.
                           </>
                         )}
                       </p>
