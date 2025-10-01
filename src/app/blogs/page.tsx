@@ -2,7 +2,8 @@
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import React from 'react'
-import { motion } from "motion/react"
+// import { motion} from "motion/react";
+import { motion, Variants } from "framer-motion";
 import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -59,13 +60,13 @@ function AllBlogs() {
     {
       title: "How Age Affects Fertility: What Every Woman Should Know",
       image: "/image/blogs/1.png",
-      content: "Fertility is a topic many women think about only when they begin planning for a family. But what many don't realize is that age plays a major role in a woman's ability to conceive naturally. Whether you are in your late 20s or early 40s, understanding the impact of age on fertility is key to making informed choices.",
+      content: "Fertility is a topic many women think about only when they begin planning for a family. But what many don&apos;t realize is that age plays a major role in a woman&apos;s ability to conceive naturally. Whether you are in your late 20s or early 40s, understanding the impact of age on fertility is key to making informed choices.",
       uri: "blogs/how-age-affects-fertility",
     },
     {
       title: "Top 5 Reasons IVF Fails - And How to Avoid Them",
       image: "/image/blogs/2.png",
-      content: "In-vitro fertilization (IVF) has given hope to millions of couples struggling with infertility. However, it can be deeply disappointing when an IVF cycle doesn't lead to pregnancy. IVF failure doesn't mean the end of your journey—it's often the beginning of a deeper understanding of your fertility.",
+      content: "In-vitro fertilization (IVF) has given hope to millions of couples struggling with infertility. However, it can be deeply disappointing when an IVF cycle doesn&apos;t lead to pregnancy. IVF failure doesn&apos;t mean the end of your journey—it&apos;s often the beginning of a deeper understanding of your fertility.",
       uri: "blogs/ivf-failure-reasons",
     },
     {
@@ -75,20 +76,19 @@ function AllBlogs() {
       uri: "blogs/pcos-and-infertility",
     },
     {
-      title: "When to See a Fertility Specialist: Don't Delay Your Parenthood Journey",
+      title: "When to See a Fertility Specialist: Don&apos;t Delay Your Parenthood Journey",
       image: "/image/blogs/4.png",
-      content: "For many couples, starting a family is one of life's most cherished dreams. But when pregnancy doesn't happen naturally, it can lead to emotional stress and uncertainty. It's important to know that infertility is a medical condition—not a failure or weakness. Today, with modern science and expert care, most causes of infertility can be identified and treated. The key is to recognize the right time to seek help",
+      content: "For many couples, starting a family is one of life&apos;s most cherished dreams. But when pregnancy doesn&apos;t happen naturally, it can lead to emotional stress and uncertainty. It&apos;s important to know that infertility is a medical condition—not a failure or weakness. Today, with modern science and expert care, most causes of infertility can be identified and treated. The key is to recognize the right time to seek help",
       uri: "blogs/when-to-see-fertility-specialist",
     },
     {
-      title: "It’s Not Just Women – Why Men’s Health Matters in Pregnancy",
+      title: "It&apos;s Not Just Women – Why Men&apos;s Health Matters in Pregnancy",
       image: "/image/blogs/5.png",
-      content: "When we talk about pregnancy and miscarriage, most people think of women’s health. We often forget that men’s health, especially the health of their sperm, is just as important. Recent studies show that problems with sperm health can affect pregnancy outcomes, including miscarriage. A healthy pregnancy is not just the responsibility of the woman – it takes both partners working together.",
+      content: "When we talk about pregnancy and miscarriage, most people think of women&apos;s health. We often forget that men&apos;s health, especially the health of their sperm, is just as important. Recent studies show that problems with sperm health can affect pregnancy outcomes, including miscarriage. A healthy pregnancy is not just the responsibility of the woman – it takes both partners working together.",
       uri: "blogs/why-mens-health-matters-in-pregnancy",
     },
   ]
-
-  const containerVariants = {
+  const containerVariants : Variants = {
     hidden: {},
     visible: {
       transition: {
@@ -97,9 +97,9 @@ function AllBlogs() {
     },
   }
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 100 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 100},
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6,ease:"easeOut"} },
   }
 
   return (
