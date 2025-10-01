@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import React, { useRef } from 'react'
-import { motion, useInView } from 'motion/react'
+import { motion, useInView,Variants } from 'framer-motion'
 
 export default function Details() {
     return (
@@ -13,7 +13,7 @@ function Hero() {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: '-100px' })
 
-    const leftVariants = {
+    const leftVariants:Variants = {
         hidden: { opacity: 0, x: -200 },
         visible: {
             opacity: 1,
@@ -22,7 +22,7 @@ function Hero() {
         },
     }
 
-    const rightVariants = {
+    const rightVariants:Variants = {
         hidden: { opacity: 0, x: 200 },
         visible: {
             opacity: 1,

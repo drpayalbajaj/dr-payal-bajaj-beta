@@ -119,7 +119,7 @@ const ScratchCardGame: React.FC<ScratchCardGameProps> = ({
     return { x: clientX - rect.left, y: clientY - rect.top };
   };
 
-  const scratchAt = (x: number, y: number) => {
+  const scratchAt = useCallback((x: number, y: number) => {
     const ctx = canvasRef.current?.getContext("2d");
     if (!ctx) return;
     const radius = Math.max(12, size.w * 0.05);
@@ -129,30 +129,29 @@ const ScratchCardGame: React.FC<ScratchCardGameProps> = ({
     ctx.fill();
     ctx.closePath();
     ctx.globalCompositeOperation = "source-over";
-  };
+  }, [size.w]);
 
-  const saveToGoogleSheet = async () => {
-  try {
-    const res = await fetch("/api/rewards/save-reward", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name,
-        email,
-        phone,
-        coupon: couponCode,
-      }),
-    });
+  const saveToGoogleSheet = useCallback(async () => {
+    try {
+      const res = await fetch("/api/rewards/save-reward", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          coupon: couponCode,
+        }),
+      });
 
-    if (!res.ok) {
-      throw new Error("API request failed");
+      if (!res.ok) {
+        throw new Error("API request failed");
+      }
+    } catch (err) {
+      console.error("Error saving to sheet", err);
+      alert("Something went wrong while claiming your reward. Please reload the page and try again.");
     }
-  } catch (err) {
-    console.error("Error saving to sheet", err);
-    alert("Something went wrong while claiming your reward. Please reload the page and try again.");
-  }
-};
-
+  }, [name, email, phone, couponCode]);
 
   const calcPercent = useCallback(() => {
     const canvas = canvasRef.current;
@@ -172,7 +171,7 @@ const ScratchCardGame: React.FC<ScratchCardGameProps> = ({
         saveToGoogleSheet();
       }
     } catch {}
-  }, [revealThreshold, revealed, couponCode]);
+  }, [revealThreshold, revealed, saveToGoogleSheet]); // ⬅️ FIX 1: saveToGoogleSheet add kiya
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -224,7 +223,7 @@ const ScratchCardGame: React.FC<ScratchCardGameProps> = ({
       window.removeEventListener("mouseup", stop);
       window.removeEventListener("touchend", stop);
     };
-  }, [scratching, calcPercent]);
+  }, [scratching, calcPercent, scratchAt]); // ⬅️ FIX 2: scratchAt add kiya
 
   return (
     <div className="w-full max-w-md mx-auto px-3">

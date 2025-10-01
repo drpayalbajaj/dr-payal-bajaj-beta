@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useRef, useState } from 'react'
-import { motion } from "motion/react"
+import { motion,Variants } from "framer-motion"
 
 type MenuItem = {
     name: string
@@ -20,7 +20,7 @@ const menuItem: MenuItem[] = [
     { name: 'Rewards', path: '/rewards' }
 ]
 
-const containerVariants = {
+const containerVariants:Variants = {
     hidden: {},
     visible: {
         transition: {
@@ -29,7 +29,7 @@ const containerVariants = {
     },
 }
 
-const itemVariants = {
+const itemVariants:Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
 }
