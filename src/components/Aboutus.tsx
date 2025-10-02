@@ -375,34 +375,7 @@ function Hero() {
         </div>
       </div>
 
-      {/* ===== FOUNDER SECTION ===== */}
-      <div className="bg-gradient-to-br from-slate-50 to-violet-50/20 py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
-            variants={fadeInVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Meet Our <span className="text-primary">Founder</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Visionary leadership driving innovation in fertility care and
-              making dreams of parenthood a reality for countless families.
-            </p>
-          </motion.div>
-
-          <div className="flex justify-center">
-            <TeamMember
-              name="Dr. Sanjay Bajaj"
-              title="Managing Director & Founder"
-              imageSrc="/image/hero/nv1-1.jpg"
-              altText="Dr. Sanjay Bajaj"
-            />
-          </div>
-        </div>
-      </div>
+    
     </section>
   );
 }
