@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 
 export default function Hero() {
     return (
@@ -68,7 +68,7 @@ export default function Hero() {
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                     </svg>
-                                    Call Now
+                                    Book now / Text
                                 </span>
                             </Link>
                         </div>
@@ -180,4 +180,4 @@ function SocialLink({ href, icon, label }: { href: string, icon: string, label: 
             <div className="absolute inset-0 bg-gradient-to-br from-primary to-violet-400 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
         </Link>
     );
-}
+};
