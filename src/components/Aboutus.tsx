@@ -29,7 +29,7 @@ function Hero() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   interface Feature {
-     icon: React.ReactElement<SVGProps<SVGSVGElement>>;
+    icon: React.ReactElement<SVGProps<SVGSVGElement>>;
     title: string;
     description: string;
   }
@@ -220,130 +220,129 @@ function Hero() {
       </div>
 
       {/* ===== VISION/MISSION SECTION WITH BLENDED BACKGROUND ===== */}
-      <div className="relative py-20 md:py-28 overflow-hidden rounded-3xl mx-6 md:mx-12 lg:mx-auto max-w-7xl my-10">
-        {/* Background Image and Overlay */}
-        <div className="absolute inset-0">
-          <Image
-            src="/image/hero/andriyko-podilnyk-uwnw5sxqpN4-unsplash.jpg"
-            alt="Hands cradling newborn feet, symbolizing care and new life at Nandi IVF"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/50"></div>
-        </div>
+     
+<div className="relative py-16 md:py-28 overflow-hidden rounded-3xl mx-4 sm:mx-6 md:mx-12 lg:mx-auto max-w-7xl my-10">
+  {/* Background Image and Overlay */}
+  <div className="absolute inset-0">
+    <Image
+      src="/image/hero/andriyko-podilnyk-uwnw5sxqpN4-unsplash.jpg"
+      alt="Hands cradling newborn feet, symbolizing care and new life at Nandi IVF"
+      fill
+      className="object-cover"
+    />
+    <div className="absolute inset-0 bg-black/50"></div>
+  </div>
 
-        {/* Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
-            className="w-full max-w-2xl mx-auto"
-            variants={fadeInVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-          >
-            <div className="bg-white/30 backdrop-blur-2xl rounded-3xl p-8 md:p-12 shadow-2xl border border-white/20">
-              <div className="relative">
-                {/* Modern Tab Switcher */}
-                <div className="relative flex w-full max-w-sm mx-auto p-1.5 rounded-full bg-gray-100/70 mb-10">
-                  <motion.div
-                    layout
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                    className="absolute top-1.5 bottom-1.5 bg-white rounded-full shadow-sm"
-                    animate={{
-                      left:
-                        activeTab === "vision" ? "3px" : "calc(50% + 1.5px)",
-                      width: "calc(50% - 4.5px)",
-                    }}
-                  />
-                  <button
-                    onClick={() => setActiveTab("vision")}
-                    className={`relative z-10 flex-1 py-3 px-4 text-center text-lg font-semibold transition-colors duration-300 rounded-full ${
-                      activeTab === "vision"
-                        ? "text-primary"
-                        : "text-gray-600 hover:text-gray-800"
-                    }`}
-                  >
-                    Our Vision
-                  </button>
-                  <button
-                    onClick={() => setActiveTab("mission")}
-                    className={`relative z-10 flex-1 py-3 px-4 text-center text-lg font-semibold transition-colors duration-300 rounded-full ${
-                      activeTab === "mission"
-                        ? "text-primary"
-                        : "text-gray-600 hover:text-gray-800"
-                    }`}
-                  >
-                    Our Mission
-                  </button>
-                </div>
+  {/* Content Container */}
+  <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 md:px-12">
+    <motion.div
+      className="w-full mx-auto"
+      variants={fadeInVariants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+    >
+      <div className="bg-white/30 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl border border-white/20">
+        <div className="relative">
+          {/* Modern Tab Switcher */}
+          <div className="relative flex w-full max-w-md mx-auto p-1.5 rounded-full bg-gray-100/70 mb-6 sm:mb-10">
+            <motion.div
+              layout
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="absolute top-1.5 bottom-1.5 bg-white rounded-full shadow-sm"
+              animate={{
+                left: activeTab === "vision" ? "3px" : "calc(50% + 1.5px)",
+                width: "calc(50% - 4.5px)",
+              }}
+            />
+            <button
+              onClick={() => setActiveTab("vision")}
+              className={`relative z-10 flex-1 py-2 sm:py-3 px-3 sm:px-4 text-center text-base sm:text-lg font-semibold transition-colors duration-300 rounded-full ${
+                activeTab === "vision"
+                  ? "text-primary"
+                  : "text-gray-600 hover:text-gray-800"
+              }`}
+            >
+              Our Vision
+            </button>
+            <button
+              onClick={() => setActiveTab("mission")}
+              className={`relative z-10 flex-1 py-2 sm:py-3 px-3 sm:px-4 text-center text-base sm:text-lg font-semibold transition-colors duration-300 rounded-full ${
+                activeTab === "mission"
+                  ? "text-primary"
+                  : "text-gray-600 hover:text-gray-800"
+              }`}
+            >
+              Our Mission
+            </button>
+          </div>
 
-                {/* Content Area */}
-                <div className="relative min-h-[280px]">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activeTab}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.3 }}
-                      className="text-center"
-                    >
-                      <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        {activeTab === "vision" ? (
-                          <SparklesIcon className="w-8 h-8 text-primary" />
-                        ) : (
-                          <HeartIcon className="w-8 h-8 text-primary" />
-                        )}
-                      </div>
-                      <h3
-                        className="text-3xl md:text-4xl font-bold mb-6"
-                        style={{ color: "#111827" }}
-                      >
-                        {activeTab === "vision" ? "Our Vision" : "Our Mission"}
-                      </h3>
-                      <p
-                        className="text-lg font-medium leading-relaxed max-w-lg mx-auto"
-                        style={{
-                          color: "white",
-                          textShadow: "0 2px 4px rgba(0,0,0,0.5)",
-                        }}
-                      >
-                        {activeTab === "vision" ? (
-                          <>
-                            At{" "}
-                            <strong
-                              className="font-bold"
-                              style={{ color: "#a78bfa" }}
-                            >
-                              Nandi IVF
-                            </strong>
-                            , we believe everyone deserves their own happy
-                            family. We strive to provide world-class assisted
-                            reproductive technologies backed by the highest
-                            quality standards to families around the globe.
-                          </>
-                        ) : (
-                          <>
-                            Our mission at{" "}
-                            <strong
-                              className="font-bold"
-                              style={{ color: "#a78bfa" }}
-                            >
-                              Nandi IVF
-                            </strong>{" "}
-                            is to provide empathetic and evidence-based
-                            fertility care tailored to meet each patient
-                            specific needs with compassion and excellence.
-                          </>
-                        )}
-                      </p>
-                    </motion.div>
-                  </AnimatePresence>
+          {/* Content Area */}
+          <div className="relative min-h-[260px] sm:min-h-[280px] text-center">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                  {activeTab === "vision" ? (
+                    <SparklesIcon className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
+                  ) : (
+                    <HeartIcon className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
+                  )}
                 </div>
-              </div>
-            </div>
-          </motion.div>
+                <h3
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
+                  style={{ color: "#111827" }}
+                >
+                  {activeTab === "vision" ? "Our Vision" : "Our Mission"}
+                </h3>
+                <p
+                  className="text-sm sm:text-base md:text-lg font-medium leading-relaxed max-w-full sm:max-w-lg mx-auto px-2 sm:px-0"
+                  style={{
+                    color: "white",
+                    textShadow: "0 2px 4px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  {activeTab === "vision" ? (
+                    <>
+                      At{" "}
+                      <strong
+                        className="font-bold"
+                        style={{ color: "#a78bfa" }}
+                      >
+                        Nandi IVF
+                      </strong>
+                      , we believe everyone deserves their own happy family.
+                      We strive to provide world-class assisted reproductive
+                      technologies backed by the highest quality standards to
+                      families around the globe.
+                    </>
+                  ) : (
+                    <>
+                      Our mission at{" "}
+                      <strong
+                        className="font-bold"
+                        style={{ color: "#a78bfa" }}
+                      >
+                        Nandi IVF
+                      </strong>{" "}
+                      is to provide empathetic and evidence-based fertility
+                      care tailored to meet each patient specific needs with
+                      compassion and excellence.
+                    </>
+                  )}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
+    </motion.div>
+  </div>
+</div>
 
       {/* ===== CLINICAL TEAM SECTION ===== */}
       <div className="bg-white py-20 md:py-28">
@@ -375,7 +374,7 @@ function Hero() {
         </div>
       </div>
 
-    
+      
     </section>
   );
 }
