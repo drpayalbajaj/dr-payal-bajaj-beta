@@ -84,7 +84,7 @@
 //     )
 // }
 'use client'
-import { motion, useInView } from "motion/react"
+import { motion, useInView,Variants } from "framer-motion"
 import React, { useRef } from 'react'
 import Image from 'next/image'
 
@@ -92,7 +92,7 @@ export default function Qualification() {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: '-100px' })
 
-    const containerVariants = {
+    const containerVariants:Variants = {
         hidden: {},
         visible: {
             transition: {
@@ -101,7 +101,7 @@ export default function Qualification() {
         },
     }
 
-    const itemVariants = {
+    const itemVariants:Variants = {
         hidden: { opacity: 0, y: 50 },
         visible: {
             opacity: 1,
