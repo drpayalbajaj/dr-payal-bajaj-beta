@@ -11,9 +11,11 @@ import IVF from '@/components/IVF'
 import Qualification from '@/components/Qualification'
 import Specialization from '@/components/Specialization'
 import Testimonials from '@/components/Testimonials'
+// import Page from '@/landing/page'
 
 
 import React from 'react'
+
 
 export default function page() {
   return (
@@ -31,6 +33,8 @@ export default function page() {
       <Blog />
       <Testimonials />
       <Footer />
+      {/* <Page/> */}
+     
     </>
   )
 }
