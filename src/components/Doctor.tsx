@@ -255,7 +255,7 @@ function Hero() {
                 <div className="relative bg-white rounded-3xl p-6 shadow-2xl border border-white/20">
                   <div className="relative rounded-2xl overflow-hidden">
                     <Image
-                      src="/image/hero/whatsApp image.jpeg"
+                      src="/image/hero/WhatsApp image1.jpeg"
                       width={500}
                       height={600}
                       alt="Dr. Payal Bajaj - Medical Director And Senior IVF Consultant"
