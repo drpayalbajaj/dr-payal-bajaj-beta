@@ -17,6 +17,7 @@
             "dotenv": "^16.5.0",
             "framer-motion": "^12.23.22",
             "googleapis": "^155.0.1",
+            "lucide-react": "^0.544.0",
             "motion": "^12.12.1",
             "next": "15.3.2",
             "react": "^19.0.0",

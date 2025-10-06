@@ -367,7 +367,7 @@ function Hero() {
             <TeamMember
               name="Dr. Payal Bajaj"
               title="Medical Director And Senior IVF Consultant"
-              imageSrc="/image/hero/payal.jpg"
+              imageSrc="/image/hero/WhatsApp image1.jpeg"
               altText="Dr. Payal Bajaj"
             />
           </div>
