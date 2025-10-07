@@ -19,10 +19,10 @@ const Contactus: React.FC = () => {
           </div>
           <h3 className="font-semibold">Call Us</h3>
           <a
-            href="tel:+91-9999999999"
+            href="tel:+91-9911631639"
             className="text-white hover:underline text-sm"
           >
-            +91  9911631639
+            +91 9911631639
           </a>
         </div>
 
@@ -33,10 +33,10 @@ const Contactus: React.FC = () => {
           </div>
           <h3 className="font-semibold">Email Us</h3>
           <a
-            href="mailto:info@drpriyabajaj.com"
+            href="mailto:drpayalbajaj@gmail.com"
             className="text-white hover:underline text-sm break-all"
           >
-            info@drpriyabajaj.com
+            drpayalbajaj@gmail.com
           </a>
         </div>
 

@@ -1,17 +1,7 @@
-
 "use client";
 
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-
-const countryCodes = [
-  { code: "+1", country: "USA/Canada" },
-  { code: "+44", country: "UK" },
-  { code: "+91", country: "India" },
-  { code: "+61", country: "Australia" },
-  { code: "+81", country: "Japan" },
-  { code: "+49", country: "Germany" },
-];
 
 interface ConsultationPopupProps {
   onClose?: () => void;
@@ -20,26 +10,33 @@ interface ConsultationPopupProps {
 const ConsultationPopup: React.FC<ConsultationPopupProps> = ({ onClose }) => {
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
-  const [name, setName] = useState("");
-  const [contact, setContact] = useState("");
-  const [countryCode, setCountryCode] = useState("+91");
-  const [captchaChecked, setCaptchaChecked] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    treatment: "",
+  });
 
   useEffect(() => {
     setShowModal(true);
+    window.history.pushState({}, "", "/ivf-treatment");
   }, []);
 
   const handleClose = () => {
     setShowModal(false);
+      window.history.pushState({}, "", "/landing");
     if (onClose) onClose();
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!name || !contact || !captchaChecked) {
-      alert("Please fill all fields and verify captcha!");
-      return;
-    }
+    console.log("Submit consultation:", form);
+    setForm({ name: "", phone: "", email: "", treatment: "" });
     router.push("/thank-you");
     if (onClose) onClose();
   };
@@ -49,7 +46,10 @@ const ConsultationPopup: React.FC<ConsultationPopupProps> = ({ onClose }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
       <div className="bg-white w-11/12 max-w-md p-6 rounded-2xl shadow-lg relative">
-        <button onClick={handleClose} className="absolute top-2 right-2 text-gray-600 hover:text-black text-xl font-bold">
+        <button
+          onClick={handleClose}
+          className="absolute top-2 right-2 text-gray-600 hover:text-black text-xl font-bold"
+        >
           ✕
         </button>
 
@@ -57,31 +57,52 @@ const ConsultationPopup: React.FC<ConsultationPopupProps> = ({ onClose }) => {
         <hr className="my-4 border-t border-gray-300" />
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium">Name</label>
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)}
-              className="w-full border rounded-lg px-3 py-2 mt-1 focus:ring-2 focus:ring-blue-500 focus:outline-none" required />
-          </div>
+          <input
+            name="name"
+            value={form.name}
+            onChange={handleChange}
+            type="text"
+            placeholder="Full Name *"
+            className="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-pink-400 focus:outline-none"
+            required
+          />
+          <input
+            name="phone"
+            value={form.phone}
+            onChange={handleChange}
+            type="tel"
+            placeholder="Phone Number *"
+            className="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-pink-400 focus:outline-none"
+            required
+          />
+          <input
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+            type="email"
+            placeholder="Email Address *"
+            className="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-pink-400 focus:outline-none"
+            required
+          />
+          <select
+            name="treatment"
+            value={form.treatment}
+            onChange={handleChange}
+            className="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-pink-400 focus:outline-none"
+            required
+          >
+            <option value="">Select Treatment of Interest</option>
+            <option value="IVF">IVF</option>
+            <option value="IUI">IUI</option>
+            <option value="Fertility Counseling">Fertility Counseling</option>
+            <option value="Other">Other</option>
+          </select>
 
-          <div>
-            <label className="block text-sm font-medium">Contact</label>
-            <div className="flex flex-col sm:flex-row gap-2 mt-1">
-              <select value={countryCode} onChange={(e) => setCountryCode(e.target.value)}
-                className="border rounded-lg px-2 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none sm:w-1/3">
-                {countryCodes.map((c) => (<option key={c.code} value={c.code}>{c.code} ({c.country})</option>))}
-              </select>
-              <input type="number" value={contact} onChange={(e) => setContact(e.target.value)}
-                className="border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none flex-1" required />
-            </div>
-          </div>
-
-          <div className="flex items-center space-x-2">
-            <input type="checkbox" id="captcha" checked={captchaChecked} onChange={(e) => setCaptchaChecked(e.target.checked)} className="h-4 w-4" />
-            <label htmlFor="captcha" className="text-sm">I am not a robot</label>
-          </div>
-
-          <button type="submit" className="w-full bg-pink-600 hover:bg-pink-700 text-white py-2 rounded-lg font-semibold transition">
-            Book Appointment
+          <button
+            type="submit"
+            className="w-full bg-pink-600 hover:bg-pink-700 text-white py-3 rounded-lg font-semibold transition"
+          >
+            Book Free Consultation
           </button>
         </form>
       </div>
