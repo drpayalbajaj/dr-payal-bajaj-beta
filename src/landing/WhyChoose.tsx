@@ -1,13 +1,12 @@
 "use client";
 import React, { useMemo, useState } from "react";
 import { CheckCircle } from "lucide-react";
-// import { useRouter } from "next/navigation";
 import ConsultationPopup from "./ConsultationPopup";
 const ITEMS_PER_PAGE = 3;
 
 const WhyChoose: React.FC = () => {
     const [showModal, setShowModal] = useState(false);
-  // const router=useRouter();
+
   const reasons = [
     {
       title: "23+ Years of IVF Excellence",
@@ -63,7 +62,15 @@ const WhyChoose: React.FC = () => {
   const handleCTA = () => {
   setShowModal(true); 
   window.history.pushState({}, "", "/ivf-treatment");
+  
 };
+  const handleClose = () => {
+  setShowModal(false);
+  window.history.pushState({}, "", "/landing"); 
+
+};
+
+
   const paginated = useMemo(() => {
     const start = (currentPage - 1) * ITEMS_PER_PAGE;
     const end = start + ITEMS_PER_PAGE;
@@ -161,7 +168,7 @@ const WhyChoose: React.FC = () => {
             Book an Appointment
           </button>
         </div>
-            {showModal && <ConsultationPopup onClose={() => setShowModal(false)} />}
+            {showModal && <ConsultationPopup onClose={handleClose} />}
       </section>
     </div>
   );

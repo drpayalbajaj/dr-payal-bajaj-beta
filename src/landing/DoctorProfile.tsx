@@ -1,14 +1,24 @@
-// app/components/DoctorProfile.tsx
+
 "use client";
 import React,{useState} from "react";
 import ConsultationPopup from "./ConsultationPopup";
 
+
+
 const DoctorProfile: React.FC = () => {
    const [showModal, setShowModal] = useState(false);
+
     const handleCTA = () => {
     setShowModal(true); 
     window.history.pushState({}, "", "/ivf-treatment");
+ 
   };
+
+  const handleClose = () => {
+  setShowModal(false);
+  window.history.pushState({}, "", "/landing"); 
+  // if (onClose) onClose();
+};
   return (
     <div className="px-6 md:px-20 py-10">
       {/* Title */}
@@ -108,7 +118,7 @@ const DoctorProfile: React.FC = () => {
           Book an Appointment
         </button>
       </div>
-        {showModal && <ConsultationPopup onClose={() => setShowModal(false)} />}
+        {showModal && <ConsultationPopup onClose={handleClose } />}
     </div>
   );
 };
