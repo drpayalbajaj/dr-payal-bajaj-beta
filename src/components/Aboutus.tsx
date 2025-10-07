@@ -166,7 +166,7 @@ function Hero() {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-violet-200/40 rounded-2xl blur-2xl"></div>
                 <Image
-                  src="/image/hero/IMG_0404.JPG"
+                  src="/image/hero/TeamImage.jpeg"
                   width={550}
                   height={550}
                   alt="Hero Image"
@@ -367,14 +367,12 @@ function Hero() {
             <TeamMember
               name="Dr. Payal Bajaj"
               title="Medical Director And Senior IVF Consultant"
-              imageSrc="/image/hero/WhatsApp image1.jpeg"
+              imageSrc="/image/hero/ClinicalTeam.JPG"
               altText="Dr. Payal Bajaj"
             />
           </div>
         </div>
-      </div>
-
-      
+      </div>  
     </section>
   );
 }

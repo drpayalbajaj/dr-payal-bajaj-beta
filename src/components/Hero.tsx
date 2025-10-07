@@ -138,7 +138,7 @@ export default function Hero() {
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-violet-200/40 rounded-2xl blur-2xl"></div>
               <div className="relative bg-white rounded-2xl p-4 shadow-2xl border border-white/20">
                 <Image
-                  src="/image/hero/WhatsApp image1.jpeg"
+                  src="/image/hero/HeaderImage.jpeg"
                   width={400}
                   height={500}
                   alt="Expert fertility care and IVF treatment"
