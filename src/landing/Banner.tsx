@@ -3,7 +3,7 @@ import React from "react";
 
 const Banner: React.FC = () => {
   const stats = [
-    { value: "20+", label: "Years Experience" },
+    { value: "23+", label: "Years Experience" },
     { value: "1000+", label: "Successful Pregnancies" },
     { value: "95%", label: "Patient Satisfaction" },
     { value: "24/7", label: "Support Available" },
