@@ -11,6 +11,7 @@ import Footers from './Footers'
 import React from 'react'
 
 
+
 export default function page() {
   return (
     <>
@@ -24,6 +25,7 @@ export default function page() {
       <Faq/>
       <Contactus/>
       <Footers/>
+     
     </>
   )
 }

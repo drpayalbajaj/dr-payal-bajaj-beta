@@ -1,7 +1,10 @@
+"use client";
 import React from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 
+
 const Contactus: React.FC = () => {
+  
   return (
     <section className="bg-pink-600 text-white py-12 px-6 text-center">
       <h2 className="text-2xl md:text-3xl font-semibold mb-2">
@@ -19,10 +22,10 @@ const Contactus: React.FC = () => {
           </div>
           <h3 className="font-semibold">Call Us</h3>
           <a
-            href="tel:+91-9999999999"
+            href="tel:+91-9911631639"
             className="text-white hover:underline text-sm"
           >
-            +91  9911631639
+            +91 9911631639
           </a>
         </div>
 
@@ -33,10 +36,10 @@ const Contactus: React.FC = () => {
           </div>
           <h3 className="font-semibold">Email Us</h3>
           <a
-            href="mailto:info@drpriyabajaj.com"
+            href="mailto:drpayalbajaj@gmail.com"
             className="text-white hover:underline text-sm break-all"
           >
-            info@drpriyabajaj.com
+            drpayalbajaj@gmail.com
           </a>
         </div>
 
@@ -63,6 +66,7 @@ const Contactus: React.FC = () => {
       >
         Book Free Consultation
       </a>
+  
     </section>
   );
 };
