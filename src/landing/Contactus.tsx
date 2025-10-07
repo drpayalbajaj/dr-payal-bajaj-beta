@@ -1,7 +1,10 @@
+"use client";
 import React from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
 
+
 const Contactus: React.FC = () => {
+  
   return (
     <section className="bg-pink-600 text-white py-12 px-6 text-center">
       <h2 className="text-2xl md:text-3xl font-semibold mb-2">
@@ -63,6 +66,7 @@ const Contactus: React.FC = () => {
       >
         Book Free Consultation
       </a>
+  
     </section>
   );
 };
