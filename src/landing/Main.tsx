@@ -16,20 +16,18 @@ export default function Banner() {
   useEffect(() => {
     setShowPopup(true);
   }, []);
+function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
+  const { name, value } = e.target;
+  setForm((prev) => ({ ...prev, [name]: value }));
+}
 
-  // Form input change handler
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-  }
+function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
+  console.log("Submit consultation:", form);
+  alert("Thank you! We received your request.");
+  setForm({ name: "", phone: "", email: "", treatment: "" });
+}
 
-  // Form submit handler
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log("Submit consultation:", form);
-    alert("Thank you! We received your request.");
-    setForm({ name: "", phone: "", email: "", treatment: "" });
-  }
 
   return (
     <section className="flex flex-col lg:flex-row justify-between items-center flex-1 container mx-auto px-6 py-12 gap-10">
