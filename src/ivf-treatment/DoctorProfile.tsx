@@ -16,7 +16,7 @@ const DoctorProfile: React.FC = () => {
 
   const handleClose = () => {
   setShowModal(false);
-  window.history.pushState({}, "", "/landing"); 
+  window.history.pushState({}, "", "/ivf-treatment"); 
   // if (onClose) onClose();
 };
   return (

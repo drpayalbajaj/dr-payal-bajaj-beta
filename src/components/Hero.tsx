@@ -52,7 +52,7 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
-                href="/landing"
+                href="/ivf-treatment"
                 className="group px-8 py-4 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center"
               >
                 <span className="flex items-center justify-center gap-2">

@@ -24,7 +24,7 @@ const ConsultationPopup: React.FC<ConsultationPopupProps> = ({ onClose }) => {
 
   const handleClose = () => {
     setShowModal(false);
-      window.history.pushState({}, "", "/landing");
+      window.history.pushState({}, "", "/ivf-treatment");
     if (onClose) onClose();
   };
 
