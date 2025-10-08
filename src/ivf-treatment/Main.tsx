@@ -1,13 +1,13 @@
 // app/components/Main.tsx
 "use client";
 
-import { useState, useEffect } from "react";
-import ConsultationPopup from "./ConsultationPopup";
+import { useState } from "react";
+
 import { useRouter } from "next/navigation";
 
 export default function Banner() {
   const router = useRouter();
-  const [showPopup, setShowPopup] = useState(false);
+ 
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -15,9 +15,7 @@ export default function Banner() {
     treatment: "",
   });
 
-  useEffect(() => {
-    setShowPopup(true);
-  }, []);
+ 
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
     const { name, value } = e.target;
@@ -64,12 +62,12 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-4">
-          <button
-            onClick={() => setShowPopup(true)}
+          <a
+            href="/ivf-treatment"
             className="bg-pink-600 text-white px-5 py-3 rounded-lg font-medium hover:bg-pink-700 transition text-center"
           >
             Book Free Consultation
-          </button>
+          </a>
         </div>
       </div>
 
@@ -133,7 +131,7 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
       </div>
 
       {/* Consultation Popup */}
-      {showPopup && <ConsultationPopup onClose={() => setShowPopup(false)} />}
+   
     </section>
   );
 }

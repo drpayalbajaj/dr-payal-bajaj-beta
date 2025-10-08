@@ -87,36 +87,41 @@
 //     </html>
 //   );
 // }
-import type { Metadata } from "next";
+
+
+// src/app/layout.tsx
 import "./globals.css";
 import Script from "next/script";
 import SmoothScroll from "./SmoothScroll";
-// import { GoogleAnalytics } from "@next/third-parties/google";
+import React, { ReactNode } from "react";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Dr. Payal Bajaj - Senior IVF Consultant",
   description: "Dr. Payal Bajaj - Senior IVF Consultant",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <head>
+        {/* Favicon */}
         <link
           rel="shortcut icon"
           href="/image/icons/logo.png"
           type="image/x-icon"
         />
+
+        {/* HugeIcons Stylesheet */}
         <link
           rel="stylesheet"
           href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css"
         />
 
-        {/* Google Tag Manager - place this as high in <head> as possible */}
+        {/* Google Tag Manager - Head */}
         <Script id="gtm-head" strategy="beforeInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -124,11 +129,10 @@ export default function RootLayout({
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-TNKNSVKR');`}
         </Script>
-        {/* End Google Tag Manager */}
       </head>
 
       <body>
-        {/* Google Tag Manager (noscript) - immediately after opening <body> */}
+        {/* Google Tag Manager - Noscript */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-TNKNSVKR"
@@ -137,15 +141,15 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        {/* End Google Tag Manager (noscript) */}
 
+        {/* Smooth Scroll Wrapper */}
         <SmoothScroll>{children}</SmoothScroll>
 
-        {/* Third-party script (load lazily) */}
-        <Script
-          src="https://static.elfsight.com/platform/platform.js"
-        />
+        {/* Third-party script */}
+        <Script src="https://static.elfsight.com/platform/platform.js" />
       </body>
     </html>
   );
 }
+
+

@@ -1,24 +1,14 @@
 
 "use client";
-import React,{useState} from "react";
-import ConsultationPopup from "./ConsultationPopup";
+import React from "react";
+
 
 
 
 const DoctorProfile: React.FC = () => {
-   const [showModal, setShowModal] = useState(false);
-
-    const handleCTA = () => {
-    setShowModal(true); 
-    window.history.pushState({}, "", "/ivf-treatment");
  
-  };
 
-  const handleClose = () => {
-  setShowModal(false);
-  window.history.pushState({}, "", "/ivf-treatment"); 
-  // if (onClose) onClose();
-};
+  
   return (
     <div className="px-6 md:px-20 py-10">
       {/* Title */}
@@ -111,14 +101,14 @@ const DoctorProfile: React.FC = () => {
 
       {/* CTA BUTTON */}
       <div className="text-center mt-12">
-        <button
-            onClick={ handleCTA}
+        <a
+         href="/ivf-treatment"
           className="inline-block bg-pink-500 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:bg-pink-600 transition-all duration-300 hover:-translate-y-0.5"
         >
           Book an Appointment
-        </button>
+        </a>
       </div>
-        {showModal && <ConsultationPopup onClose={handleClose } />}
+       
     </div>
   );
 };
