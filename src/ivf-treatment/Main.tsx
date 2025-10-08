@@ -24,12 +24,34 @@ export default function Banner() {
     setForm((prev) => ({ ...prev, [name]: value }));
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    console.log("Submit consultation:", form);
-    setForm({ name: "", phone: "", email: "", treatment: "" });
-    router.push("/thank-you");
-  }
+function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
+
+  fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: form.name,
+      email: form.email,
+      contactNo: form.phone,
+      treatment: form.treatment,
+      message: "", // optional
+    }),
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.message) {
+        alert(data.message);
+        setForm({ name: "", phone: "", email: "", treatment: "" });
+        router.push("/thank-you");
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Failed to submit form.");
+    });
+}
+
 
   return (
     <section className="flex flex-col lg:flex-row justify-between items-center flex-1 container mx-auto px-6 py-12 gap-10">

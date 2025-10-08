@@ -15,7 +15,7 @@ export default function ThankYouPage() {
       </p>
 
       <Link
-        href="/landing"
+        href="/ivf-treatment"
         className="bg-pink-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-pink-700 transition-all"
       >
         Back to Home

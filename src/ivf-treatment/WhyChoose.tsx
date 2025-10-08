@@ -61,7 +61,7 @@ const WhyChoose: React.FC = () => {
 
   const handleClose = () => {
     setShowModal(false);
-    window.history.pushState({}, "", "/landing");
+    window.history.pushState({}, "", "/ivf-treatment");
   };
 
   return (

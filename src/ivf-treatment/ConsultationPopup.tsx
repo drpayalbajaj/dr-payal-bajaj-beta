@@ -24,7 +24,7 @@ const ConsultationPopup: React.FC<ConsultationPopupProps> = ({ onClose }) => {
 
   const handleClose = () => {
     setShowModal(false);
-      window.history.pushState({}, "", "/landing");
+      window.history.pushState({}, "", "/ivf-treatment");
     if (onClose) onClose();
   };
 
@@ -33,13 +33,38 @@ const ConsultationPopup: React.FC<ConsultationPopupProps> = ({ onClose }) => {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Submit consultation:", form);
-    setForm({ name: "", phone: "", email: "", treatment: "" });
-    router.push("/thank-you");
-    if (onClose) onClose();
-  };
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: form.name,
+        email: form.email,
+        contactNo: form.phone,
+        treatment: form.treatment,
+        message: "", // optional
+      }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert(data.message); // success message
+      setForm({ name: "", phone: "", email: "", treatment: "" });
+      router.push("/thank-you");
+      if (onClose) onClose();
+    } else {
+      alert(data.message);
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong!");
+  }
+};
+
 
   if (!showModal) return null;
 

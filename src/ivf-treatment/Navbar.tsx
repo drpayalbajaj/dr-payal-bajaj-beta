@@ -13,7 +13,7 @@ export default function Navbar() {
   };
   const handleClose = () => {
     setShowModal(false);
-    window.history.pushState({}, "", "/landing"); 
+    window.history.pushState({}, "", "/ivf-treatment"); 
   
   };
 
