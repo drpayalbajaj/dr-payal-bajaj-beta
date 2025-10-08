@@ -52,7 +52,6 @@ const ConsultationPopup: React.FC<ConsultationPopupProps> = ({ onClose }) => {
     const data = await response.json();
 
     if (response.ok) {
-      alert(data.message); // success message
       setForm({ name: "", phone: "", email: "", treatment: "" });
       router.push("/thank-you");
       if (onClose) onClose();
