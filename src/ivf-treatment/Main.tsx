@@ -41,7 +41,6 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     .then(res => res.json())
     .then(data => {
       if (data.message) {
-        alert(data.message);
         setForm({ name: "", phone: "", email: "", treatment: "" });
         router.push("/thank-you");
       }
