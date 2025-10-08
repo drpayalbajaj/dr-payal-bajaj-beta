@@ -1,12 +1,13 @@
-// app/components/StatsBanner.tsx
+'use client'
 import React from "react";
+import CountUp from "react-countup";
 
 const Banner: React.FC = () => {
   const stats = [
-    { value: "23+", label: "Years Experience" },
-    { value: "1000+", label: "Successful Pregnancies" },
-    { value: "95%", label: "Patient Satisfaction" },
-    { value: "24/7", label: "Support Available" },
+    { value: 23, suffix: "+", label: "Years Experience" },
+    { value: 1000, suffix: "+", label: "Successful Pregnancies" },
+    { value: 95, suffix: "%", label: "Patient Satisfaction" },
+    { value: 24, suffix: "/7", label: "Support Available" },
   ];
 
   return (
@@ -16,7 +17,12 @@ const Banner: React.FC = () => {
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col items-center">
               <span className="text-pink-600 font-bold text-3xl md:text-4xl">
-                {stat.value}
+                <CountUp
+                  start={0}
+                  end={stat.value}
+                  duration={2} // duration in seconds
+                  separator=","
+                />{stat.suffix}
               </span>
               <p className="text-gray-700 text-sm md:text-base mt-1">
                 {stat.label}

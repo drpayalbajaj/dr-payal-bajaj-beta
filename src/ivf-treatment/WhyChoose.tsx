@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { CheckCircle } from "lucide-react";
-import ConsultationPopup from "./ConsultationPopup";
+
 
 const WhyChoose: React.FC = () => {
-  const [showModal, setShowModal] = useState(false);
+
 
   const reasons = [
     {
@@ -54,15 +54,7 @@ const WhyChoose: React.FC = () => {
     },
   ];
 
-  const handleCTA = () => {
-    setShowModal(true);
-    window.history.pushState({}, "", "/ivf-treatment");
-  };
-
-  const handleClose = () => {
-    setShowModal(false);
-    window.history.pushState({}, "", "/ivf-treatment");
-  };
+  
 
   return (
     <div className="bg-white">
@@ -89,15 +81,15 @@ const WhyChoose: React.FC = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <button
-            onClick={handleCTA}
+          <a
+           href="/ivf-treatment"
             className="inline-block bg-pink-500 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:bg-pink-600 transition-all duration-300 hover:-translate-y-0.5"
           >
             Book an Appointment
-          </button>
+          </a>
         </div>
 
-        {showModal && <ConsultationPopup onClose={handleClose} />}
+
       </section>
     </div>
   );
