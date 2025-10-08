@@ -104,7 +104,7 @@ export default function Header() {
                             </motion.li>
                         ))}
                         <motion.li variants={itemVariants}>
-                            <Link href='/#contact' className="font-merriweather cursor-pointer relative font-medium flex items-center justify-center bg-white text-primary text-maroon-500 px-7 py-[10px] rounded-md text-xl">
+                            <Link href='/ivf-treatment' className="font-merriweather cursor-pointer relative font-medium flex items-center justify-center bg-white text-primary text-maroon-500 px-7 py-[10px] rounded-md text-xl">
                                 Contact
                             </Link>
                         </motion.li>
