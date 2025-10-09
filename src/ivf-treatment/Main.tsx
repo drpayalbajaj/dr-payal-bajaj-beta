@@ -1,15 +1,17 @@
 "use client";
-
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function Main() {
+  const router = useRouter();
+
   const [form, setForm] = useState({
     name: "",
     phone: "",
     email: "",
-    treatment: "",
-    message: "",
+    treatment: ""
+  
   });
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
@@ -29,13 +31,14 @@ export default function Main() {
           email: form.email,
           contactNo: form.phone,
           treatment: form.treatment,
-          message: form.message || "",
+        
         }),
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.message) {
-            setForm({ name: "", phone: "", email: "", treatment: "", message: "" });
+            setForm({ name: "", phone: "", email: "", treatment: "" });
+               router.push("/thank-you");
             return data.message;
           } else {
             throw new Error("Form submission failed");
@@ -108,13 +111,7 @@ export default function Main() {
               <option value="Other">Other</option>
             </select>
 
-            <textarea
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              placeholder="Your Message (optional)"
-              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
-            ></textarea>
+            
 
             <button
               type="submit"
