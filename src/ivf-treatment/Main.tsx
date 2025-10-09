@@ -32,8 +32,7 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
       name: form.name,
       email: form.email,
       contactNo: form.phone,
-      treatment: form.treatment,
-      message: "", // optional
+      message: form.treatment, // optional
     }),
   })
     .then(res => res.json())
