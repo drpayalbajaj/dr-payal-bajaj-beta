@@ -1,54 +1,92 @@
-// app/components/Main.tsx
 "use client";
-
-import { useState } from "react";
-
+import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 
-export default function Banner() {
+export default function Main() {
   const router = useRouter();
- 
+
   const [form, setForm] = useState({
     name: "",
     phone: "",
     email: "",
-    treatment: "",
+    treatment: ""
   });
 
- 
-
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   }
 
-function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-  e.preventDefault();
+  const isSafeInput = (input: string) => {
+    const blacklistPattern = /<script|<\/script|javascript:|onerror=|onload=/gi;
+    return !blacklistPattern.test(input);
+  };
 
-  fetch("/api/contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    // Basic client-side required checks & safety check
+    for (const key of Object.keys(form)) {
+      const val = form[key as keyof typeof form];
+      if (!val) {
+        toast.error(`Please fill out the ${key} field.`);
+        return;
+      }
+      if (!isSafeInput(val)) {
+        toast.error(`Unsafe content detected in ${key}`);
+        return;
+      }
+    }
+
+    // Prepare payload: note backend in your contact API expects 'contactNo'
+    const payload = {
       name: form.name,
       email: form.email,
       contactNo: form.phone,
-      treatment: form.treatment,
-      message: "", // optional
-    }),
-  })
-    .then(res => res.json())
-    .then(data => {
-      if (data.message) {
-        setForm({ name: "", phone: "", email: "", treatment: "" });
-        router.push("/thank-you");
-      }
-    })
-    .catch(err => {
-      console.error(err);
-      alert("Failed to submit form.");
-    });
-}
+      treatment: form.treatment
+    };
 
+    toast.promise(
+      axios
+        .post("/api/contact", payload, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then((response) => {
+          // log for debugging
+          console.log("Contact API response:", response.status, response.data);
+          if (response.status === 200 || response.status === 201) {
+            setForm({ name: "", phone: "", email: "", treatment: "" });
+            // redirect to thank-you (if you have that route)
+            router.push("/thank-you");
+            return response.data?.message || "Submitted successfully";
+          } else {
+            // still return server message if present
+            throw new Error(response.data?.message || `Server returned ${response.status}`);
+          }
+        })
+        .catch((error) => {
+          console.error("Error sending message", error);
+          // axios error might have response.data.message
+          const errMsg =
+            error?.response?.data?.message ||
+            error?.message ||
+            "Failed to submit form";
+          // rethrow so toast.promise shows error
+          throw new Error(errMsg);
+        }),
+      {
+        loading: "Submitting...",
+        success: (msg) => msg as string,
+        error: (err) => (err instanceof Error ? err.message : "Failed to submit"),
+      }
+    );
+  }
 
   return (
     <section className="flex flex-col lg:flex-row justify-between items-center flex-1 container mx-auto px-6 py-12 gap-10">
@@ -60,15 +98,6 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         <p className="text-gray-600 mb-6 text-sm sm:text-base">
           With 82.5% success rate and 23+ years of IVF excellence, Dr. Payal Bajaj offers advanced treatments that bring results.
         </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-4">
-          <a
-            href="/ivf-treatment"
-            className="bg-pink-600 text-white px-5 py-3 rounded-lg font-medium hover:bg-pink-700 transition text-center"
-          >
-            Book Free Consultation
-          </a>
-        </div>
       </div>
 
       {/* Right Form */}
@@ -130,8 +159,7 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         </div>
       </div>
 
-      {/* Consultation Popup */}
-   
+      <Toaster />
     </section>
   );
 }
