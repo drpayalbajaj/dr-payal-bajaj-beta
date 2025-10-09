@@ -1,54 +1,53 @@
-// app/components/Main.tsx
 "use client";
 
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
-import { useRouter } from "next/navigation";
-
-export default function Banner() {
-  const router = useRouter();
- 
+export default function Main() {
   const [form, setForm] = useState({
     name: "",
     phone: "",
     email: "",
     treatment: "",
+    message: "",
   });
 
- 
-
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   }
 
-function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-  e.preventDefault();
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
 
-  fetch("/api/contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: form.name,
-      email: form.email,
-      contactNo: form.phone,
-      treatment: form.treatment,
-      message: "", // optional
-    }),
-  })
-    .then(res => res.json())
-    .then(data => {
-      if (data.message) {
-        setForm({ name: "", phone: "", email: "", treatment: "" });
-        router.push("/thank-you");
+    toast.promise(
+      fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          contactNo: form.phone,
+          treatment: form.treatment,
+          message: form.message || "",
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.message) {
+            setForm({ name: "", phone: "", email: "", treatment: "", message: "" });
+            return data.message;
+          } else {
+            throw new Error("Form submission failed");
+          }
+        }),
+      {
+        loading: "Submitting...",
+        success: (msg) => msg,
+        error: "Failed to submit form",
       }
-    })
-    .catch(err => {
-      console.error(err);
-      alert("Failed to submit form.");
-    });
-}
-
+    );
+  }
 
   return (
     <section className="flex flex-col lg:flex-row justify-between items-center flex-1 container mx-auto px-6 py-12 gap-10">
@@ -60,15 +59,6 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         <p className="text-gray-600 mb-6 text-sm sm:text-base">
           With 82.5% success rate and 23+ years of IVF excellence, Dr. Payal Bajaj offers advanced treatments that bring results.
         </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-4">
-          <a
-            href="/ivf-treatment"
-            className="bg-pink-600 text-white px-5 py-3 rounded-lg font-medium hover:bg-pink-700 transition text-center"
-          >
-            Book Free Consultation
-          </a>
-        </div>
       </div>
 
       {/* Right Form */}
@@ -118,6 +108,14 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
               <option value="Other">Other</option>
             </select>
 
+            <textarea
+              name="message"
+              value={form.message}
+              onChange={handleChange}
+              placeholder="Your Message (optional)"
+              className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
+            ></textarea>
+
             <button
               type="submit"
               className="bg-pink-600 text-white py-3 rounded-lg font-medium hover:bg-pink-700 transition"
@@ -130,8 +128,7 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         </div>
       </div>
 
-      {/* Consultation Popup */}
-   
+      <Toaster />
     </section>
   );
 }
