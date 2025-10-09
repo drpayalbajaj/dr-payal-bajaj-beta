@@ -26,13 +26,12 @@ function sanitizeInput(input: string) {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    let { name, email, contactNo, treatment, message } = body;
+    let { name, email, contactNo, treatment } = body;
 
     name = sanitizeInput(name || "");
     email = sanitizeInput(email || "");
     contactNo = sanitizeInput(contactNo || "");
     treatment = sanitizeInput(treatment || "");
-    message = sanitizeInput(message || "");
 
     if (!name || !email || !contactNo || !treatment) {
       return NextResponse.json({ message: "All fields are required." }, { status: 400 });
@@ -58,7 +57,6 @@ export async function POST(req: NextRequest) {
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Contact No:</strong> ${contactNo}</p>
           <p><strong>Treatment:</strong> ${treatment}</p>
-          <p><strong>Message:</strong><br/>${message.replace(/\n/g, "<br/>")}</p>
         </div>
       `,
     });
@@ -68,13 +66,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: "Failed to send email." }, { status: 500 });
     }
 
-    // Google Sheets Integration
     try {
-      const credentials = JSON.parse(process.env.GOOGLE_SHEETS_CREDENTIALS || "{}");
-
       const auth = new google.auth.JWT({
-        email: credentials.client_email,
-        key: credentials.private_key?.replace(/\\n/g, "\n"),
+        email: process.env.GOOGLE_CLIENT_EMAIL,
+        key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
         scopes: ["https://www.googleapis.com/auth/spreadsheets"],
       });
 
@@ -85,18 +80,17 @@ export async function POST(req: NextRequest) {
         range: "Sheet1!A:F",
         valueInputOption: "RAW",
         requestBody: {
-          values: [[name, email, contactNo, treatment, message, new Date().toLocaleString()]],
+          values: [[name, email, contactNo, treatment, new Date().toLocaleString()]],
         },
+        
       });
+     
     } catch (err) {
       console.error("Error saving to Google Sheets:", err);
-      // Optional: ignore or return a warning
     }
 
-    return NextResponse.json(
-      { message: "Thank you for contacting us! We'll get back to you soon." },
-      { status: 200 }
-    );
+    return NextResponse.json({ message: "Thank you for contacting us! We'll get back to you soon." }, { status: 200 });
+
   } catch (err) {
     console.error("Server Error:", err);
     return NextResponse.json({ message: "Internal server error." }, { status: 500 });
