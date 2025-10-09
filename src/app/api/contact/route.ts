@@ -4,35 +4,44 @@ import { google } from "googleapis";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-function isValidEmail(email: string) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-}
+// Email validation
+const isValidEmail = (email: string) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-function isValidContactNumber(contactNo: string) {
-  return /^[0-9]{10}$/.test(contactNo);
-}
+// 10-digit phone validation
+const isValidContactNumber = (contactNo: string) =>
+  /^[0-9]{10}$/.test(contactNo);
 
-function sanitizeInput(input: string) {
-  return input
+// Basic input sanitization
+const sanitizeInput = (input: string) =>
+  input
     .replace(/<script.*?>.*?<\/script>/gi, "")
     .replace(/on\w+=".*?"/gi, "")
     .replace(/javascript:/gi, "")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .trim();
-}
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    let { name, email, contactNo, treatment } = body;
+    // Accept both forms
+    const {
+      name: rawName,
+      email: rawEmail,
+      contactNo: rawContactNo,
+      phone: rawPhone,
+      message: rawMessage,
+      treatment: rawTreatment,
+    } = body;
 
-    name = sanitizeInput(name || "");
-    email = sanitizeInput(email || "");
-    contactNo = sanitizeInput(contactNo || "");
-    treatment = sanitizeInput(treatment || "");
+    // Normalize fields for both forms
+    const name = sanitizeInput(rawName || "");
+    const email = sanitizeInput(rawEmail || "");
+    const contactNo = sanitizeInput(rawContactNo || rawPhone || "");
+    const treatment = sanitizeInput(rawTreatment || rawMessage || "");
 
+    // Validate required fields
     if (!name || !email || !contactNo || !treatment) {
       return NextResponse.json({ message: "All fields are required." }, { status: 400 });
     }
@@ -45,7 +54,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: "Contact number must be 10 digits." }, { status: 400 });
     }
 
-    // Send email via Resend
+    // Send email
     const { error } = await resend.emails.send({
       from: "Dr. Payal Bajaj <info@drpayalbajaj.com>",
       to: ["drpayalbajaj@gmail.com"],
@@ -56,7 +65,9 @@ export async function POST(req: NextRequest) {
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Contact No:</strong> ${contactNo}</p>
-          <p><strong>Treatment:</strong> ${treatment}</p>
+          <p><strong>Message/Treatment:</strong> ${treatment}</p>
+          <p><strong>UTC:</strong> ${new Date().toISOString()}</p>
+          <p><strong>IST:</strong> ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}</p>
         </div>
       `,
     });
@@ -66,6 +77,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: "Failed to send email." }, { status: 500 });
     }
 
+    // Append to Google Sheets
     try {
       const auth = new google.auth.JWT({
         email: process.env.GOOGLE_CLIENT_EMAIL,
@@ -77,20 +89,28 @@ export async function POST(req: NextRequest) {
 
       await sheets.spreadsheets.values.append({
         spreadsheetId: process.env.GOOGLE_SHEET_ID,
-        range: "Sheet1!A:F",
+        range: "Sheet1!A:G",
         valueInputOption: "RAW",
         requestBody: {
-          values: [[name, email, contactNo, treatment, new Date().toLocaleString()]],
+          values: [
+            [
+              name,
+              email,
+              contactNo,
+              treatment,
+              new Date().toISOString(), // UTC
+              new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }), // IST
+              "", // Remark
+            ],
+          ],
         },
-        
       });
-     
     } catch (err) {
       console.error("Error saving to Google Sheets:", err);
+      // Do not block form submission if Sheet fails
     }
 
-    return NextResponse.json({ message: "Thank you for contacting us! We'll get back to you soon." }, { status: 200 });
-
+    return NextResponse.json({ message: "Thank you! We'll get back to you soon." }, { status: 200 });
   } catch (err) {
     console.error("Server Error:", err);
     return NextResponse.json({ message: "Internal server error." }, { status: 500 });
