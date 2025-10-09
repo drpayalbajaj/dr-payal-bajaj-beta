@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 
 export default function Main() {
   const router = useRouter();
@@ -11,43 +12,78 @@ export default function Main() {
     phone: "",
     email: "",
     treatment: ""
-  
   });
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  const isSafeInput = (input: string) => {
+    const blacklistPattern = /<script|<\/script|javascript:|onerror=|onload=/gi;
+    return !blacklistPattern.test(input);
+  };
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
+    // Basic client-side required checks & safety check
+    for (const key of Object.keys(form)) {
+      const val = form[key as keyof typeof form];
+      if (!val) {
+        toast.error(`Please fill out the ${key} field.`);
+        return;
+      }
+      if (!isSafeInput(val)) {
+        toast.error(`Unsafe content detected in ${key}`);
+        return;
+      }
+    }
+
+    // Prepare payload: note backend in your contact API expects 'contactNo'
+    const payload = {
+      name: form.name,
+      email: form.email,
+      contactNo: form.phone,
+      treatment: form.treatment
+    };
+
     toast.promise(
-      fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          contactNo: form.phone,
-          treatment: form.treatment,
-        
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.message) {
+      axios
+        .post("/api/contact", payload, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then((response) => {
+          // log for debugging
+          console.log("Contact API response:", response.status, response.data);
+          if (response.status === 200 || response.status === 201) {
             setForm({ name: "", phone: "", email: "", treatment: "" });
-               router.push("/thank-you");
-            return data.message;
+            // redirect to thank-you (if you have that route)
+            router.push("/thank-you");
+            return response.data?.message || "Submitted successfully";
           } else {
-            throw new Error("Form submission failed");
+            // still return server message if present
+            throw new Error(response.data?.message || `Server returned ${response.status}`);
           }
+        })
+        .catch((error) => {
+          console.error("Error sending message", error);
+          // axios error might have response.data.message
+          const errMsg =
+            error?.response?.data?.message ||
+            error?.message ||
+            "Failed to submit form";
+          // rethrow so toast.promise shows error
+          throw new Error(errMsg);
         }),
       {
         loading: "Submitting...",
-        success: (msg) => msg,
-        error: "Failed to submit form",
+        success: (msg) => msg as string,
+        error: (err) => (err instanceof Error ? err.message : "Failed to submit"),
       }
     );
   }
@@ -110,8 +146,6 @@ export default function Main() {
               <option value="Fertility Counseling">Fertility Counseling</option>
               <option value="Other">Other</option>
             </select>
-
-            
 
             <button
               type="submit"
