@@ -81,15 +81,16 @@
 //     )
 // }
 'use client'
-import { motion, useInView,Variants } from "framer-motion"
-import React, { useRef } from 'react'
+import { motion, useInView, Variants } from "framer-motion"
+import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 
 export default function Specialization() {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: '-100px' })
+    const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
-    const containerVariants:Variants = {
+    const containerVariants: Variants = {
         hidden: {},
         visible: {
             transition: {
@@ -98,7 +99,7 @@ export default function Specialization() {
         },
     }
 
-    const itemVariants:Variants = {
+    const itemVariants: Variants = {
         hidden: { opacity: 0, y: 50 },
         visible: {
             opacity: 1,
@@ -143,13 +144,21 @@ export default function Specialization() {
                         },
                     ].map(({ img, title, desc }, i) => (
                         <motion.div
-                            className="w-full h-full rounded-2xl p-4 bg-new-white"
+                            className="w-full h-full rounded-2xl p-6 bg-new-white shadow-sm hover:shadow-xl transition-all duration-500 ease-out"
                             key={i}
                             variants={itemVariants}
+                            onMouseEnter={() => setHoveredCard(i)}
+                            onMouseLeave={() => setHoveredCard(null)}
+                            whileHover={{ y: -6, scale: 1.02 }}
                         >
                             <div className="relative w-full flex items-center flex-col h-full">
-                                <Image src={img} width={300} height={200} alt={title} />
-                                <h3 className="w-full font-semibold text-primary text-center mt-4 mb-2 text-3xl">
+                                <motion.div
+                                    animate={{ scale: hoveredCard === i ? 1.08 : 1 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <Image src={img} width={300} height={200} alt={title} />
+                                </motion.div>
+                                <h3 className="w-full font-semibold text-primary text-center mt-4 mb-2 text-3xl transition-transform duration-300" style={{ transform: hoveredCard === i ? 'scale(1.05)' : 'scale(1)' }}>
                                     {title}
                                 </h3>
                                 <p className="text-gray-700 text-lg font-medium text-center leading-relaxed">{desc}</p>

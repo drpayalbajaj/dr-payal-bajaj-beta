@@ -23,6 +23,7 @@ export default function page() {
       <Header />
       <Hero />
       <Doctor/>
+      <Testimonials />
       <About/>
       <Specialization />
       <Qualification />
@@ -31,7 +32,6 @@ export default function page() {
       <Details />
       <Contact />
       <Blog />
-      <Testimonials />
       <Footer />
       {/* <Page/> */}
      

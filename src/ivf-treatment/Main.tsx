@@ -1,56 +1,53 @@
+// app/components/Main.tsx
 "use client";
+
 import { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+
 import { useRouter } from "next/navigation";
 
-export default function Main() {
+export default function Banner() {
   const router = useRouter();
-
+ 
   const [form, setForm] = useState({
     name: "",
     phone: "",
     email: "",
-    treatment: ""
-  
+    treatment: "",
   });
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
+ 
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
 
-    toast.promise(
-      fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          contactNo: form.phone,
-          treatment: form.treatment,
-        
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.message) {
-            setForm({ name: "", phone: "", email: "", treatment: "" });
-               router.push("/thank-you");
-            return data.message;
-          } else {
-            throw new Error("Form submission failed");
-          }
-        }),
-      {
-        loading: "Submitting...",
-        success: (msg) => msg,
-        error: "Failed to submit form",
+  fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: form.name,
+      email: form.email,
+      contactNo: form.phone,
+      message: form.treatment, // optional
+    }),
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.message) {
+        setForm({ name: "", phone: "", email: "", treatment: "" });
+        router.push("/thank-you");
       }
-    );
-  }
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Failed to submit form.");
+    });
+}
+
 
   return (
     <section className="flex flex-col lg:flex-row justify-between items-center flex-1 container mx-auto px-6 py-12 gap-10">
@@ -62,6 +59,15 @@ export default function Main() {
         <p className="text-gray-600 mb-6 text-sm sm:text-base">
           With 82.5% success rate and 23+ years of IVF excellence, Dr. Payal Bajaj offers advanced treatments that bring results.
         </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-4">
+          <a
+            href="/ivf-treatment"
+            className="bg-pink-600 text-white px-5 py-3 rounded-lg font-medium hover:bg-pink-700 transition text-center"
+          >
+            Book Free Consultation
+          </a>
+        </div>
       </div>
 
       {/* Right Form */}
@@ -111,8 +117,6 @@ export default function Main() {
               <option value="Other">Other</option>
             </select>
 
-            
-
             <button
               type="submit"
               className="bg-pink-600 text-white py-3 rounded-lg font-medium hover:bg-pink-700 transition"
@@ -125,7 +129,8 @@ export default function Main() {
         </div>
       </div>
 
-      <Toaster />
+      {/* Consultation Popup */}
+   
     </section>
   );
 }
