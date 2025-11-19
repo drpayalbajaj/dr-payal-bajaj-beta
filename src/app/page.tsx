@@ -1,5 +1,7 @@
 import Doctor from '@/components/Doctor'
 import About  from '@/components/Aboutus'
+import Doctor from '@/components/Doctor'
+import About  from '@/components/Aboutus'
 import Blog from '@/components/Blog'
 import Contact from '@/components/Contact'
 import Details from '@/components/Details'
@@ -14,7 +16,11 @@ import Testimonials from '@/components/Testimonials'
 // import Page from '@/landing/page'
 
 
+// import Page from '@/landing/page'
+
+
 import React from 'react'
+
 
 
 export default function page() {
