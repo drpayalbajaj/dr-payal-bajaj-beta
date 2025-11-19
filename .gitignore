@@ -12,6 +12,8 @@ src/google-credentials.json
 !.yarn/releases
 !.yarn/versions
 
+echo "src/google-credentials.json"
+
 # testing
 /coverage
 
