@@ -1,17 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Outfit:wght@100..900&display=swap");
+
 @import "tailwindcss";
 
 @theme {
   --color-primary: #875ba6;
   --color-new-white: #e7ddf1;
   --color-secondry: #2d1939;
-  --color-steel-gray: #58595B;
+  --color-steel-gray: #58595b;
   --color-off-white: #fff3fe;
   --color-dark: #3d3d3d;
-  --font-playfair: "Playfair Display", serif;
-  --font-roboto: "Roboto", sans-serif;
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-outfit: "Outfit", sans-serif;
 }
-
 
 section {
   position: relative;
@@ -19,12 +19,29 @@ section {
   padding: 60px 70px;
 }
 
-h1,h2,h3,h4,h5,h6{
-  font-family: "Playfair Display", serif !important;
-  line-height: 1.1;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cormorant Garamond", serif !important;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
-span, p{
-  font-family: "Roboto", sans-serif;
+
+span,
+p,
+a,
+button,
+input,
+textarea {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.01em;
 }
 
 .hidden-nav {
@@ -40,23 +57,23 @@ span, p{
   transition: top 0.6s ease-in-out;
 }
 
-@media (max-width:668px) {
-  section{
+@media (max-width: 668px) {
+  section {
     padding: 40px 30px;
   }
-  nav{
+  nav {
     padding: 16px 30px;
   }
-  .pp{
+  .pp {
     padding-right: 30px !important;
   }
 }
 
-@media (max-width:480px) {
-  h2{
+@media (max-width: 480px) {
+  h2 {
     font-size: 28px;
   }
-  h3{
+  h3 {
     font-size: 20px;
   }
 }

@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+src/google-credentials.json
+.env
 /.pnp
 .pnp.*
 .yarn/*
@@ -9,6 +11,8 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+
+echo "src/google-credentials.json"
 
 # testing
 /coverage
