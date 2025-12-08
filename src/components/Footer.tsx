@@ -70,7 +70,7 @@ export default function Footer() {
           <div className='text-white text-sm sm:text-base'>
             <p>
               Copyright @ 2025 Dr. Payal Bajaj | Developed by 
-              <a>Strategix</a>
+              <a href="https://www.wizards.co.in" target='_blank' className='text-amber-300 ml-1'>Strategix</a>
             </p>
           </div>
           <div className='text-white text-sm sm:text-base'>

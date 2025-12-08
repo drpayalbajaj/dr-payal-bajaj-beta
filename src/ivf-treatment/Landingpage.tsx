@@ -7,7 +7,6 @@ import  WhyChoose from './WhyChoose'
 import Faq from './Faq'
 import Contactus from './Contactus'
 import Footers from './Footers'
-
 import React from 'react'
 
 
@@ -15,7 +14,6 @@ import React from 'react'
 export default function page() {
   return (
     <>
-  
       <Navbar/>
       <Main/>
       <Banner/>
