@@ -4,6 +4,18 @@ import { google } from 'googleapis';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+interface FormData {
+    name: string;
+    email: string;
+    contactNo: string;
+    message: string;
+}
+
+interface ValidationResult {
+    isValid: boolean;
+    error?: string;
+}
+
 function isValidEmail(email: string): boolean {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
@@ -23,7 +35,7 @@ function sanitizeInput(input: string): string {
         .trim();
 }
 
-function validateFormData(data: any): { isValid: boolean; error?: string } {
+function validateFormData(data: FormData): ValidationResult {
     const { name, email, contactNo, message } = data;
 
     if (!name || !email || !contactNo || !message) {
@@ -150,7 +162,15 @@ Received: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
                                   (process.env.GOOGLE_PRIVATE_KEY && process.env.GOOGLE_CLIENT_EMAIL);
             
             if (hasCredentials && process.env.GOOGLE_SHEET_ID) {
-                let credentials: any;
+                interface GoogleCredentials {
+                    type: string;
+                    project_id: string;
+                    private_key: string;
+                    client_email: string;
+                    token_uri: string;
+                }
+
+                let credentials: GoogleCredentials | undefined;
                 
                 if (process.env.GOOGLE_PRIVATE_KEY && process.env.GOOGLE_CLIENT_EMAIL) {
                     credentials = {
@@ -198,7 +218,7 @@ Received: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
                 }
             }
         } catch {
-            // Silently fail - email already sent
+            // Silently fail
         }
         
         return NextResponse.json({ 
@@ -206,7 +226,7 @@ Received: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
             success: true
         }, { status: 200 });
 
-    } catch (error) {
+    } catch {
         return NextResponse.json({ 
             message: "An unexpected error occurred. Please try again later."
         }, { status: 500 });
