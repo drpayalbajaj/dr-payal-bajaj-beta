@@ -75,7 +75,7 @@ export async function POST(req: NextRequest) {
             }, { status: 500 });
         }
 
-        const { data, error } = await resend.emails.send({
+        const { error } = await resend.emails.send({
             from: "Dr. Payal Bajaj <send@drpayalbajaj.com>",
             to: ["drpayalbajaj@gmail.com"],
             replyTo: email,
@@ -150,7 +150,7 @@ Received: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
                                   (process.env.GOOGLE_PRIVATE_KEY && process.env.GOOGLE_CLIENT_EMAIL);
             
             if (hasCredentials && process.env.GOOGLE_SHEET_ID) {
-                let credentials;
+                let credentials: any;
                 
                 if (process.env.GOOGLE_PRIVATE_KEY && process.env.GOOGLE_CLIENT_EMAIL) {
                     credentials = {
@@ -197,7 +197,7 @@ Received: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
                     });
                 }
             }
-        } catch (sheetsError) {
+        } catch {
             // Silently fail - email already sent
         }
         
