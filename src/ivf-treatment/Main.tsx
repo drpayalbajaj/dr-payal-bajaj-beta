@@ -1,8 +1,6 @@
-// app/components/Main.tsx
 "use client";
 
 import { useState } from "react";
-
 import { useRouter } from "next/navigation";
 
 export default function Banner() {
@@ -15,43 +13,95 @@ export default function Banner() {
     treatment: "",
   });
 
- 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
     const { name, value } = e.target;
+    
+    if (error) setError("");
+    
+    if (name === "phone") {
+      const digitsOnly = value.replace(/\D/g, "");
+      if (digitsOnly.length <= 10) {
+        setForm((prev) => ({ ...prev, [name]: digitsOnly }));
+      }
+      return;
+    }
+    
+    if (name === "name") {
+      const lettersOnly = value.replace(/[^a-zA-Z\s]/g, "");
+      if (lettersOnly.length <= 50) {
+        setForm((prev) => ({ ...prev, [name]: lettersOnly }));
+      }
+      return;
+    }
+    
     setForm((prev) => ({ ...prev, [name]: value }));
   }
 
-function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-  e.preventDefault();
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    
+    setError("");
+    
+    if (!form.name.trim() || form.name.length < 2) {
+      setError("Name must be at least 2 characters");
+      return;
+    }
+    
+    if (form.phone.length !== 10 || !/^[6-9]/.test(form.phone)) {
+      setError("Please enter a valid 10-digit mobile number");
+      return;
+    }
+    
+    if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      setError("Please enter a valid email address");
+      return;
+    }
+    
+    if (!form.treatment) {
+      setError("Please select a treatment");
+      return;
+    }
 
-  fetch("/api/contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: form.name,
-      email: form.email,
-      contactNo: form.phone,
-      message: form.treatment, // optional
-    }),
-  })
-    .then(res => res.json())
-    .then(data => {
-      if (data.message) {
+    setIsSubmitting(true);
+
+    try {
+      // 🔥 Environment variable se API URL le rahe hain
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+      
+      const response = await fetch(`${API_URL}/api/v1/contact`, {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name.trim(),
+          email: form.email.trim(),
+          phone: form.phone, // Backend "phone" expect karta hai
+          treatment: form.treatment,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
         setForm({ name: "", phone: "", email: "", treatment: "" });
         router.push("/thank-you");
+      } else {
+        setError(data.message || "Failed to submit. Please try again.");
+        setIsSubmitting(false);
       }
-    })
-    .catch(err => {
+    } catch (err) {
       console.error(err);
-      alert("Failed to submit form.");
-    });
-}
-
+      setError("Network error. Please try again.");
+      setIsSubmitting(false);
+    }
+  }
 
   return (
     <section className="flex flex-col lg:flex-row justify-between items-center flex-1 container mx-auto px-6 py-12 gap-10">
-      {/* Left Content */}
       <div className="lg:w-1/2 text-center lg:text-left">
         <h2 className="text-3xl sm:text-4xl font-semibold text-gray-800 leading-snug mb-4">
           Tried Everything but <span className="text-pink-600 font-bold">Still Waiting</span> for the Good News
@@ -59,7 +109,6 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         <p className="text-gray-600 mb-6 text-sm sm:text-base">
           With 82.5% success rate and 23+ years of IVF excellence, Dr. Payal Bajaj offers advanced treatments that bring results.
         </p>
-
         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-4">
           <a
             href="/ivf-treatment"
@@ -70,10 +119,17 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         </div>
       </div>
 
-      {/* Right Form */}
       <div className="lg:w-1/2 w-full">
         <div className="bg-white shadow-lg rounded-2xl p-6 sm:p-8 max-w-md mx-auto">
-          <h3 className="text-xl font-semibold mb-4 text-gray-800 text-center">Get Your Free Consultation</h3>
+          <h3 className="text-xl font-semibold mb-4 text-gray-800 text-center">
+            Get Your Free Consultation
+          </h3>
+
+          {error && (
+            <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+              <p className="text-sm text-red-600 text-center">{error}</p>
+            </div>
+          )}
 
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <input
@@ -84,7 +140,10 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
               placeholder="Full Name *"
               className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
               required
+              disabled={isSubmitting}
+              maxLength={50}
             />
+
             <input
               name="phone"
               value={form.phone}
@@ -93,7 +152,10 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
               placeholder="Phone Number *"
               className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
               required
+              disabled={isSubmitting}
+              maxLength={10}
             />
+
             <input
               name="email"
               value={form.email}
@@ -102,13 +164,16 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
               placeholder="Email Address *"
               className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
               required
+              disabled={isSubmitting}
             />
+
             <select
               name="treatment"
               value={form.treatment}
               onChange={handleChange}
               className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"
               required
+              disabled={isSubmitting}
             >
               <option value="">Select Treatment of Interest</option>
               <option value="IVF">IVF</option>
@@ -119,18 +184,22 @@ function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 
             <button
               type="submit"
-              className="bg-pink-600 text-white py-3 rounded-lg font-medium hover:bg-pink-700 transition"
+              disabled={isSubmitting}
+              className={`py-3 rounded-lg font-medium transition ${
+                isSubmitting
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-pink-600 hover:bg-pink-700 text-white"
+              }`}
             >
-              Book Free Consultation
+              {isSubmitting ? "Submitting..." : "Book Free Consultation"}
             </button>
 
-            <p className="text-xs text-gray-500 text-center mt-2">Your information is safe and secure with us.</p>
+            <p className="text-xs text-gray-500 text-center mt-2">
+              Your information is safe and secure with us.
+            </p>
           </form>
         </div>
       </div>
-
-      {/* Consultation Popup */}
-   
     </section>
   );
 }
