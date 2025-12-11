@@ -23,6 +23,7 @@ import React from 'react'
 
 
 
+
 export default function page() {
   return (
     <>
@@ -38,7 +39,9 @@ export default function page() {
       <Details />
       <Contact />
       <Blog />
+
       <Footer />
+     
       {/* <Page/> */}
      
     </>

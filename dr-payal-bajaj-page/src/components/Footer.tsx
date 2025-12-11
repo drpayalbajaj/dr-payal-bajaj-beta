@@ -1,7 +1,17 @@
+'use client'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import React from 'react'
 
 export default function Footer() {
+  const path = usePathname()
+
+  const getHref = (link: string) => {
+    if (link === '/') return '/'
+    if (link === '/blogs') return '/blogs'
+    return path === '/blogs' ? `/${link}` : link
+  }
+
   return (
     <>
       <section className='bg-primary w-full px-4 sm:px-6 lg:px-12 py-10 md:py-16'>
@@ -33,12 +43,12 @@ export default function Footer() {
           <div className="flex flex-col">
             <h2 className='text-2xl sm:text-3xl font-bold text-white'>Quick Links</h2>
             <div className='mt-4 sm:mt-10 flex flex-col gap-1 text-white'>
-              <Link href='/'>Home</Link>
-              <Link href='#about'>About</Link>
-              <Link href='#services'>Services</Link>
-              <Link href='#qualification'>Qualification</Link>
-              <Link href='/blogs'>Blogs</Link>
-              <Link href='#contact'>Contact</Link>
+              <Link href={getHref('/')}>Home</Link>
+              <Link href={getHref('#about')}>About</Link>
+              <Link href={getHref('#services')}>Services</Link>
+              <Link href={getHref('#qualification')}>Qualification</Link>
+              <Link href={getHref('/blogs')}>Blogs</Link>
+              <Link href={getHref('#contact')}>Contact</Link>
             </div>
           </div>
 
@@ -75,7 +85,7 @@ export default function Footer() {
           </div>
           <div className='text-white text-sm sm:text-base'>
             <p className='flex flex-wrap gap-2 sm:gap-4'>
-              <Link href="#">Privacy Policy</Link> |
+              <Link href="/privacyandpolicy">Privacy Policy</Link> |
               <Link href="#">Disclaimer</Link> |
               <Link href="#">Terms of use</Link>
             </p>
@@ -84,4 +94,4 @@ export default function Footer() {
       </section>
     </>
   )
-};
+}
