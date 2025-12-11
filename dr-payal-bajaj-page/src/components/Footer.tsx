@@ -87,7 +87,7 @@ export default function Footer() {
             <p className='flex flex-wrap gap-2 sm:gap-4'>
               <Link href="/privacyandpolicy">Privacy Policy</Link> |
               <Link href="/Disclamer">Disclaimer</Link> |
-              <Link href="#">Terms of use</Link>
+              <Link href="/termofuse">Terms of use</Link>
             </p>
           </div>
         </div>
