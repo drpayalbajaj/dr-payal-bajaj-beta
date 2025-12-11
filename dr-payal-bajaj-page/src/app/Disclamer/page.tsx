@@ -1,14 +1,15 @@
 
 import React from "react";
-import PrivacyPolicy from "@/components/PrivacyPolicy";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Disclaimer from "@/components/Disclamer";
 
 export default function PrivacyPolicyPage() {
   return (
     <>
       <Header />
-      <PrivacyPolicy />
+      <Disclaimer />
       <Footer />
     </>
   );

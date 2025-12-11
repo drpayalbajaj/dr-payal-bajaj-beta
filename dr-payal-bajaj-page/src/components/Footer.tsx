@@ -86,7 +86,7 @@ export default function Footer() {
           <div className='text-white text-sm sm:text-base'>
             <p className='flex flex-wrap gap-2 sm:gap-4'>
               <Link href="/privacyandpolicy">Privacy Policy</Link> |
-              <Link href="#">Disclaimer</Link> |
+              <Link href="/Disclamer">Disclaimer</Link> |
               <Link href="#">Terms of use</Link>
             </p>
           </div>
