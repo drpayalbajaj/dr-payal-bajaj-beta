@@ -26,7 +26,7 @@ const IUISection: React.FC = () => {
         
         <div className="space-y-6">
           <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-            Every couple dreams of starting a family, but the path to parenthood is not always straightforward. Many couples face challenges that can feel overwhelming, confusing, or even discouraging. That's why choosing the best IUI center in Delhi is so important. You need not just modern technology, but someone who listens, understands, and guides you with care at every step.
+            Every couple dreams of starting a family, but the path to parenthood is not always straightforward. Many couples face challenges that can feel overwhelming, confusing, or even discouraging. That&apos;s why choosing the best IUI center in Delhi is so important. You need not just modern technology, but someone who listens, understands, and guides you with care at every step.
           </p>
           <p className="text-gray-700 text-base md:text-lg leading-relaxed">
             At our clinic, we treat each couple as unique. Some come to us full of hope and excitement, while others arrive anxious or tired after trying for months, or even years, without success. Our IUI specialist in Delhi takes the time to listen to your story, understand your concerns, and create a treatment plan specifically for you.
@@ -69,7 +69,7 @@ const IUISection: React.FC = () => {
           </div>
           
           <p className="text-gray-700 text-base md:text-lg leading-relaxed text-center max-w-4xl mx-auto">
-            We understand that undergoing fertility treatment can be emotionally challenging. That's why we make empathy a core part of our care. From explaining procedures in plain language to offering reassurance during stressful moments, our team is with you at every stage. You're not just a patient here—you're a couple with hopes, dreams, and stories that matter.
+            We understand that undergoing fertility treatment can be emotionally challenging. That&apos;s why we make empathy a core part of our care. From explaining procedures in plain language to offering reassurance during stressful moments, our team is with you at every stage. You&apos;re not just a patient here—you&apos;re a couple with hopes, dreams, and stories that matter.
           </p>
         </div>
       </div>
@@ -86,10 +86,10 @@ const IUISection: React.FC = () => {
           
           <div className="space-y-6 mb-8">
             <p className="text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
-              If you're ready to start your journey to parenthood, our clinic is here to guide you. With expert advice from Dr. Payal Bajaj, a trusted IUI specialist in Delhi, modern facilities, and complete transparency about IUI treatment cost in Delhi, you can approach your fertility journey with confidence.
+              If you&apos;re ready to start your journey to parenthood, our clinic is here to guide you. With expert advice from Dr. Payal Bajaj, a trusted IUI specialist in Delhi, modern facilities, and complete transparency about IUI treatment cost in Delhi, you can approach your fertility journey with confidence.
             </p>
             <p className="text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
-              Whether it's your first attempt or a new plan after previous challenges, our goal is simple: to help you take one step closer to holding your little one in your arms.
+              Whether it&apos;s your first attempt or a new plan after previous challenges, our goal is simple: to help you take one step closer to holding your little one in your arms.
             </p>
           </div>
           

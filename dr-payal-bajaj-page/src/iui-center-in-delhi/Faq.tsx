@@ -1,5 +1,4 @@
-// Updated: Faq.tsx (Replaced/Updated with IUI-specific FAQs; improved styling with better accordion design, spacing, and responsive typography)
-"use client"; // क्योंकि useState React Hook है
+"use client";
 
 import React, { useState } from "react";
 import { Plus, Minus } from "lucide-react";
@@ -21,7 +20,7 @@ const Faq: React.FC = () => {
     {
       question: "How long does the IUI process take?",
       answer:
-        "A typical IUI cycle takes around 10–15 days, including monitoring, ovulation tracking, and the insemination procedure.",
+        "A typical IUI cycle takes around 10-15 days, including monitoring, ovulation tracking, and the insemination procedure.",
     },
     {
       question:

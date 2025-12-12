@@ -22,7 +22,7 @@ const EggFreezingSection: React.FC = () => {
   ];
 
   const doctorExpertise = [
-    "Track your body's response to ensure safe egg retrieval",
+    "Track your body&apos;s response to ensure safe egg retrieval",
     "Use advanced freezing systems to keep egg quality intact",
     "Guide you on long-term storage and future use"
   ];
@@ -50,11 +50,11 @@ const EggFreezingSection: React.FC = () => {
         
         <div className="space-y-6">
           <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-            For many women, life doesn't always match the timeline they once imagined. Work, dreams, travel plans, personal changes—sometimes motherhood just doesn't fit into the present moment. And there's nothing wrong with that.
+            For many women, life doesn&apos;t always match the timeline they once imagined. Work, dreams, travel plans, personal changes—sometimes motherhood just doesn&apos;t fit into the present moment. And there&apos;s nothing wrong with that.
           </p>
           
           <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-            But if the thought of "maybe later" has been on your mind, egg freezing can give you the space and freedom to decide when your right time truly is.
+            But if the thought of &quot;maybe later&quot; has been on your mind, egg freezing can give you the space and freedom to decide when your right time truly is.
           </p>
 
           <p className="text-gray-700 text-base md:text-lg leading-relaxed">
@@ -75,11 +75,11 @@ const EggFreezingSection: React.FC = () => {
           
           <div className="space-y-6 text-center">
             <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-              Age affects egg quality, and most women already know this—but knowing doesn't always make life easier. Egg freezing simply gives you a safe way to preserve healthier eggs today, so you don't have to rush tomorrow.
+              Age affects egg quality, and most women already know this—but knowing doesn&apos;t always make life easier. Egg freezing simply gives you a safe way to preserve healthier eggs today, so you don&apos;t have to rush tomorrow.
             </p>
 
             <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-              At our egg freezing centre in Delhi, we follow modern and secure freezing methods. From your first visit, we make sure you feel comfortable and fully aware of what's happening. No medical jargon, no confusion—just clear guidance at every stage.
+              At our egg freezing centre in Delhi, we follow modern and secure freezing methods. From your first visit, we make sure you feel comfortable and fully aware of what&apos;s happening. No medical jargon, no confusion—just clear guidance at every stage.
             </p>
           </div>
         </div>
@@ -100,7 +100,7 @@ const EggFreezingSection: React.FC = () => {
           </p>
 
           <p className="text-gray-700 text-base md:text-lg leading-relaxed text-center mb-8 font-semibold">
-            Here's how we stand with you:
+            Here&apos;s how we stand with you:
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -117,7 +117,7 @@ const EggFreezingSection: React.FC = () => {
 
           <div className="bg-pink-50 rounded-xl p-6 text-center">
             <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-              <span className="font-semibold">A calm, supportive atmosphere:</span> You're never rushed or ignored here.
+              <span className="font-semibold">A calm, supportive atmosphere:</span> You&apos;re never rushed or ignored here.
             </p>
           </div>
 
@@ -162,7 +162,7 @@ const EggFreezingSection: React.FC = () => {
           
           <div className="space-y-6 text-center">
             <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-              Egg freezing isn't only about fertility—it's about choice. It gives you peace of mind, especially when you're focused on your career, personal growth, or simply waiting for the right chapter of life.
+              Egg freezing isn&apos;t only about fertility—it&apos;s about choice. It gives you peace of mind, especially when you&apos;re focused on your career, personal growth, or simply waiting for the right chapter of life.
             </p>
 
             <p className="text-gray-700 text-base md:text-lg leading-relaxed">
@@ -184,7 +184,7 @@ const EggFreezingSection: React.FC = () => {
           
           <div className="space-y-6 mb-8">
             <p className="text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
-              You don't have to wait for life to "slow down" before thinking about motherhood. If you want to explore egg freezing in Delhi, our team is here to guide you with honesty and empathy.
+              You don&apos;t have to wait for life to &quot;slow down&quot; before thinking about motherhood. If you want to explore egg freezing in Delhi, our team is here to guide you with honesty and empathy.
             </p>
             <p className="text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
               Take the first step. Book a consultation at the best egg freezing clinic in Delhi and let us help you plan your future with confidence and care.
