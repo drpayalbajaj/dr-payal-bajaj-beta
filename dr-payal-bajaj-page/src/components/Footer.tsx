@@ -49,6 +49,10 @@ export default function Footer() {
               <Link href={getHref('#qualification')}>Qualification</Link>
               <Link href={getHref('/blogs')}>Blogs</Link>
               <Link href={getHref('#contact')}>Contact</Link>
+              <Link href={getHref('/egg-freezing-clinic-in-delhi')}>Egg-freezing</Link>
+              <Link href={getHref('/iui-center-in-delhi')}>Iui-center</Link>
+              <Link href={getHref('/surrogacy-centre-in-delhi')}>Surrogacy-centre</Link>
+              
             </div>
           </div>
 

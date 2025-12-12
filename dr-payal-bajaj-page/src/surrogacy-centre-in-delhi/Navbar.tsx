@@ -11,7 +11,7 @@ export default function Navbar() {
       </Link>
 
       <a
-        href="/egg-freezing-clinic-in-delhi"
+        href="/surrogacy-centre-in-delhi"
         className="bg-pink-600 text-white px-4 py-2 rounded-lg text-sm sm:text-base hover:bg-pink-700 transition"
       >
         📞 Call Now
