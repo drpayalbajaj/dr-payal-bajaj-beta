@@ -11,9 +11,9 @@ export default function page() {
             <section className='bg-new-white w-full relative'>
                 <div className='bg-new-light-500 max-w-[768px] w-full mx-auto mt-5 '>
                     <div className='relative w-full flex flex-col gap-8'>
-                        <h1 className='hero-heading md:text-[36px] text-[24px] font-bold text-primary leading-[1.1]' >
+                        <h3 className='hero-heading md:text-[36px] text-[24px] font-bold text-primary leading-[1.1]' >
                             It&apos;s Not Just Women - Why Men&apos;s Health Matters in Pregnancy
-                        </h1>
+                        </h3>
                         <em className='block -mt-[25px] text-dark text-[14px]'>By Dr. Payal Bajaj - Medical Director & Senior IVF Consultant</em>
 
                         <div className='w-full'>

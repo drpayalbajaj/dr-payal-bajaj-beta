@@ -50,7 +50,7 @@ const Faq: React.FC = () => {
         Frequently Asked Questions
       </h2>
       <p className="text-center text-gray-600 mb-10">
-        Get answers to common questions about IVF and fertility treatments
+      Get answers to common questions about IUI and fertility treatments
       </p>
 
       <div className="max-w-3xl mx-auto space-y-4">

@@ -25,9 +25,10 @@ const SurrogacySection: React.FC = () => {
     <section className="px-6 md:px-20 py-16 bg-gradient-to-b from-white to-gray-50">
       {/* Title and Subtitle */}
       <div className="text-center mb-16">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
-          Best Surrogacy Centre in Delhi - Trusted IVF Specialists
-        </h1>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
+        Advanced Surrogacy Treatment in Delhi for Couples
+
+        </h2>
         <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
           Have you been hoping to become parents, but it just hasn&apos;t happened yet? At our best surrogacy centre in Delhi, we don&apos;t just do procedures. We&apos;re here to walk with you, hold your hand, and answer every little question.
         </p>

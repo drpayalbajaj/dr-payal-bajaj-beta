@@ -120,11 +120,11 @@ function Hero() {
                 <SparklesIcon className="w-4 h-4 mr-2" />
                 Best IVF Centre in Delhi
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
                 Building Dreams,
                 <br />
                 <span className="text-primary">One Family</span> at a Time
-              </h1>
+              </h2>
               <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
                 <a
                   href="http://nandiivf.com/"
@@ -188,7 +188,7 @@ function Hero() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              What sets <span className="text-primary">Nandi IVF</span> apart
+              What Sets <span className="text-primary">Nandi IVF</span> Apart
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Experience world-class fertility care with our comprehensive
@@ -293,12 +293,12 @@ function Hero() {
                     <HeartIcon className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
                   )}
                 </div>
-                <h3
+                <h2
                   className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
                   style={{ color: "#111827" }}
                 >
                   {activeTab === "vision" ? "Our Vision" : "Our Mission"}
-                </h3>
+                </h2>
                 <p
                   className="text-sm sm:text-base md:text-lg font-medium leading-relaxed max-w-full sm:max-w-lg mx-auto px-2 sm:px-0"
                   style={{

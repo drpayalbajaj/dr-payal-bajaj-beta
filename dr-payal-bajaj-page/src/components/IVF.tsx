@@ -66,7 +66,7 @@ export default function IVF() {
             className="mt-8 text-left relative text-3xl font-bold text-primary"
             variants={itemVariants}
           >
-            Why Choose Nandi IVF Centre
+            Why Choose Nandi IVF Centre?
           </motion.h3>
           <motion.p
             className="text-left text-lg font-medium text-gray-700 leading-relaxed mt-4 max-w-2xl"

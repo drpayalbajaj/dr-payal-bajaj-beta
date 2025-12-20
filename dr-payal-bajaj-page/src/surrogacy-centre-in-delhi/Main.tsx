@@ -103,15 +103,16 @@ export default function Banner() {
   return (
     <section className="flex flex-col lg:flex-row justify-between items-center flex-1 container mx-auto px-6 py-12 gap-10">
       <div className="lg:w-1/2 text-center lg:text-left">
-        <h2 className="text-3xl sm:text-4xl font-semibold text-gray-800 leading-snug mb-4">
-          Tried Everything but <span className="text-pink-600 font-bold">Still Waiting</span> for the Good News
-        </h2>
+        <h1 className="text-3xl sm:text-4xl font-semibold text-gray-800 leading-snug mb-4">
+        Best Surrogacy Centre<span className="text-pink-600 font-bold"> in Delhi​ for </span> Successful Parenthood
+
+        </h1>
         <p className="text-gray-600 mb-6 text-sm sm:text-base">
-          With 82.5% success rate and 23+ years of IVF excellence, Dr. Payal Bajaj offers advanced treatments that bring results.
+        Dr. Payal Bajaj, with 23+ years of expertise and an 82.5% success rate, provides compassionate and effective surrogacy options for aspiring parents.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-4">
           <a
-            href="/ivf-treatment"
+            href="https://drpayalbajaj.com/#contact "
             className="bg-pink-600 text-white px-5 py-3 rounded-lg font-medium hover:bg-pink-700 transition text-center"
           >
             Book Free Consultation

@@ -38,7 +38,7 @@ export default function Hero() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
               Step into your
               <span className="block text-primary mt-2">
-                parenthood journey
+                Parenthood Journey
               </span>
             </h1>
 

@@ -6,9 +6,9 @@ import { CheckCircle } from "lucide-react";
 const WhyChoose: React.FC = () => {
   const reasons = [
     {
-      title: "23+ Years of IVF Excellence",
+      title: "23+ Years of IUI Expertise",
       description:
-        "Trusted fertility specialist with decades of proven success in helping couples conceive.",
+        "Renowned fertility specialist dedicated to helping couples bring their dreams of parenthood to life. ",
     },
     {
       title: "Trained in Germany & Japan",
@@ -16,14 +16,14 @@ const WhyChoose: React.FC = () => {
         "International exposure ensures advanced, evidence-based fertility treatments.",
     },
     {
-      title: "82.5% IVF Success Rate",
+      title: "82.5% IUI Success Rate",
       description:
-        "Among the highest in the field, real results, not just promises.",
+        "One of the highest in the field, delivering real results, not just promises.",
     },
     {
-      title: "Expert in Complex Cases",
+      title: "Expert in Complex Fertility Cases",
       description:
-        "Specialized protocols designed for couples who’ve faced multiple IVF failures.",
+        "Protocols crafted for couples who have experienced multiple IUI failures.",
     },
     {
       title: "Personalized Support at Every Step",
@@ -33,7 +33,7 @@ const WhyChoose: React.FC = () => {
     {
       title: "All Fertility Solutions in One Place",
       description:
-        "From diagnosis to advanced IVF, every treatment is done with care and precision.",
+        "Every treatment, from diagnosis to advanced IUI, is performed with expert care and exacting precision.",
     },
     {
       title: "Honest Guidance, No False Promises",
@@ -94,7 +94,7 @@ const WhyChoose: React.FC = () => {
         {/* CTA */}
         <div className="text-center mt-16">
           <a
-            href="/ivf-treatment"
+            href="https://drpayalbajaj.com/#contact "
             className="inline-block bg-gradient-to-r from-pink-500 to-pink-600 text-white font-semibold px-10 py-5 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-lg"
           >
             Book an Appointment

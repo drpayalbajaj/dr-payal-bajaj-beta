@@ -5,7 +5,7 @@ export const metadata = {
   description: 'Consult with Dr Payal Bajaj, the best IVF specialist in Delhi for fertility care. Get affordable IVF treatment & personalised support. Book a free consult now.',
   
   alternates: {
-    canonical: 'https://drpayalbajaj.com/ivf-treatment/',
+    canonical: 'https://drpayalbajaj.com/ivf-treatment',
   },
   
   openGraph: {

@@ -18,7 +18,7 @@ export default function Footer() {
         <div className='grid grid-cols-1 md:grid-cols-[45%_1fr_1fr] gap-10 md:gap-8'>
           {/* About Section */}
           <div className="flex flex-col">
-            <h2 className='text-4xl sm:text-5xl font-bold text-white'>Dr. Payal Bajaj</h2>
+            <h3 className='text-4xl sm:text-5xl font-bold text-white'>Dr. Payal Bajaj</h3>
             <span className='text-lg sm:text-xl font-semibold text-gray-100 mt-2'>Senior IVF Consultant</span>
             <p className='mt-6 sm:mt-10 text-sm sm:text-base text-gray-100 max-w-full sm:max-w-[380px] leading-relaxed'>
               Dr. Payal Bajaj, one of the best and most highly reputable gynaecologists, is an IVF specialist in Delhi. She helps provide a detailed explanation and solution to any condition concerning the female reproductive system.
@@ -41,7 +41,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="flex flex-col">
-            <h2 className='text-2xl sm:text-3xl font-bold text-white'>Quick Links</h2>
+            <h3 className='text-2xl sm:text-3xl font-bold text-white'>Quick Links</h3>
             <div className='mt-4 sm:mt-10 flex flex-col gap-1 text-white'>
               <Link href={getHref('/')}>Home</Link>
               <Link href={getHref('#about')}>About</Link>
@@ -58,7 +58,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="flex flex-col">
-            <h2 className='text-2xl sm:text-3xl font-bold text-white'>Visit Us</h2>
+            <h3 className='text-2xl sm:text-3xl font-bold text-white'>Visit Us</h3>
             <div className='mt-4 sm:mt-10 flex flex-col gap-3'>
               <div className='flex gap-3 items-center'>
                 <i className="hgi hgi-stroke hgi-call w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border border-white rounded-full text-white"></i>

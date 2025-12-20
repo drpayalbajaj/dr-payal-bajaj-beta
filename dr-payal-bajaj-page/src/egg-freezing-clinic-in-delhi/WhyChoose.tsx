@@ -8,9 +8,9 @@ const WhyChoose: React.FC = () => {
 
   const reasons = [
     {
-      title: "23+ Years of IVF Excellence",
+      title: "Over 23 Years of Fertility Expertise",
       description:
-        "Trusted fertility specialist with decades of proven success in helping couples conceive.",
+        "A trusted specialist with decades of experience helping women preserve their fertility and plan for the future.",
     },
     {
       title: "Trained in Germany & Japan",
@@ -18,14 +18,14 @@ const WhyChoose: React.FC = () => {
         "International exposure ensures advanced, evidence-based fertility treatments.",
     },
     {
-      title: "82.5% IVF Success Rate",
+      title: "Exceptional Success Rates",
       description:
-        "Among the highest in the field, real results, not just promises.",
+        "Among the top in the field, delivering measurable results and peace of mind, not just promises",
     },
     {
-      title: "Expert in Complex Cases",
+      title: "Specialist in Challenging Cases",
       description:
-        "Specialized protocols designed for couples who’ve faced multiple IVF failures.",
+        "Tailored protocols for women with complex fertility needs or previous unsuccessful attempts at preservation.",
     },
     {
       title: "Personalized Support at Every Step",
@@ -33,9 +33,9 @@ const WhyChoose: React.FC = () => {
         "Dedicated one-on-one attention and compassionate care throughout your journey.",
     },
     {
-      title: "All Fertility Solutions in One Place",
+      title: "Comprehensive Fertility Solutions",
       description:
-        "From diagnosis to advanced IVF, every treatment is done with care and precision.",
+        "From consultation to advanced egg freezing procedures, every step is handled with precision, care, and expertise.",
     },
     {
       title: "Honest Guidance, No False Promises",
@@ -82,7 +82,7 @@ const WhyChoose: React.FC = () => {
         {/* CTA */}
         <div className="text-center mt-12">
           <a
-           href="/ivf-treatment"
+           href="https://drpayalbajaj.com/#contact "
             className="inline-block bg-pink-500 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:bg-pink-600 transition-all duration-300 hover:-translate-y-0.5"
           >
             Book an Appointment

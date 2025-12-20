@@ -104,14 +104,15 @@ export default function Banner() {
     <section className="flex flex-col lg:flex-row justify-between items-center flex-1 container mx-auto px-6 py-12 gap-10">
       <div className="lg:w-1/2 text-center lg:text-left">
         <h2 className="text-3xl sm:text-4xl font-semibold text-gray-800 leading-snug mb-4">
-          Tried Everything but <span className="text-pink-600 font-bold">Still Waiting</span> for the Good News
+        Best Egg Freezing <span className="text-pink-600 font-bold">Clinic in Delhi</span> Secure Your Future
+
         </h2>
         <p className="text-gray-600 mb-6 text-sm sm:text-base">
-          With 82.5% success rate and 23+ years of IVF excellence, Dr. Payal Bajaj offers advanced treatments that bring results.
+        With an 82.5% success rate and 23+ years of excellence in reproductive medicine, Dr. Payal Bajaj offers advanced egg freezing treatments designed to preserve fertility with confidence and proven results.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-4">
           <a
-            href="/ivf-treatment"
+            href="https://drpayalbajaj.com/#contact "
             className="bg-pink-600 text-white px-5 py-3 rounded-lg font-medium hover:bg-pink-700 transition text-center"
           >
             Book Free Consultation

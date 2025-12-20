@@ -79,9 +79,9 @@ function Hero() {
 
               {/* Doctor Name & Title */}
               <div className="space-y-4">
-                <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
+                <h2 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
                   Dr. Payal Bajaj
-                </h1>
+                </h2>
                 <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary/10 to-violet-100/50 rounded-xl">
                   <h2 className="text-xl md:text-2xl font-semibold text-primary">
                     Medical Director And Senior IVF Consultant
@@ -220,9 +220,9 @@ function Hero() {
                       />
                     </svg>
                   </div>
-                  <h4 className="text-2xl font-bold text-gray-900 mt-1">
+                  <h3 className="text-2xl font-bold text-gray-900 mt-1">
                     Evidence-Based Care Philosophy
-                  </h4>
+                  </h3>
                 </div>
 
                 {/* Paragraph in a separate div, full width */}

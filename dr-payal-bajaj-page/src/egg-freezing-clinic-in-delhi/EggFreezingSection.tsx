@@ -32,10 +32,10 @@ const EggFreezingSection: React.FC = () => {
       {/* Title and Subtitle */}
       <div className="text-center mb-16">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
-          Best Egg Freezing Clinic in Delhi: Secure Your Future
+        Advanced Egg Freezing Treatment in Delhi
         </h1>
         <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-          With more than two decades of fertility experience and an 82.5% success rate, our clinic has grown into a trusted place for women who want to preserve their fertility. Being known as one of the best egg freezing clinics in Delhi, we offer advanced egg freezing in Delhi under a dedicated and caring team.
+          With more than two decades of fertility experience and an 82.5% success rate, our clinic has grown into a trusted place for women who want to preserve their fertility. Being known as one of the <a className="text-pink-600 hover:text-pink-700 font-semibold underline" href="https://drpayalbajaj.com/egg-freezing-clinic-in-delhi">best egg freezing clinics in Delhi</a>, we offer advanced egg freezing in Delhi under a dedicated and caring team.
         </p>
       </div>
 
@@ -135,7 +135,7 @@ const EggFreezingSection: React.FC = () => {
           </h2>
           
           <p className="text-gray-700 text-base md:text-lg leading-relaxed text-center mb-8">
-            As a leading clinic for egg freezing in Delhi, we combine updated technology with experienced IVF specialist in Delhi. Our doctors:
+            As a leading clinic for egg freezing in Delhi, we combine updated technology with experienced <a className="text-pink-600 hover:text-pink-700 font-semibold underline"  href="https://drpayalbajaj.com/ivf-treatment">IVF specialist in Delhi</a>. Our doctors:
           </p>
 
           <div className="space-y-4 max-w-3xl mx-auto">

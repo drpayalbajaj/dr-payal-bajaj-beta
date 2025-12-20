@@ -12,9 +12,9 @@ const DoctorProfile: React.FC = () => {
   return (
     <div className="px-6 md:px-20 py-10">
       {/* Title */}
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-8">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
         Meet Dr. Payal Bajaj
-      </h1>
+      </h2>
 
       {/* Doctor Section */}
       <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
@@ -30,15 +30,13 @@ const DoctorProfile: React.FC = () => {
         {/* Text */}
         <div className="text-gray-700 max-w-2xl">
           <h2 className="text-xl font-semibold mb-2">
-            Medical Director And Senior IVF Consultant
+          Medical Director And Senior IUI Consultant
           </h2>
           <p className="mb-3">
-            <span className="font-bold">Dr. Payal Bajaj</span> is a highly
-            experienced Obstetrician and Gynaecologist with over{" "}
-            <span className="font-bold">23+ years of expertise</span> in her
-            field. She is also a distinguished{" "}
+            <span className="font-bold">Dr. Payal Bajaj</span> is a seasoned Obstetrician and Gynaecologist with more than{" "}
+            <span className="font-bold">23+ years of experience</span> She is also a renowned {" "}
             <span className="font-bold">
-              Reproductive Endocrinologist and Infertility Specialist.
+            Reproductive Endocrinologist and Infertility Specialist.
             </span>
           </p>
 
@@ -73,7 +71,7 @@ const DoctorProfile: React.FC = () => {
               Rao Hospital, Delhi
             </li>
             <li>
-              <span className="font-bold">Ex Senior IVF Consultant</span> – Aveya
+              <span className="font-bold">Ex Senior IUI Consultant</span> – Aveya
               Fertility
             </li>
           </ul>
@@ -102,7 +100,7 @@ const DoctorProfile: React.FC = () => {
       {/* CTA BUTTON */}
       <div className="text-center mt-12">
         <a
-         href="/ivf-treatment"
+         href="https://drpayalbajaj.com/#contact "
           className="inline-block bg-pink-500 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:bg-pink-600 transition-all duration-300 hover:-translate-y-0.5"
         >
           Book an Appointment
