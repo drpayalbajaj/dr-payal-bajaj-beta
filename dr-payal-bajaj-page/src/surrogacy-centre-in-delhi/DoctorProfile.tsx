@@ -7,8 +7,8 @@ const SurrogacySection: React.FC = () => {
   const features = [
     {
       icon: <Heart className="w-8 h-8 text-pink-500" />,
-      title: "Every Couple's Journey is Different",
-      description: "No two journeys are the same. We take time to listen and plan a path that makes sense for you, at your pace."
+      title: `Every Couple's Journey is Different`,
+      description: `No two journeys are the same. We take time to listen and plan a path that makes sense for you, at your pace.`
     },
     {
       icon: <Shield className="w-8 h-8 text-pink-500" />,
@@ -18,7 +18,7 @@ const SurrogacySection: React.FC = () => {
     {
       icon: <Users className="w-8 h-8 text-pink-500" />,
       title: "Complete Transparency",
-      description: "You'll always know what's happening with regular updates throughout the journey."
+      description: `You'll always know what's happening with regular updates throughout the journey.`
     }
   ];
 
@@ -30,14 +30,14 @@ const SurrogacySection: React.FC = () => {
         Advanced Surrogacy Treatment in Delhi for Couples
         </h2>
         <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-          Have you been hoping to become parents, but it just hasn't happened yet? At our{" "}
+          Have you been hoping to become parents, but it just hasn&apos;t happened yet? At our{" "}
           <Link 
             href="/surrogacy-centre-in-delhi" 
             className="text-pink-600 hover:text-pink-700 font-semibold underline"
           >
             best surrogacy centre in Delhi
           </Link>
-          , we don't just do procedures. We're here to walk with you, hold your hand, and answer every little question.
+          , we don&apos;t just do procedures. We&apos;re here to walk with you, hold your hand, and answer every little question.
         </p>
       </div>
 
@@ -46,7 +46,7 @@ const SurrogacySection: React.FC = () => {
         <div className="flex items-center justify-center mb-8">
           <Heart className="w-12 h-12 text-pink-500 mr-3" />
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
-            Every Couple's Journey is Different
+            Every Couple&apos;s Journey is Different
           </h2>
         </div>
         
@@ -71,7 +71,7 @@ const SurrogacySection: React.FC = () => {
           </div>
           
           <p className="text-gray-700 text-base md:text-lg leading-relaxed mt-6">
-            When you come here, you're not just a patient. You're part of a small, caring community that understands exactly what you're feeling.
+            When you come here, you&apos;re not just a patient. You&apos;re part of a small, caring community that understands exactly what you&apos;re feeling.
           </p>
         </div>
       </div>
@@ -87,7 +87,7 @@ const SurrogacySection: React.FC = () => {
           </div>
           
           <p className="text-gray-700 text-base md:text-lg leading-relaxed text-center mb-8">
-            Surrogacy might seem complicated, but it doesn't need to be scary. We explain everything clearly, step by step.
+            Surrogacy might seem complicated, but it doesn&apos;t need to be scary. We explain everything clearly, step by step.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -118,19 +118,19 @@ const SurrogacySection: React.FC = () => {
             <div className="flex items-start space-x-3">
               <CheckCircle className="w-6 h-6 text-pink-500 flex-shrink-0 mt-1" />
               <p className="text-gray-700">
-                <span className="font-semibold">Updates?</span> You'll always know how things are going.
+                <span className="font-semibold">Updates?</span> You&apos;ll always know how things are going.
               </p>
             </div>
             <div className="flex items-start space-x-3">
               <CheckCircle className="w-6 h-6 text-pink-500 flex-shrink-0 mt-1" />
               <p className="text-gray-700">
-                <span className="font-semibold">Questions?</span> Ask anything—you won't be brushed off.
+                <span className="font-semibold">Questions?</span> Ask anything—you won&apos;t be brushed off.
               </p>
             </div>
           </div>
 
           <p className="text-gray-700 text-base md:text-lg leading-relaxed text-center mt-8">
-            Knowing what's happening takes away so much stress. If you are exploring surrogacy in Delhi, our centre makes the journey smoother with clear guidance and compassionate care.
+            Knowing what&apos;s happening takes away so much stress. If you are exploring surrogacy in Delhi, our centre makes the journey smoother with clear guidance and compassionate care.
           </p>
         </div>
       </div>
@@ -146,7 +146,7 @@ const SurrogacySection: React.FC = () => {
           </div>
           
           <p className="text-gray-700 text-base md:text-lg leading-relaxed text-center mb-8">
-            This journey isn't just medical—it's emotional. The waiting, the unknowns, the small joys—they all matter. That's why we make support part of our care.
+            This journey isn&apos;t just medical—it&apos;s emotional. The waiting, the unknowns, the small joys—they all matter. That&apos;s why we make support part of our care.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -154,7 +154,7 @@ const SurrogacySection: React.FC = () => {
               <p className="text-gray-700">You can talk to us whenever you feel anxious</p>
             </div>
             <div className="text-center p-6 bg-pink-50 rounded-xl">
-              <p className="text-gray-700">You'll get updates so you're never in the dark</p>
+              <p className="text-gray-700">You&apos;ll get updates so you&apos;re never in the dark</p>
             </div>
             <div className="text-center p-6 bg-pink-50 rounded-xl">
               <p className="text-gray-700">Every doubt or worry is treated seriously</p>
@@ -179,7 +179,7 @@ const SurrogacySection: React.FC = () => {
           </p>
 
           <p className="text-gray-700 text-base md:text-lg leading-relaxed text-center">
-            Couples leave feeling understood and supported. And that's why so many consider us the{" "}
+            Couples leave feeling understood and supported. And that&apos;s why so many consider us the{" "}
             <Link 
               href="/surrogacy-centre-in-delhi" 
               className="text-pink-600 hover:text-pink-700 font-semibold underline"
@@ -210,7 +210,7 @@ const SurrogacySection: React.FC = () => {
           
           <div className="space-y-6 mb-8">
             <p className="text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
-              Parenthood starts with a single step. If you're ready, we're ready too. We'll be here for you through every worry, every update, and every joyful moment.
+              Parenthood starts with a single step. If you&apos;re ready, we&apos;re ready too. We&apos;ll be here for you through every worry, every update, and every joyful moment.
             </p>
             <p className="text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
               Book a consultation today with{" "}
@@ -220,7 +220,7 @@ const SurrogacySection: React.FC = () => {
               >
                 Dr. Payal Bajaj
               </Link>
-              . Your little one is waiting, and we'll be right beside you.
+              . Your little one is waiting, and we&apos;ll be right beside you.
             </p>
           </div>
           
