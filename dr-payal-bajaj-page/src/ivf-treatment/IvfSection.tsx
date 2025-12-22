@@ -100,7 +100,7 @@ const IvfSection: React.FC = () => {
               >
                 surrogacy treatment in Delhi
               </a>
-              , or an{' '}
+              , or an
               <a
                 href="https://drpayalbajaj.com/egg-freezing-clinic-in-delhi"
                 className="text-purple-900 hover:text-purple-950 font-bold underline"

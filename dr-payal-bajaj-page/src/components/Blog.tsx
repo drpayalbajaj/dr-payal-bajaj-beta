@@ -31,18 +31,15 @@ const blogData: Blogs[] = [
     uri: "blogs/pcos-and-infertility",
   },
   {
-    title:
-      "When to See a Fertility Specialist: Don't Delay Your Parenthood Journey",
+    title: `When to See a Fertility Specialist: Don't Delay Your Parenthood Journey`,
     image: "/image/blogs/4.png",
-    content:
-      "For many couples, starting a family is one of life's most cherished dreams...",
+    content: `For many couples, starting a family is one of life's most cherished dreams...`,
     uri: "blogs/when-to-see-fertility-specialist",
   },
   {
-    title: "It’s Not Just Women – Why Men’s Health Matters in Pregnancy",
+    title: `It's Not Just Women – Why Men's Health Matters in Pregnancy`,
     image: "/image/blogs/5.png",
-    content:
-      "When we talk about pregnancy and miscarriage, most people think of women’s health...",
+    content: `When we talk about pregnancy and miscarriage, most people think of women's health...`,
     uri: "blogs/why-mens-health-matters-in-pregnancy",
   },
 ];

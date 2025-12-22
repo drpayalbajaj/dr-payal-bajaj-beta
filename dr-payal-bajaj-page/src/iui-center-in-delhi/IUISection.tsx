@@ -27,14 +27,10 @@ const IUISection: React.FC = () => {
 
         <div className="space-y-6">
         <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-  Every couple dreams of starting a family, but the path to parenthood is not always straightforward. Many couples face challenges that can feel overwhelming, confusing, or even discouraging. That&apos;s why choosing the{' '}
-  <a 
+  Every couple dreams of starting a family, but the path to parenthood is not always straightforward. Many couples face challenges that can feel overwhelming, confusing, or even discouraging. That&apos;s why choosing the <a 
     href="https://drpayalbajaj.com/iui-center-in-delhi" 
     className="text-pink-600 hover:text-pink-700 font-semibold underline"
-  >
-    best IUI center in Delhi
-  </a>
-  {' '}is so important. You need not just modern technology, but someone who listens, understands, and guides you with care at every step.
+  >best IUI center in Delhi</a> is so important. You need not just modern technology, but someone who listens, understands, and guides you with care at every step.
 </p>
           <p className="text-gray-700 text-base md:text-lg leading-relaxed">
             At our clinic, we treat each couple as unique. Some come to us full of hope and excitement, while others arrive anxious or tired after trying for months, or even years, without success. Our IUI specialist in Delhi takes the time to listen to your story, understand your concerns, and create a treatment plan specifically for you.
@@ -60,7 +56,7 @@ const IUISection: React.FC = () => {
               This level of attention and care is why couples feel at ease and why our clinic is recognized as a trusted IUI center in Delhi.
             </p>
             <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-              If your case requires more advanced solutions, our network with the{' '}
+              If your case requires more advanced solutions, our network with the &apos;
               <a
                 href="https://drpayalbajaj.com/ivf-treatment/"
                 className="text-pink-600 hover:text-pink-700 font-semibold underline"
