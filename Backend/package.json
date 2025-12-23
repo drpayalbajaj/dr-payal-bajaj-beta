@@ -1,0 +1,28 @@
+{
+   "name": "backend",
+   "version": "1.0.0",
+   "description": "backend of  dr pyal bajaj",
+   "type": "module",
+   "main": "index.js",
+   "scripts": {
+      "dev": "nodemon src/index.js",
+      "start": "node backend/index.js",
+      "build": "cd frontend && npm install && npm run build"
+   },
+   "keywords": [
+      "javascript",
+      "backend"
+   ],
+   "author": "Strategix Work",
+   "license": "ISC",
+   "dependencies": {
+      "cookie-parser": "^1.4.7",
+      "cors": "^2.8.5",
+      "dotenv": "^17.2.3",
+      "express": "^5.2.1",
+      "googleapis": "^167.0.0",
+      "mongodb": "^7.0.0",
+      "mongoose": "^9.0.1",
+      "resend": "^6.5.2"
+   }
+}
