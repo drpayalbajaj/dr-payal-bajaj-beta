@@ -31,9 +31,9 @@ const EggFreezingSection: React.FC = () => {
     <section className="px-6 md:px-20 py-16 bg-gradient-to-b from-white to-gray-50">
       {/* Title and Subtitle */}
       <div className="text-center mb-16">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
         Advanced Egg Freezing Treatment in Delhi
-        </h1>
+        </h2>
         <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
           With more than two decades of fertility experience and an 82.5% success rate, our clinic has grown into a trusted place for women who want to preserve their fertility. Being known as one of the <a className="text-pink-600 hover:text-pink-700 font-semibold underline" href="https://drpayalbajaj.com/egg-freezing-clinic-in-delhi">best egg freezing clinics in Delhi</a>, we offer advanced egg freezing in Delhi under a dedicated and caring team.
         </p>

@@ -10,9 +10,9 @@ const IvfSection: React.FC = () => {
     <section className="px-6 md:px-20 py-16 bg-gradient-to-b from-white to-gray-50">
       {/* Title and Subtitle */}
       <div className="text-center mb-16">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
           Best IVF Doctor in Delhi for Advanced Fertility Treatment
-        </h1>
+        </h2>
         <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
           When couples begin their parenthood journey, most of them look for two things-solid medical support and someone who genuinely understands what they&apos;re feeling. That&apos;s exactly why so many families trust Dr. Payal Bajaj, the best IVF doctor in Delhi, one of the most respected fertility experts in the city, and why our centre is known as the best IVF clinic in Delhi India. When you walk in, it doesn&apos;t feel like just another medical facility. You feel like your story, your struggle, and your hope actually matter.
         </p>
