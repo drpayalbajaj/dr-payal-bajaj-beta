@@ -69,9 +69,9 @@ export default function Banner() {
 
     try {
       // 🔥 Environment variable se API URL le rahe hain
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+      // const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
       
-      const response = await fetch(`${API_URL}/api/v1/contact`, {
+      const response = await fetch ("/api/contact", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
@@ -79,8 +79,8 @@ export default function Banner() {
         body: JSON.stringify({
           name: form.name.trim(),
           email: form.email.trim(),
-          phone: form.phone, // Backend "phone" expect karta hai
-          treatment: form.treatment,
+          contactNo: form.phone, 
+          message: form.treatment,
         }),
       });
 

@@ -45,6 +45,7 @@ export default function Banner() {
     
     setError("");
     
+    // Validation
     if (!form.name.trim() || form.name.length < 2) {
       setError("Name must be at least 2 characters");
       return;
@@ -68,10 +69,8 @@ export default function Banner() {
     setIsSubmitting(true);
 
     try {
-      // 🔥 Environment variable se API URL le rahe hain
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-      
-      const response = await fetch(`${API_URL}/api/v1/contact`, {
+      // ✅ Next.js API route ko call kar rahe hain (frontend ke andar)
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
@@ -79,22 +78,24 @@ export default function Banner() {
         body: JSON.stringify({
           name: form.name.trim(),
           email: form.email.trim(),
-          phone: form.phone, // Backend "phone" expect karta hai
-          treatment: form.treatment,
+          contactNo: form.phone, // Backend "contactNo" expect karta hai
+          message: form.treatment, // Treatment ko message field mein bhej rahe hain
         }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
+        // Success - form reset aur thank you page pe redirect
         setForm({ name: "", phone: "", email: "", treatment: "" });
         router.push("/thank-you");
       } else {
+        // Error handling
         setError(data.message || "Failed to submit. Please try again.");
         setIsSubmitting(false);
       }
     } catch (err) {
-      console.error(err);
+      console.error("Form submission error:", err);
       setError("Network error. Please try again.");
       setIsSubmitting(false);
     }
@@ -104,7 +105,7 @@ export default function Banner() {
     <section className="flex flex-col lg:flex-row justify-between items-center flex-1 container mx-auto px-6 py-12 gap-10">
       <div className="lg:w-1/2 text-center lg:text-left">
         <h1 className="text-3xl sm:text-4xl font-semibold text-gray-800 leading-snug mb-4">
-        Best IVF Clinic in <span className="text-pink-600 font-bold">Delhi for Advanced</span> Fertility Care
+          Best IVF Clinic in <span className="text-pink-600 font-bold">Delhi for Advanced</span> Fertility Care
         </h1>
         <p className="text-gray-600 mb-6 text-sm sm:text-base">
           With 82.5% success rate and 23+ years of IVF excellence, Dr. Payal Bajaj offers advanced treatments that bring results.
