@@ -37,7 +37,7 @@ const blogData: Blogs[] = [
     uri: "blogs/when-to-see-fertility-specialist",
   },
   {
-    title: `It's Not Just Women – Why Men's Health Matters in Pregnancy`,
+    title: ` Not Just Women – Why Men's Health Matters in Pregnancy`,
     image: "/image/blogs/5.png",
     content: `When we talk about pregnancy and miscarriage, most people think of women's health...`,
     uri: "blogs/why-mens-health-matters-in-pregnancy",

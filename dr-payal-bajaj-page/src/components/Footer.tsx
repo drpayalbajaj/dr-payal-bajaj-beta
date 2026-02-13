@@ -52,6 +52,8 @@ export default function Footer() {
               <Link href={getHref('/egg-freezing-clinic-in-delhi')}>Egg-freezing</Link>
               <Link href={getHref('/iui-center-in-delhi')}>Iui-center</Link>
               <Link href={getHref('/surrogacy-centre-in-delhi')}>Surrogacy-centre</Link>
+              <Link href={getHref('/ivf-fertility-clinic-in-delhi')}>Ivf-fertility-clinic</Link>
+              <Link href={getHref('/ivf-fertility-doctor-in-delhi')}>Ivf-fertility-doctor</Link>
               
             </div>
           </div>
